@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Header from '../src/components/Header/Header';
@@ -12,6 +11,7 @@ function App() {
   return (
     <Container className="p-0" fluid={true}>
       <Header />
+      <div> Hello world</div>
       <Footer />
     </Container>
   );
