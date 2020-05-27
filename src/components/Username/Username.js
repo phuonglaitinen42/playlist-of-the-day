@@ -34,10 +34,10 @@ const Username = () => {
 
         <Form className="registeredName" onSubmit={addPostHandler}>
             <Form.Group>
-                <Form.Label htmlFor="name">Please provide your name.</Form.Label>
+                <Form.Label htmlFor="username">Please provide your name.</Form.Label>
                 <Form.control
-                    id="name"
-                    name="name"
+                    id="username"
+                    name="username"
                     type="text"
                     placeholder="John Doe"
                     onChange={changeValueHandler}
