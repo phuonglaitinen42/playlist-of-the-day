@@ -1,211 +1,223 @@
 var quizQuestions = [
   {
-    question: "At what time did you wake up?",
+    story: "Today, like any other day, you wake up and open your curtains.",
+    question: "How's the weather like outside?",
     answers: [
-      {
-        type: "Blues",
-        content: "6",
-      },
-      {
-        type: "Country",
-        content: "7",
-      },
       {
         type: "Jazz",
-        content: "9",
-      },
-      {
-        type: "Rock/Pop",
-        content: "10",
-      },
-    ],
-  },
-  {
-    question: "What did you eat for breakfast? ",
-    answers: [
-      {
-        type: "Blues",
-        content: "Pancake",
-      },
-      {
-        type: "Country",
-        content: "French toast",
-      },
-      {
-        type: "Jazz",
-        content: "Cereal",
-      },
-      {
-        type: "Rock/Pop",
-        content: "Rice pudding",
-      },
-    ],
-  },
-  {
-    question: "What is the weather today?  ",
-    answers: [
-      {
-        type: "Blues",
         content: "Sunny",
       },
       {
-        type: "Country",
+        type: "Pop/Ballad",
         content: "Rainy",
       },
       {
-        type: "Jazz",
+        type: "Progressive Rock",
         content: "Cloudy",
       },
       {
-        type: "Rock/Pop",
-        content: "Windy",
+        type: "Metal",
+        content: "Snowy",
       },
     ],
   },
   {
-    question: "What season is it now? ",
+    story: "Now it is time to kick off your day",
+    question: "What would you do first? ",
     answers: [
-      {
-        type: "Blues",
-        content: "Spring",
-      },
-      {
-        type: "Country",
-        content: "Summer",
-      },
       {
         type: "Jazz",
-        content: "Autumn",
+        content: "Coffee first",
       },
       {
-        type: "Rock/Pop",
-        content: "Winter",
+        type: "Pop/Ballad",
+        content: "Write journal",
+      },
+      {
+        type: "Progressive Rock",
+        content: "Work out",
+      },
+      {
+        type: "Metal",
+        content: "Get to work",
       },
     ],
   },
   {
-    question: "What kind of activity are you going to do today?  ",
+    story: "Now you're ready to kick off your day",
+    question: "Choose your motivation quote of the day  ",
     answers: [
-      {
-        type: "Blues",
-        content: "Reading",
-      },
-      {
-        type: "Country",
-        content: "Cooking",
-      },
       {
         type: "Jazz",
-        content: "Gardening",
+        content: "Live Colorfully",
       },
       {
-        type: "Rock/Pop",
-        content: "Cleaning",
+        type: "Pop/Ballad",
+        content: "Be proud of how hard you are working",
+      },
+      {
+        type: "Progressive Rock",
+        content: "You got this",
+      },
+      {
+        type: "Metal",
+        content: "Punch today in the face",
       },
     ],
   },
   {
-    question: "What drink are you having? ",
+    story: "Time flies when you are concentrate. It is soon lunch time",
+    question: "How would you like to have lunch? ",
     answers: [
-      {
-        type: "Blues",
-        content: "Coffee",
-      },
-      {
-        type: "Country",
-        content: "Matcha",
-      },
       {
         type: "Jazz",
-        content: "Latte",
+        content: "Cook your own",
       },
       {
-        type: "Rock/Pop",
-        content: "Iced tea",
+        type: "Pop/Ballad",
+        content: "Eat with coworkers",
+      },
+      {
+        type: "Progressive Rock",
+        content: "Order takeaway",
+      },
+      {
+        type: "Metal",
+        content: "Skip lunch",
       },
     ],
   },
   {
-    question: "How are you feeling at the moment?  ",
+    story: "As usual, afternoon slump approaches... You need a small break",
+    question: "What kind of activity would you do?  ",
     answers: [
       {
-        type: "Blues",
+        type: "Jazz",
+        content: "Go for a walk",
+      },
+      {
+        type: "Pop/Ballad",
+        content: "Quick stretch",
+      },
+      {
+        type: "Progressive Rock",
+        content: "Power nap",
+      },
+      {
+        type: "Metal",
+        content: "Grab some coffee",
+      },
+    ],
+  },
+  {
+    story: "Now you finally have some personal time",
+    question: "What is your plan? ",
+    answers: [
+      {
+        type: "Jazz",
+        content: "Chill at home",
+      },
+      {
+        type: "Pop/Ballad",
+        content: "Wander somehere alone",
+      },
+      {
+        type: "Progressive Rock",
+        content: "Have a drink with friends",
+      },
+      {
+        type: "Metal",
+        content: "Hit the gym",
+      },
+    ],
+  },
+  {
+    story:
+      "While you were enjoying your afterwork time, your friend invited you to a gig, you accepted the invitation",
+    question: "What would you do during the gig?  ",
+    answers: [
+      {
+        type: "Jazz",
+        content: "Move your body along with the music",
+      },
+      {
+        type: "Pop/Ballad",
+        content: "Dance with friends",
+      },
+      {
+        type: "Progressive Rock",
+        content: "Deeply listen to the lyrics",
+      },
+      {
+        type: "Metal",
+        content: "Go crazy at the front row",
+      },
+    ],
+  },
+  {
+    story:
+      "After all daily activities, you are at home, you start to plan your next trip.",
+    question: "What would you like to do?  ",
+    answers: [
+      {
+        type: "Jazz",
+        content: "Lie on a beach with mojito",
+      },
+      {
+        type: "Pop/Ballad",
+        content: "Simply eat, sleep, relax",
+      },
+      {
+        type: "Progressive Rock",
+        content: "Explore history and culture",
+      },
+      {
+        type: "Metal",
+        content: "Go trekking",
+      },
+    ],
+  },
+  {
+    story: "You look at the bookshelf and see an unread pile of books",
+    question: "which type of book would you bring on your trip? ",
+    answers: [
+      {
+        type: "Jazz",
+        content: "Fantasy adventure book",
+      },
+      {
+        type: "Pop/Ballad",
+        content: "Self-improvement",
+      },
+      {
+        type: "Progressive Rock",
+        content: "Investing management",
+      },
+      {
+        type: "Metal",
+        content: "Biography of famous people",
+      },
+    ],
+  },
+  {
+    story: "Before the day ends, you ask yourself on question",
+    question: "How do I feel about the day?  ",
+    answers: [
+      {
+        type: "Jazz",
         content: "Happy",
       },
       {
-        type: "Country",
-        content: "Nothing",
+        type: "Pop/Ballad",
+        content: "So-so",
       },
       {
-        type: "Jazz",
-        content: "Missing something/somebody",
+        type: "Progressive Rock",
+        content: "Enjoyable",
       },
       {
-        type: "Rock/Pop",
-        content: "Energized",
-      },
-    ],
-  },
-  {
-    question: "Where would you like to have a work-out?  ",
-    answers: [
-      {
-        type: "Blues",
-        content: "Home",
-      },
-      {
-        type: "Country",
-        content: "Fitness studio",
-      },
-      {
-        type: "Jazz",
-        content: "Jogging in the wood",
-      },
-      {
-        type: "Rock/Pop",
-        content: "Gym",
-      },
-    ],
-  },
-  {
-    question: "What did you plan for your lunch? ",
-    answers: [
-      {
-        type: "Blues",
-        content: "Eat out",
-      },
-      {
-        type: "Country",
-        content: "Take-away",
-      },
-      {
-        type: "Jazz",
-        content: "Cook myself",
-      },
-      {
-        type: "Rock/Pop",
-        content: "Delivery food",
-      },
-    ],
-  },
-  {
-    question: "Whose voice you prefer more?  ",
-    answers: [
-      {
-        type: "Blues",
-        content: "Bill Withers",
-      },
-      {
-        type: "Country",
-        content: "Carrie Underwood",
-      },
-      {
-        type: "Jazz",
-        content: "Frank Sinatra",
-      },
-      {
-        type: "Rock/Pop",
-        content: "The Beatles",
+        type: "Metal",
+        content: "Neutral",
       },
     ],
   },
