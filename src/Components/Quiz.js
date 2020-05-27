@@ -4,7 +4,7 @@ import { TransitionGroup } from "react-transition-group";
 import Question from "./Question";
 import QuestionCount from "./QuestionCount";
 import AnswerOption from "./AnswerOption";
-
+import Storyline from "./Storyline";
 function Quiz(props) {
   function renderAnswerOptions(key) {
     return (
@@ -30,6 +30,7 @@ function Quiz(props) {
       transitionAppearTimeout={500}
     >
       <div key={props.questionId}>
+        <Storyline story={props.story} />
         <QuestionCount counter={props.questionId} total={props.questionTotal} />
 
         <Question content={props.question} />
@@ -44,6 +45,7 @@ function Quiz(props) {
 Quiz.propTypes = {
   answer: PropTypes.string.isRequired,
   answerOptions: PropTypes.array.isRequired,
+  story: PropTypes.string.isRequired,
   question: PropTypes.string.isRequired,
   questionId: PropTypes.number.isRequired,
   questionTotal: PropTypes.number.isRequired,
