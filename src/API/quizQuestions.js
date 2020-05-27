@@ -1,5 +1,6 @@
 var quizQuestions = [
   {
+    background: "https://source.unsplash.com/1600x900/?nature,water",
     question: "At what time did you wake up?",
     answers: [
       {
@@ -21,6 +22,7 @@ var quizQuestions = [
     ],
   },
   {
+    background: "https://source.unsplash.com/1600x900/?nature,leave",
     question: "What did you eat for breakfast? ",
     answers: [
       {
@@ -42,6 +44,7 @@ var quizQuestions = [
     ],
   },
   {
+    background: "https://source.unsplash.com/1600x900/?nature,dandelion",
     question: "What is the weather today?  ",
     answers: [
       {
@@ -63,6 +66,7 @@ var quizQuestions = [
     ],
   },
   {
+    background: "https://source.unsplash.com/1600x900/?nature,grass",
     question: "What season is it now? ",
     answers: [
       {
@@ -84,6 +88,7 @@ var quizQuestions = [
     ],
   },
   {
+    background: "https://source.unsplash.com/1600x900/?nature,lake",
     question: "What kind of activity are you going to do today?  ",
     answers: [
       {
@@ -105,6 +110,7 @@ var quizQuestions = [
     ],
   },
   {
+    background: "https://source.unsplash.com/1600x900/?nature,star",
     question: "What drink are you having? ",
     answers: [
       {
@@ -126,6 +132,7 @@ var quizQuestions = [
     ],
   },
   {
+    background: "https://source.unsplash.com/1600x900/?nature,fire",
     question: "How are you feeling at the moment?  ",
     answers: [
       {
@@ -147,6 +154,7 @@ var quizQuestions = [
     ],
   },
   {
+    background: "https://source.unsplash.com/1600x900/?nature,calm",
     question: "Where would you like to have a work-out?  ",
     answers: [
       {
@@ -168,6 +176,7 @@ var quizQuestions = [
     ],
   },
   {
+    background: "https://source.unsplash.com/1600x900/?nature,flower",
     question: "What did you plan for your lunch? ",
     answers: [
       {
@@ -189,6 +198,7 @@ var quizQuestions = [
     ],
   },
   {
+    background: "https://source.unsplash.com/1600x900/?nature,forest",
     question: "Whose voice you prefer more?  ",
     answers: [
       {
@@ -210,5 +220,4 @@ var quizQuestions = [
     ],
   },
 ];
-
 export default quizQuestions;

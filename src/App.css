@@ -4,7 +4,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgba(34, 34, 34, 0.5);
   padding: 20px;
   color: white;
   text-align: center;
@@ -21,4 +21,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App {
+  background: url("https://source.unsplash.com/Ydj_lckko4M/1600x900") no-repeat
+    center center/cover;
+  height: 1000px;
 }

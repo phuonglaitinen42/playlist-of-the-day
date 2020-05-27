@@ -28,8 +28,12 @@ body {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
-  background: #fff;
   border-radius: 3px;
+}
+.question-area,
+.result {
+  background: rgba(255, 255, 255, 0.5);
+  margin: 20px;
 }
 
 @media (min-width: 769px) {
@@ -64,11 +68,16 @@ body {
 
 /* AnswerOption Component */
 .answerOption {
-  border-top: 1px solid #eee;
+  border: 3px solid #eee;
+  margin: 20px;
+  border-radius: 5px;
 }
 
 .answerOption:hover {
-  background-color: #eefbfe;
+  background-color: #eefbfe4d;
+}
+.answerOptions label {
+  color: #fff;
 }
 
 .radioCustomButton {
@@ -100,7 +109,7 @@ body {
   width: 28px;
   height: 28px;
   content: "";
-  display: inline-block;
+  display: /*inline-block*/ none;
   vertical-align: middle;
   background: #fff;
   border: 1px solid #bbb;

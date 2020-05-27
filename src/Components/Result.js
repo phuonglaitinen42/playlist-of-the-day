@@ -17,6 +17,9 @@ function Result(props) {
         It's a likely chance that you prefer{" "}
         <strong>{props.quizResult} </strong>music at the momment!
       </div>
+      <div>
+        <button>Get your playlist now</button>
+      </div>
     </CSSTransitionGroup>
   );
 }
