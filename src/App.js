@@ -13,9 +13,7 @@ function App() {
   return (
     <Container className="p-0" fluid={true}>
       <Header />
-      <main>
       <Username />
-      </main>
       <Footer />
     </Container>
   );

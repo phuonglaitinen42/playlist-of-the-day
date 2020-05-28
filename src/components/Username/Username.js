@@ -35,14 +35,14 @@ const Username = () => {
         <Form className="registeredName" onSubmit={addPostHandler}>
             <Form.Group>
                 <Form.Label htmlFor="username">Please provide your name.</Form.Label>
-                <Form.control
+                <Form.Control
                     id="username"
-                    name="name"
+                    username="userame"
                     type="text"
                     placeholder="John Doe"
                     onChange={changeValueHandler}
                 >
-                </Form.control>
+                </Form.Control>
             </Form.Group>
             <Button className="d-inline-block" variant="success" type="submit">
                 Send
