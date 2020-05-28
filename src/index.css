@@ -1,16 +1,15 @@
 body {
+  position: relative;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 * {
@@ -25,13 +24,13 @@ body {
 }
 
 .container {
-  position: relative;
   max-width: 800px;
   margin: 0 auto;
   border-radius: 3px;
 }
-.question-area,
-.result {
+
+.question-area, .result {
+  position: absolute;
   background: rgba(255, 255, 255, 0.5);
   margin: 20px;
 }
@@ -43,11 +42,13 @@ body {
 }
 
 /* Result Component */
+
 .result {
   padding: 1.5rem 2.5rem;
 }
 
 /* Quiz Component */
+
 .answerOptions {
   margin: 0;
   padding: 0;
@@ -55,18 +56,21 @@ body {
 }
 
 /* QuestionCount Component */
+
 .questionCount {
   padding: 1.5rem 2.5rem 0;
   font-size: 14px;
 }
 
 /* Question Component */
+
 .question {
   margin: 0;
   padding: 0.5rem 2.5rem 1.5rem 2.5rem;
 }
 
 /* AnswerOption Component */
+
 .answerOption {
   border: 3px solid #eee;
   margin: 20px;
@@ -76,6 +80,7 @@ body {
 .answerOption:hover {
   background-color: #eefbfe4d;
 }
+
 .answerOptions label {
   color: #fff;
 }
@@ -86,8 +91,7 @@ body {
   opacity: 0;
 }
 
-.radioCustomButton,
-.radioCustomLabel {
+.radioCustomButton, .radioCustomLabel {
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
@@ -102,14 +106,15 @@ body {
   line-height: 1.5;
 }
 
-.radioCustomButton ~ .radioCustomLabel:before {
+.radioCustomButton~.radioCustomLabel:before {
   position: absolute;
   top: 20px;
   left: 38px;
   width: 28px;
   height: 28px;
   content: "";
-  display: /*inline-block*/ none;
+  display: /*inline-block*/
+  none;
   vertical-align: middle;
   background: #fff;
   border: 1px solid #bbb;
@@ -117,7 +122,7 @@ body {
   transition: all 0.3s;
 }
 
-.radioCustomButton:checked ~ .radioCustomLabel:before {
+.radioCustomButton:checked~.radioCustomLabel:before {
   content: "";
   background: #8bc53f;
   background-size: 27px;
@@ -125,6 +130,7 @@ body {
 }
 
 /* Animation */
+
 .fade-enter {
   opacity: 0;
 }

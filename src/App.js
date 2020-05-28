@@ -17,12 +17,7 @@ class App extends Component {
       answer: "",
       answersCount: {},
       result: "",
-      backgroundStyle: {
-        backgroundImage: undefined,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      },
+      img: "",
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -33,9 +28,7 @@ class App extends Component {
       this.shuffleArray(question.answers)
     );
     this.setState({
-      backgroundStyle: {
-        backgroundImage: quizQuestions[0].img,
-      },
+      img: quizQuestions[0].img,
       story: quizQuestions[0].story,
       question: quizQuestions[0].question,
       answerOptions: shuffledAnswerOptions[0],
@@ -91,7 +84,7 @@ class App extends Component {
       questionId: questionId,
       question: quizQuestions[counter].question,
       story: quizQuestions[counter].story,
-      backgroundStyle: { backgroundImage: quizQuestions[counter].img },
+      img: quizQuestions[counter].img,
       answerOptions: quizQuestions[counter].answers,
       answer: "",
     });
@@ -119,6 +112,7 @@ class App extends Component {
   renderQuiz() {
     return (
       <Quiz
+        img={this.state.img}
         answer={this.state.answer}
         answerOptions={this.state.answerOptions}
         story={this.state.story}
