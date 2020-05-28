@@ -1,8 +1,19 @@
 import React, { Component } from "react";
-import quizQuestions from "./API/quizQuestions";
+
+import quizQuestions from "./API/quizQuestions/quizQuestions";
 import Quiz from "./Components/Quiz/Quiz";
-import Result from "./Components/Result";
+import Result from "./components/Result/Result";
 import "./App.css";
+
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+//import Username from './components/Username/Username';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+
+
+
 
 class App extends Component {
   constructor(props) {
@@ -126,12 +137,16 @@ class App extends Component {
 
   render() {
     return (
+      <Container className="p-0" fluid={true}>
+      <Header />
       <div className="App">
         <div className="App-header">
           <h2>Find what playlist fits your feeling</h2>
         </div>
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
+      <Footer />
+    </Container>
     );
   }
 }

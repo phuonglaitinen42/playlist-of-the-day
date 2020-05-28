@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { CSSTransitionGroup } from "react-transition-group";
-import Question from "../Question";
-import QuestionCount from "../QuestionCount";
-import AnswerOption from "../AnswerOption";
-import Storyline from "../Storyline";
+import Question from "../Question/Question";
+import QuestionCount from "../QuestionCount/QuestionCount";
+import AnswerOption from "../AnswerOption/AnswerOption";
+import Storyline from "../Storyline/Storyline";
 function Quiz(props) {
   function renderAnswerOptions(key) {
     return (
