@@ -1,5 +1,6 @@
 var quizQuestions = [
   {
+    img: "'url()'",
     story: "Today, like any other day, you wake up and open your curtains.",
     question: "How's the weather like outside?",
     answers: [
