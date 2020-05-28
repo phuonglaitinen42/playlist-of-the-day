@@ -24,19 +24,19 @@ const Username = () => {
         u.preventDefault();
 
         axios
-            .post("http:localhost:3001/usernames", registeredName)
-            .then(response => {
-                console.log(response.data);
-            })
+            .post("http://localhost:3001/usernames", registeredName)
+            .then((response) => {
+            console.log(response.data);
+            });
     };
 
     return (
 
         <Form className="registeredName" onSubmit={addPostHandler}>
             <Form.Group>
-                <Form.Label htmlFor="name">Please provide your name.</Form.Label>
+                <Form.Label htmlFor="username">Please provide your name.</Form.Label>
                 <Form.control
-                    id="name"
+                    id="username"
                     name="name"
                     type="text"
                     placeholder="John Doe"
@@ -49,7 +49,7 @@ const Username = () => {
                 <FontAwesomeIcon icon={faSignature} className="signature-icon" />
             </Button>
         </Form>
-    )
-}
+    );
+};
 
 export default Username;
