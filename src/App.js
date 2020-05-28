@@ -3,6 +3,8 @@ import quizQuestions from "./API/quizQuestions";
 import Quiz from "./Components/Quiz/Quiz";
 import Result from "./Components/Result";
 import "./App.css";
+// import pic1 from "./assets/pic1.jpg";
+// import pic2 from "./assets/pic2.jpg";
 
 class App extends Component {
   constructor(props) {
@@ -17,6 +19,13 @@ class App extends Component {
       answer: "",
       answersCount: {},
       result: "",
+      backgroundStyle: {
+        backgroundImage: undefined,
+        backgroundColor: "olivedrab",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      },
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -85,6 +94,61 @@ class App extends Component {
       answerOptions: quizQuestions[counter].answers,
       answer: "",
     });
+    if (questionId === 2) {
+      this.setState({
+        backgroundStyle: {
+          backgroundColor: "tomato",
+        },
+      });
+    } else if (questionId === 3) {
+      this.setState({
+        backgroundStyle: {
+          backgroundColor: "darkseagreen",
+        },
+      });
+    } else if (questionId === 4) {
+      this.setState({
+        backgroundStyle: {
+          backgroundColor: "mediumpurple",
+        },
+      });
+    } else if (questionId === 5) {
+      this.setState({
+        backgroundStyle: {
+          backgroundColor: "lightseagreen",
+        },
+      });
+    } else if (questionId === 6) {
+      this.setState({
+        backgroundStyle: {
+          backgroundColor: "lightslategray",
+        },
+      });
+    } else if (questionId === 7) {
+      this.setState({
+        backgroundStyle: {
+          backgroundColor: "goldenrod",
+        },
+      });
+    } else if (questionId === 8) {
+      this.setState({
+        backgroundStyle: {
+          backgroundColor: "plum",
+        },
+      });
+    } else if (questionId === 9) {
+      this.setState({
+        backgroundStyle: {
+          backgroundColor: "slateblue",
+        },
+      });
+    } else {
+      this.setState({
+        backgroundStyle: {
+          backgroundColor: "darkorange",
+        },
+      });
+    }
   }
 
   getResults() {
@@ -126,7 +190,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={this.state.backgroundStyle}>
         <div className="App-header">
           <h2>Find what playlist fits your feeling</h2>
         </div>
