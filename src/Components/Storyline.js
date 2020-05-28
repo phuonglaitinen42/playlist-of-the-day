@@ -2,7 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Storyline(props) {
-  return <h3 className="story">{props.story}</h3>;
+  return (
+    <p className="story" style={{ padding: 40 }}>
+      {props.story}
+    </p>
+  );
 }
 
 Storyline.propTypes = {
