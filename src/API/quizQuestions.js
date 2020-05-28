@@ -1,6 +1,16 @@
+import q1 from "../assets/q1";
+import q2 from "../assets/q2";
+import q4 from "../assets/q4";
+import q5 from "../assets/q5";
+import q6 from "../assets/q6";
+import q7 from "../assets/q7";
+import q8 from "../assets/q8";
+import q9 from "../assets/q9";
+import q10 from "../assets/q10";
+
 var quizQuestions = [
   {
-    img: "'url()'",
+    img: q1,
     story: "Today, like any other day, you wake up and open your curtains.",
     question: "How's the weather like outside?",
     answers: [
@@ -23,6 +33,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: q2,
     story: "Now it is time to kick off your day",
     question: "What would you do first? ",
     answers: [
@@ -67,6 +78,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: q4,
     story: "Time flies when you are concentrate. It is soon lunch time",
     question: "How would you like to have lunch? ",
     answers: [
@@ -89,6 +101,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: q5,
     story: "As usual, afternoon slump approaches... You need a small break",
     question: "What kind of activity would you do?  ",
     answers: [
@@ -111,6 +124,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: q6,
     story: "Now you finally have some personal time",
     question: "What is your plan? ",
     answers: [
@@ -133,6 +147,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: q7,
     story:
       "While you were enjoying your afterwork time, your friend invited you to a gig, you accepted the invitation",
     question: "What would you do during the gig?  ",
@@ -156,6 +171,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: q8,
     story:
       "After all daily activities, you are at home, you start to plan your next trip.",
     question: "What would you like to do?  ",
@@ -179,6 +195,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: q9,
     story: "You look at the bookshelf and see an unread pile of books",
     question: "which type of book would you bring on your trip? ",
     answers: [
@@ -201,6 +218,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: q10,
     story: "Before the day ends, you ask yourself on question",
     question: "How do I feel about the day?  ",
     answers: [
