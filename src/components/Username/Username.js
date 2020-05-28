@@ -24,10 +24,10 @@ const Username = () => {
         u.preventDefault();
 
         axios
-            .post("http:localhost:3001/usernames", registeredName)
-            .then(response => {
-                console.log(response.data);
-            })
+            .post("http://localhost:3001/usernames", registeredName)
+            .then((response) => {
+            console.log(response.data);
+            });
     };
 
     return (
@@ -35,21 +35,21 @@ const Username = () => {
         <Form className="registeredName" onSubmit={addPostHandler}>
             <Form.Group>
                 <Form.Label htmlFor="username">Please provide your name.</Form.Label>
-                <Form.control
+                <Form.Control
                     id="username"
-                    name="username"
+                    username="userame"
                     type="text"
                     placeholder="John Doe"
                     onChange={changeValueHandler}
                 >
-                </Form.control>
+                </Form.Control>
             </Form.Group>
             <Button className="d-inline-block" variant="success" type="submit">
                 Send
                 <FontAwesomeIcon icon={faSignature} className="signature-icon" />
             </Button>
         </Form>
-    )
-}
+    );
+};
 
 export default Username;
