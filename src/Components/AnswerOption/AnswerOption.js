@@ -1,5 +1,5 @@
-import React from "./node_modules/react";
-import PropTypes from "./node_modules/prop-types";
+import React from "../../../node_modules/react";
+import PropTypes from "../../../node_modules/prop-types";
 
 function AnswerOption(props) {
   return (
