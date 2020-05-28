@@ -7,7 +7,7 @@ import "./App.css";
 
 import Header from '../src/Components/Header/Header';
 import Footer from '../src/Components/Footer/Footer';
-//import Username from '../src/Components/Username/Username';
+import Username from '../src/Components/Username/Username';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
@@ -137,6 +137,7 @@ class App extends Component {
     return (
       <Container className="p-0" fluid={true}>
       <Header />
+      <Username />
       <div className="App">
         <div className="App-header">
           <h2>Find what playlist fits your feeling</h2>
