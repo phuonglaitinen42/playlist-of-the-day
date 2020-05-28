@@ -37,7 +37,7 @@ const Username = () => {
                 <Form.Label htmlFor="username">Please provide your name.</Form.Label>
                 <Form.Control
                     id="username"
-                    username="userame"
+                    username="username"
                     type="text"
                     placeholder="John Doe"
                     onChange={changeValueHandler}
