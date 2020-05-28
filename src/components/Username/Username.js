@@ -15,7 +15,6 @@ const Username = () => {
 
     const changeValueHandler = (u) => {
         setUserName({
-            ...registeredName,
             [u.target.name]: u.target.value,
         });
     };
@@ -37,7 +36,7 @@ const Username = () => {
                 <Form.Label htmlFor="username">Please provide your name.</Form.Label>
                 <Form.Control
                     id="username"
-                    username="username"
+                    name="username"
                     type="text"
                     placeholder="John Doe"
                     onChange={changeValueHandler}
