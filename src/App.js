@@ -12,6 +12,7 @@ class App extends Component {
       counter: 0,
       questionId: 1,
       question: "",
+      story: "",
       answerOptions: [],
       answer: "",
       answersCount: {},
@@ -26,6 +27,7 @@ class App extends Component {
       this.shuffleArray(question.answers)
     );
     this.setState({
+      story: quizQuestions[0].story,
       question: quizQuestions[0].question,
       answerOptions: shuffledAnswerOptions[0],
     });
@@ -79,6 +81,7 @@ class App extends Component {
       counter: counter,
       questionId: questionId,
       question: quizQuestions[counter].question,
+      story: quizQuestions[counter].story,
       answerOptions: quizQuestions[counter].answers,
       answer: "",
     });
@@ -108,6 +111,7 @@ class App extends Component {
       <Quiz
         answer={this.state.answer}
         answerOptions={this.state.answerOptions}
+        story={this.state.story}
         questionId={this.state.questionId}
         question={this.state.question}
         questionTotal={quizQuestions.length}
