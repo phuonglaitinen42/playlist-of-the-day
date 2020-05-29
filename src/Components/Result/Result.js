@@ -5,6 +5,11 @@ import { CSSTransitionGroup } from "react-transition-group";
 import Button from 'react-bootstrap/Button';
 
 function Result(props) {
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   return (
     <CSSTransitionGroup
       className="container result"
@@ -21,10 +26,8 @@ function Result(props) {
       </div>
       <div>
         <Button className="d-inline-block" variant="success" type="submit">Get your playlist now</Button>
-        <Button className="d-inline-block" variant="light" type="submit">
-          <a href="window.location.reload()" style={{ textDecoration: "none" }}>
+        <Button className="d-inline-block" variant="light" type="submit" onClick={refreshPage}>
             Redo the questions
-          </a>{" "}
         </Button>
       </div>
     </CSSTransitionGroup>
