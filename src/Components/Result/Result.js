@@ -1,6 +1,8 @@
 import React from "react";
+
 import PropTypes from "prop-types";
 import { CSSTransitionGroup } from "react-transition-group";
+import Button from 'react-bootstrap/Button';
 
 function Result(props) {
   return (
@@ -18,12 +20,12 @@ function Result(props) {
         <strong>{props.quizResult} </strong>music at the momment!
       </div>
       <div>
-        <button>Get your playlist now</button>
-        <button>
+        <Button className="d-inline-block" variant="success" type="submit">Get your playlist now</Button>
+        <Button className="d-inline-block" variant="light" type="submit">
           <a href="window.location.reload()" style={{ textDecoration: "none" }}>
             Redo the questions
           </a>{" "}
-        </button>
+        </Button>
       </div>
     </CSSTransitionGroup>
   );
