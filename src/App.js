@@ -134,7 +134,16 @@ class App extends Component {
         <div className="App-header">
           <h2>Find what playlist fits your feeling</h2>
         </div>
-        <img src={this.state.img} alt="pic"></img>
+        <img
+          src={this.state.img}
+          alt="pic"
+          style={{
+            display: "block",
+            width: "100vw",
+            height: "100vh",
+            objectFit: "cover",
+          }}
+        ></img>
         <div className="quiz-render">
           {this.state.result ? this.renderResult() : this.renderQuiz()}
         </div>
