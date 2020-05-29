@@ -1,5 +1,16 @@
+// import q1 from "../assets/q1";
+// import q2 from "../assets/q2";
+// import q4 from "../assets/q4";
+// import q5 from "../assets/q5";
+// import q6 from "../assets/q6";
+// import q7 from "../assets/q7";
+// import q8 from "../assets/q8";
+// import q9 from "../assets/q9";
+// import q10 from "../assets/q10";
+
 var quizQuestions = [
   {
+    img: "https://source.unsplash.com/Enr71dsAO5w/1600x900",
     story: "Today, like any other day, you wake up and open your curtains.",
     question: "How's the weather like outside?",
     answers: [
@@ -22,6 +33,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: "https://source.unsplash.com/Ydj_lckko4M/1600x900",
     story: "Now it is time to kick off your day",
     question: "What would you do first? ",
     answers: [
@@ -44,6 +56,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: "https://source.unsplash.com/3-EiAnsIXps/1600x900",
     story: "Now you're ready to kick off your day",
     question: "Choose your motivation quote of the day  ",
     answers: [
@@ -66,6 +79,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: "https://source.unsplash.com/pNpRf6tPrYw/1600x900",
     story: "Time flies when you are concentrate. It is soon lunch time",
     question: "How would you like to have lunch? ",
     answers: [
@@ -88,6 +102,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: "https://source.unsplash.com/UzPbvwqvKNE/1600x900",
     story: "As usual, afternoon slump approaches... You need a small break",
     question: "What kind of activity would you do?  ",
     answers: [
@@ -110,6 +125,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: "https://source.unsplash.com/JePhj_nNn3w/1600x900",
     story: "Now you finally have some personal time",
     question: "What is your plan? ",
     answers: [
@@ -132,6 +148,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: "https://source.unsplash.com/8E7io2lzvZQ/1600x900",
     story:
       "While you were enjoying your afterwork time, your friend invited you to a gig, you accepted the invitation",
     question: "What would you do during the gig?  ",
@@ -155,6 +172,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: "https://source.unsplash.com/KpBXAOs80YI/1600x900",
     story:
       "After all daily activities, you are at home, you start to plan your next trip.",
     question: "What would you like to do?  ",
@@ -178,6 +196,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: "https://source.unsplash.com/gl7joOaABlI/1600x900",
     story: "You look at the bookshelf and see an unread pile of books",
     question: "which type of book would you bring on your trip? ",
     answers: [
@@ -200,6 +219,7 @@ var quizQuestions = [
     ],
   },
   {
+    img: "https://source.unsplash.com/SHqPyXB2lJE/1600x900",
     story: "Before the day ends, you ask yourself on question",
     question: "How do I feel about the day?  ",
     answers: [

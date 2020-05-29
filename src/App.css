@@ -24,5 +24,6 @@
 }
 
 .App {
-  height: 1000px;
+  background-position: center;
+  height: 100%;
 }

@@ -19,13 +19,14 @@ class App extends Component {
       answer: "",
       answersCount: {},
       result: "",
-      backgroundStyle: {
-        backgroundImage: undefined,
-        backgroundColor: "olivedrab",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      },
+      // backgroundStyle: {
+      //   backgroundImage: undefined,
+      //   backgroundColor: "olivedrab",
+      //   backgroundPosition: "center",
+      //   backgroundSize: "cover",
+      //   backgroundRepeat: "no-repeat",
+      // },
+      img: "",
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -36,6 +37,7 @@ class App extends Component {
       this.shuffleArray(question.answers)
     );
     this.setState({
+      img: quizQuestions[0].img,
       story: quizQuestions[0].story,
       question: quizQuestions[0].question,
       answerOptions: shuffledAnswerOptions[0],
@@ -91,64 +93,65 @@ class App extends Component {
       questionId: questionId,
       question: quizQuestions[counter].question,
       story: quizQuestions[counter].story,
+      img: quizQuestions[counter].img,
       answerOptions: quizQuestions[counter].answers,
       answer: "",
     });
-    if (questionId === 2) {
-      this.setState({
-        backgroundStyle: {
-          backgroundColor: "tomato",
-        },
-      });
-    } else if (questionId === 3) {
-      this.setState({
-        backgroundStyle: {
-          backgroundColor: "darkseagreen",
-        },
-      });
-    } else if (questionId === 4) {
-      this.setState({
-        backgroundStyle: {
-          backgroundColor: "mediumpurple",
-        },
-      });
-    } else if (questionId === 5) {
-      this.setState({
-        backgroundStyle: {
-          backgroundColor: "lightseagreen",
-        },
-      });
-    } else if (questionId === 6) {
-      this.setState({
-        backgroundStyle: {
-          backgroundColor: "lightslategray",
-        },
-      });
-    } else if (questionId === 7) {
-      this.setState({
-        backgroundStyle: {
-          backgroundColor: "goldenrod",
-        },
-      });
-    } else if (questionId === 8) {
-      this.setState({
-        backgroundStyle: {
-          backgroundColor: "plum",
-        },
-      });
-    } else if (questionId === 9) {
-      this.setState({
-        backgroundStyle: {
-          backgroundColor: "slateblue",
-        },
-      });
-    } else {
-      this.setState({
-        backgroundStyle: {
-          backgroundColor: "darkorange",
-        },
-      });
-    }
+    // if (questionId === 2) {
+    //   this.setState({
+    //     backgroundStyle: {
+    //       backgroundColor: "tomato",
+    //     },
+    //   });
+    // } else if (questionId === 3) {
+    //   this.setState({
+    //     backgroundStyle: {
+    //       backgroundColor: "darkseagreen",
+    //     },
+    //   });
+    // } else if (questionId === 4) {
+    //   this.setState({
+    //     backgroundStyle: {
+    //       backgroundColor: "mediumpurple",
+    //     },
+    //   });
+    // } else if (questionId === 5) {
+    //   this.setState({
+    //     backgroundStyle: {
+    //       backgroundColor: "lightseagreen",
+    //     },
+    //   });
+    // } else if (questionId === 6) {
+    //   this.setState({
+    //     backgroundStyle: {
+    //       backgroundColor: "lightslategray",
+    //     },
+    //   });
+    // } else if (questionId === 7) {
+    //   this.setState({
+    //     backgroundStyle: {
+    //       backgroundColor: "goldenrod",
+    //     },
+    //   });
+    // } else if (questionId === 8) {
+    //   this.setState({
+    //     backgroundStyle: {
+    //       backgroundColor: "plum",
+    //     },
+    //   });
+    // } else if (questionId === 9) {
+    //   this.setState({
+    //     backgroundStyle: {
+    //       backgroundColor: "slateblue",
+    //     },
+    //   });
+    // } else {
+    //   this.setState({
+    //     backgroundStyle: {
+    //       backgroundColor: "darkorange",
+    //     },
+    //   });
+    // }
   }
 
   getResults() {
@@ -173,6 +176,7 @@ class App extends Component {
   renderQuiz() {
     return (
       <Quiz
+        img={this.state.img}
         answer={this.state.answer}
         answerOptions={this.state.answerOptions}
         story={this.state.story}
