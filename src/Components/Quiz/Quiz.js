@@ -5,7 +5,6 @@ import Question from "../Question";
 import QuestionCount from "../QuestionCount";
 import AnswerOption from "../AnswerOption";
 import Storyline from "../Storyline";
-import Background from "../Background";
 import "./Quiz.css";
 function Quiz(props) {
   function renderAnswerOptions(key) {
@@ -35,20 +34,15 @@ function Quiz(props) {
       background={props.background}
     >
       {/* <Background src={props.img} /> */}
-      <div key={props.questionId}>
-        <div className="question-area">
-          <QuestionCount
-            counter={props.questionId}
-            total={props.questionTotal}
-          />
-          <Storyline story={props.story} />
-          <Question content={props.question} />
-        </div>
-        <div className="answer-render-section">
-          <li className="answerOptions">
-            {props.answerOptions.map(renderAnswerOptions)}
-          </li>
-        </div>
+      <div className="question-area" key={props.questionId}>
+        <QuestionCount counter={props.questionId} total={props.questionTotal} />
+        <Storyline story={props.story} />
+        <Question content={props.question} />
+      </div>
+      <div className="answer-render-section">
+        <li className="answerOptions">
+          {props.answerOptions.map(renderAnswerOptions)}
+        </li>
       </div>
     </CSSTransitionGroup>
   );

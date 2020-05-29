@@ -30,7 +30,6 @@ body {
   position: absolute;
   top: 0;
   right: 30%;
-  max-width: 800px;
   margin: 0 auto;
   border-radius: 3px;
 }
@@ -42,7 +41,10 @@ body {
   margin: 20px;
 }
 
-@media (min-width: 769px) {
+@media (max-width: 769px) {
+  body {
+    height: 100vh;
+  }
   .container {
     margin: 2.5rem auto;
   }
@@ -106,10 +108,10 @@ body {
 }
 
 .radioCustomLabel {
-  position: relative;
+  /* position: relative; */
   width: 100%;
   margin: 0;
-  padding: 1.5rem 2.5rem 1.5rem 5rem;
+  padding: 1rem;
   font-size: 16px;
   line-height: 1.5;
 }
