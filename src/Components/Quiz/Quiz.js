@@ -34,7 +34,7 @@ function Quiz(props) {
       transitionAppearTimeout={500}
       background={props.background}
     >
-      <Background src={props.img} />
+      {/* <Background src={props.img} /> */}
       <div key={props.questionId}>
         <div className="question-area">
           <QuestionCount
@@ -55,7 +55,7 @@ function Quiz(props) {
 }
 
 Quiz.propTypes = {
-  img: PropTypes.string.isRequired,
+  // img: PropTypes.string.isRequired,
   answer: PropTypes.string.isRequired,
   answerOptions: PropTypes.array.isRequired,
   story: PropTypes.string.isRequired,

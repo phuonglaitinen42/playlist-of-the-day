@@ -3,6 +3,7 @@ import quizQuestions from "./API/quizQuestions";
 import Quiz from "./Components/Quiz/Quiz";
 import Result from "./Components/Result";
 import "./App.css";
+import Background from "../src/Components/Background";
 
 class App extends Component {
   constructor(props) {
@@ -131,9 +132,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
+        {/* <div className="App-header">
           <h2>Find what playlist fits your feeling</h2>
-        </div>
+        </div> */}
+        <Background src={this.state.img} />
+
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
     );

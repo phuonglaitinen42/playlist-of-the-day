@@ -23,7 +23,11 @@
   }
 }
 
-.App {
-  background-position: center;
-  height: 100%;
+/* .App {
+  width: fit-content;
+} */
+
+.App .background {
+  background-size: cover;
+  width: 100%;
 }
