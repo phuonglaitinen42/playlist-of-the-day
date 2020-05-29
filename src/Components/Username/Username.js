@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -44,8 +45,10 @@ const Username = () => {
                 </Form.Control>
             </Form.Group>
             <Button className="d-inline-block" variant="success" type="submit">
+             <Link className="toQuiz" to="/quiz">
                 Send
                 <FontAwesomeIcon icon={faSignature} className="signature-icon" />
+                </Link>
             </Button>
         </Form>
     );
