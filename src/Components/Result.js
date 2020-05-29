@@ -20,7 +20,7 @@ function Result(props) {
       <div>
         <button>Get your playlist now</button>
         <button>
-          <a href="window.location.reload()" style={{ textDecoration: "none" }}>
+          <a href="/" style={{ textDecoration: "none" }}>
             Redo the questions
           </a>{" "}
         </button>
