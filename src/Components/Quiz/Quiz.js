@@ -5,7 +5,7 @@ import Question from "../Question";
 import QuestionCount from "../QuestionCount";
 import AnswerOption from "../AnswerOption";
 import Storyline from "../Storyline";
-import Background from "../Background";
+// import Background from "../Background";
 import "./Quiz.css";
 function Quiz(props) {
   function renderAnswerOptions(key) {
@@ -34,7 +34,7 @@ function Quiz(props) {
       transitionAppearTimeout={500}
       background={props.background}
     >
-      <Background src={props.img} />
+      {/* <Background src={props.img} /> */}
       <div key={props.questionId}>
         <div className="question-area">
           <QuestionCount

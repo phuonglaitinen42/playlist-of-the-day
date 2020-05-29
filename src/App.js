@@ -134,7 +134,10 @@ class App extends Component {
         <div className="App-header">
           <h2>Find what playlist fits your feeling</h2>
         </div>
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+        <img src={this.state.img} alt="pic"></img>
+        <div className="quiz-render">
+          {this.state.result ? this.renderResult() : this.renderQuiz()}
+        </div>
       </div>
     );
   }
