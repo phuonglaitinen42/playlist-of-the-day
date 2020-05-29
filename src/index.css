@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-
-
 body {
+  position: relative;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -9,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
@@ -28,13 +27,14 @@ body {
 }
 
 .container {
-  position: relative;
   max-width: 800px;
   margin: 0 auto;
   border-radius: 3px;
 }
+
 .question-area,
 .result {
+  position: absolute;
   background: rgba(255, 255, 255, 0.5);
   margin: 20px;
 }
@@ -46,11 +46,13 @@ body {
 }
 
 /* Result Component */
+
 .result {
   padding: 1.5rem 2.5rem;
 }
 
 /* Quiz Component */
+
 .answerOptions {
   margin: 0;
   padding: 0;
@@ -58,18 +60,21 @@ body {
 }
 
 /* QuestionCount Component */
+
 .questionCount {
   padding: 1.5rem 2.5rem 0;
   font-size: 14px;
 }
 
 /* Question Component */
+
 .question {
   margin: 0;
   padding: 0.5rem 2.5rem 1.5rem 2.5rem;
 }
 
 /* AnswerOption Component */
+
 .answerOption {
   border: 3px solid #eee;
   margin: 20px;
@@ -79,6 +84,7 @@ body {
 .answerOption:hover {
   background-color: #eefbfe4d;
 }
+
 .answerOptions label {
   color: #fff;
 }
@@ -100,7 +106,7 @@ body {
   position: relative;
   width: 100%;
   margin: 0;
-  padding: 1.5rem 2.5rem 1.5rem 5rem;
+  padding: 1.5rem 2.5rem 1.5rem 2rem;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -128,6 +134,7 @@ body {
 }
 
 /* Animation */
+
 .fade-enter {
   opacity: 0;
 }

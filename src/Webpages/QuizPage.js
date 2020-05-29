@@ -20,6 +20,7 @@ class QuizPage extends Component {
       answer: "",
       answersCount: {},
       result: "",
+      img: "",
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -30,6 +31,7 @@ class QuizPage extends Component {
       this.shuffleArray(question.answers)
     );
     this.setState({
+      img: quizQuestions[0].img,
       story: quizQuestions[0].story,
       question: quizQuestions[0].question,
       answerOptions: shuffledAnswerOptions[0],
@@ -85,6 +87,7 @@ class QuizPage extends Component {
       questionId: questionId,
       question: quizQuestions[counter].question,
       story: quizQuestions[counter].story,
+      img: quizQuestions[counter].img,
       answerOptions: quizQuestions[counter].answers,
       answer: "",
     });
@@ -112,6 +115,7 @@ class QuizPage extends Component {
   renderQuiz() {
     return (
       <Quiz
+        img={this.state.img}
         answer={this.state.answer}
         answerOptions={this.state.answerOptions}
         story={this.state.story}
@@ -129,14 +133,21 @@ class QuizPage extends Component {
 
   render() {
     return (
-      <main>
       <div className="App">
-        <div className="App-header">
-          <h2>Find what playlist fits your feeling</h2>
+        <img
+          src={this.state.img}
+          alt="pic"
+          style={{
+            display: "block",
+            width: "100vw",
+            height: "100vh",
+            objectFit: "cover",
+          }}
+        ></img>
+        <div className="quiz-render">
+          {this.state.result ? this.renderResult() : this.renderQuiz()}
         </div>
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
-      </main>
     );
   }
 }

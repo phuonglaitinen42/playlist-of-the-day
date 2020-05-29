@@ -5,6 +5,9 @@ import Question from "../Question/Question";
 import QuestionCount from "../QuestionCount/QuestionCount";
 import AnswerOption from "../AnswerOption/AnswerOption";
 import Storyline from "../Storyline/Storyline";
+// import Background from "../Background";
+import "./Quiz.css";
+
 function Quiz(props) {
   function renderAnswerOptions(key) {
     return (
@@ -15,10 +18,11 @@ function Quiz(props) {
         answer={props.answer}
         questionId={props.questionId}
         onAnswerSelected={props.onAnswerSelected}
-        background={props.backfround}
+        background={props.background}
       />
     );
   }
+  console.log(props.img);
 
   return (
     <CSSTransitionGroup
@@ -31,6 +35,7 @@ function Quiz(props) {
       transitionAppearTimeout={500}
       background={props.background}
     >
+      {/* <Background src={props.img} /> */}
       <div key={props.questionId}>
         <div className="question-area">
           <QuestionCount
@@ -51,6 +56,7 @@ function Quiz(props) {
 }
 
 Quiz.propTypes = {
+  img: PropTypes.string.isRequired,
   answer: PropTypes.string.isRequired,
   answerOptions: PropTypes.array.isRequired,
   story: PropTypes.string.isRequired,

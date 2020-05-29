@@ -39,7 +39,7 @@ const Username = () => {
                     id="username"
                     username="username"
                     type="text"
-                    placeholder="John Doe"
+                    placeholder="Artturi Reinikainen"
                     onChange={changeValueHandler}
                 >
                 </Form.Control>

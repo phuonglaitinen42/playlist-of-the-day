@@ -24,7 +24,34 @@
 }
 
 .App {
-  background: url("https://source.unsplash.com/Ydj_lckko4M/1600x900") no-repeat
-    center center/cover;
-  height: 1000px;
+  display: grid;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.App img {
+  overflow: hidden;
+}
+.App-header {
+  width: 100%;
+}
+.quiz-render {
+  position: absolute;
+  min-width: 100%;
+  top: 120px;
+}
+.question-area,
+.result {
+  position: absolute;
+  width: 80vw;
+  left: 50%;
+  margin-left: -40vw;
+}
+
+.answer-render-section {
+  position: absolute;
+  top: 30vh;
+  width: 80vw;
+  left: 50%;
+  margin-left: -40vw;
 }
