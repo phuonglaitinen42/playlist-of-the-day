@@ -22,7 +22,6 @@ function Quiz(props) {
       />
     );
   }
-  console.log(props.img);
 
   return (
     <CSSTransitionGroup
