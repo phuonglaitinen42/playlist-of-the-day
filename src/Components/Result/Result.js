@@ -2,10 +2,9 @@ import React from "react";
 
 import PropTypes from "prop-types";
 import { CSSTransitionGroup } from "react-transition-group";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 function Result(props) {
-
   function refreshPage() {
     window.location.reload(false);
   }
@@ -25,9 +24,16 @@ function Result(props) {
         <strong>{props.quizResult} </strong>music at the momment!
       </div>
       <div>
-        <Button className="d-inline-block" variant="success" type="submit">Get your playlist now</Button>
-        <Button className="d-inline-block" variant="light" type="submit" onClick={refreshPage}>
-            Redo the questions
+        <Button className="d-inline-block" variant="success" type="submit">
+          Get your playlist now
+        </Button>
+        <Button
+          className="d-inline-block"
+          variant="light"
+          type="submit"
+          onClick={refreshPage}
+        >
+          Redo the questions
         </Button>
       </div>
     </CSSTransitionGroup>
