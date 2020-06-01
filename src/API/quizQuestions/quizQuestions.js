@@ -12,6 +12,7 @@ var quizQuestions = [
   {
     img: "https://source.unsplash.com/Enr71dsAO5w/1600x900",
     story: "Today, like any other day, you wake up and open your curtains.",
+    text: "Music is an outburst of the soul. -Frederick Delius-",
     question: "How's the weather like outside?",
     answers: [
       {
@@ -35,6 +36,7 @@ var quizQuestions = [
   {
     img: "https://source.unsplash.com/Ydj_lckko4M/1600x900",
     story: "Now it is time to kick off your day",
+    text: "",
     question: "What would you do first? ",
     answers: [
       {
@@ -58,6 +60,7 @@ var quizQuestions = [
   {
     img: "https://source.unsplash.com/3-EiAnsIXps/1600x900",
     story: "Now you're ready to kick off your day",
+    text: "If I cannot fly, let me sing. -Stephen Sondheim-",
     question: "Choose your motivation quote of the day  ",
     answers: [
       {
@@ -81,6 +84,7 @@ var quizQuestions = [
   {
     img: "https://source.unsplash.com/pNpRf6tPrYw/1600x900",
     story: "Time flies when you are concentrate. It is soon lunch time",
+    text: "",
     question: "How would you like to have lunch? ",
     answers: [
       {
@@ -104,6 +108,8 @@ var quizQuestions = [
   {
     img: "https://source.unsplash.com/UzPbvwqvKNE/1600x900",
     story: "As usual, afternoon slump approaches... You need a small break",
+    text:
+      "Music touches us emotionally, where words alone can’t. -Johnny Depp-",
     question: "What kind of activity would you do?  ",
     answers: [
       {
@@ -127,6 +133,7 @@ var quizQuestions = [
   {
     img: "https://source.unsplash.com/JePhj_nNn3w/1600x900",
     story: "Now you finally have some personal time",
+    text: "",
     question: "What is your plan? ",
     answers: [
       {
@@ -151,6 +158,8 @@ var quizQuestions = [
     img: "https://source.unsplash.com/8E7io2lzvZQ/1600x900",
     story:
       "While you were enjoying your afterwork time, your friend invited you to a gig, you accepted the invitation",
+    text:
+      "Life seems to go on without effort when I am filled with music. -George Eliot-",
     question: "What would you do during the gig?  ",
     answers: [
       {
@@ -175,6 +184,7 @@ var quizQuestions = [
     img: "https://source.unsplash.com/KpBXAOs80YI/1600x900",
     story:
       "After all daily activities, you are at home, you start to plan your next trip.",
+    text: "",
     question: "What would you like to do?  ",
     answers: [
       {
@@ -198,6 +208,8 @@ var quizQuestions = [
   {
     img: "https://source.unsplash.com/gl7joOaABlI/1600x900",
     story: "You look at the bookshelf and see an unread pile of books",
+    text:
+      "Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything. -Plato-",
     question: "which type of book would you bring on your trip? ",
     answers: [
       {
@@ -218,9 +230,11 @@ var quizQuestions = [
       },
     ],
   },
+
   {
     img: "https://source.unsplash.com/SHqPyXB2lJE/1600x900",
     story: "Before the day ends, you ask yourself on question",
+    text: "",
     question: "How do I feel about the day?  ",
     answers: [
       {
