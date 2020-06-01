@@ -22,14 +22,10 @@ function Result (props) {
     window.location.reload(false);
   }
 
-
-
-  
   
 const theUserName = dailyUser.map((n) => {
   return (
     <NameCard
-    id={n._id}
     username={n.username}
     />
   );
