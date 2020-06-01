@@ -5,13 +5,13 @@ import PropTypes from "prop-types";
 import { CSSTransitionGroup } from "react-transition-group";
 import Button from 'react-bootstrap/Button';
 import { useState, useEffect  } from "react";
-import Axios from "axios";
+import axios from "axios";
 
 function Result (props) {
   const [dailyUser, setName] = useState([]);
  
   useEffect(() => {
-    Axios.get('http://localhost:3001/usernames/')
+    axios.get('http://localhost:3001/usernames/')
     .then((response) => {
       setName(response.data) ;
     });
@@ -22,10 +22,14 @@ function Result (props) {
     window.location.reload(false);
   }
 
+
+
+  
   
 const theUserName = dailyUser.map((n) => {
   return (
     <NameCard
+    id={n._id}
     username={n.username}
     />
   );
@@ -42,7 +46,7 @@ const theUserName = dailyUser.map((n) => {
       transitionAppear
       transitionAppearTimeout={500}
     >
-      <div> {theUserName} </div>
+      <div> {theUserName}</div>
       <div>
         It's a likely chance that you prefer{" "}
         <strong>{props.quizResult} </strong>music at the momment!
