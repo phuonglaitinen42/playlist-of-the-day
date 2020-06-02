@@ -61,8 +61,13 @@ class Playlist extends Component {
           value="Get your playlist"
           onClick={() => this.getPlaylist()}
         ></input>
-        <div className="playlist-result">{this.state.playlistName}</div>
-        <div>{this.state.link}</div>
+        <div className="playlist-result">
+          Your playlist of the day is: {this.state.playlistName}
+        </div>
+
+        <a href={this.state.link} target="blank_">
+          Open Spotify and listen!
+        </a>
       </div>
     );
   }
