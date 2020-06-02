@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import quizQuestions from "./../API/quizQuestions/quizQuestions";
 import Quiz from "./../Components/Quiz/Quiz";
 import Result from "./../Components/Result/Result";
+//import ResultPage from "./../Webpages/ResultPage";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
