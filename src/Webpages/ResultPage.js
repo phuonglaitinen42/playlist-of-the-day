@@ -25,6 +25,7 @@ const ResultPage = () => {
         );
     });
 
+
     return (
         <div>
             {nameList}

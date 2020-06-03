@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { CSSTransitionGroup } from "react-transition-group";
 import Button from 'react-bootstrap/Button';
 
+// try the link with =/result/{$user._id}
+
 function Result(props) {
 
   function refreshPage() {
@@ -28,11 +30,11 @@ function Result(props) {
       <div>
         <Button className="d-inline-block" variant="success" type="submit">
           <Link to="/result">
-          Get your playlist now
+            Get your playlist now
           </Link>
-          </Button>
+        </Button>
         <Button className="d-inline-block" variant="light" type="submit" onClick={refreshPage}>
-            Redo the questions
+          Redo the questions
         </Button>
       </div>
     </CSSTransitionGroup>
