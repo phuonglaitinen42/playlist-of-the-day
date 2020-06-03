@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
 const spotifyApi = new SpotifyWebApi();
-
 class Playlist extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     const params = this.getHashParams();
     console.log(params);
     const token = params.access_token;
@@ -15,7 +14,9 @@ class Playlist extends Component {
       loggedIn: token ? true : false,
       playlistName: "",
       link: null,
+      genre: "",
     };
+    this.getGenre = this.getGenre.bind(this);
   }
   getHashParams() {
     var hashParams = {};
@@ -28,6 +29,21 @@ class Playlist extends Component {
       e = r.exec(q);
     }
     return hashParams;
+  }
+
+  getCall() {
+    if (this.state.genre === "Pop") {
+      return this.getPop();
+    }
+    if (this.state.genre === "Jazz") {
+      return this.getJazz();
+    }
+    if (this.state.genre === "Metal") {
+      return this.getMetal();
+    }
+    if (this.state.genre === "Rock") {
+      return this.getRock();
+    }
   }
 
   getJazz() {
@@ -91,14 +107,31 @@ class Playlist extends Component {
       });
     });
   }
+  getGenre(e) {
+    this.setState({
+      genre: e.target.value,
+    });
+    console.log(e.target.value);
+  }
 
   render() {
     return (
       <div>
+        <h3>What was the result you got from our quiz?</h3>
+        <label>
+          Genre:
+          <select value={this.state.genre} onChange={this.getGenre} required>
+            <option value="Jazz">Jazz</option>
+            <option value="Rock">Progressive Rock</option>
+            <option value="Metal">Metal</option>
+            <option value="Pop">Pop/Ballad</option>
+          </select>
+        </label>
+
         <input
           type="button"
           value="Get your playlist"
-          onClick={() => this.getMetal()}
+          onClick={() => this.getCall()}
         ></input>
         <div className="playlist-result">
           Your playlist of the day is: {this.state.playlistName}

@@ -25,7 +25,7 @@ function Result(props) {
       </div>
       <div>
         <Button className="d-inline-block" variant="success" type="submit">
-          <a href="http://localhost:8888">Get your playlist now</a>
+          <a href="http://localhost:8888">Login first</a>
         </Button>
         <Button
           className="d-inline-block"
