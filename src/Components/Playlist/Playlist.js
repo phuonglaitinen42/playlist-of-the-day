@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
-// import { faCloudMeatball } from "@fortawesome/free-solid-svg-icons";
 const spotifyApi = new SpotifyWebApi();
 
 class Playlist extends Component {
@@ -31,17 +30,17 @@ class Playlist extends Component {
     return hashParams;
   }
 
-  getPlaylist() {
-    spotifyApi.searchPlaylists("43ZHCT0cAZBISjO8DG9PnE").then(
+  getJazz() {
+    spotifyApi.getPlaylist("7pBWAhZGgqo3q1w672FoKl").then(
       (response) => {
-        const data = response.playlists.items[0].name;
-        const openSpotify = response.playlists.items[0].external_urls.spotify;
-        console.log(openSpotify);
-        console.log(data);
         console.log(response);
+        const link = response.external_urls.spotify;
+        const playlistName = response.name;
+        console.log(link);
+
         this.setState({
-          playlistName: data,
-          link: openSpotify,
+          playlistName: playlistName,
+          link: link,
         });
       }
 
@@ -53,6 +52,45 @@ class Playlist extends Component {
       // }
     );
   }
+  getPop() {
+    spotifyApi.getPlaylist("37i9dQZF1DXaPCIWxzZwR1").then((response) => {
+      console.log(response);
+      const link = response.external_urls.spotify;
+      const playlistName = response.name;
+      console.log(link);
+
+      this.setState({
+        playlistName: playlistName,
+        link: link,
+      });
+    });
+  }
+  getRock() {
+    spotifyApi.getPlaylist("37i9dQZF1DXcF6B6QPhFDv").then((response) => {
+      console.log(response);
+      const link = response.external_urls.spotify;
+      const playlistName = response.name;
+      console.log(link);
+
+      this.setState({
+        playlistName: playlistName,
+        link: link,
+      });
+    });
+  }
+  getMetal() {
+    spotifyApi.getPlaylist("37i9dQZF1DWTcqUzwhNmKv").then((response) => {
+      console.log(response);
+      const link = response.external_urls.spotify;
+      const playlistName = response.name;
+      console.log(link);
+
+      this.setState({
+        playlistName: playlistName,
+        link: link,
+      });
+    });
+  }
 
   render() {
     return (
@@ -60,7 +98,7 @@ class Playlist extends Component {
         <input
           type="button"
           value="Get your playlist"
-          onClick={() => this.getPlaylist()}
+          onClick={() => this.getMetal()}
         ></input>
         <div className="playlist-result">
           Your playlist of the day is: {this.state.playlistName}
