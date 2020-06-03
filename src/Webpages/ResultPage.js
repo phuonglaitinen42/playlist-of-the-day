@@ -9,7 +9,7 @@ const ResultPage = () => {
 
     useEffect(() => {
         axios
-            .get('http://localhost.3001/usernames/')
+            .get('http://localhost.3001/usernames/${')
             .then((response) => {
                 setUserName(response.data);
                 console.log(response.data);
