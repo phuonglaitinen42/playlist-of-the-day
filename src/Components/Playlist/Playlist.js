@@ -44,6 +44,7 @@ class Playlist extends Component {
           link: openSpotify,
         });
       }
+
       // function (data) {
       //   console.log(data.playlists.items[0].uri);
       // },
@@ -68,6 +69,7 @@ class Playlist extends Component {
         <a href={this.state.link} target="blank_">
           Open Spotify and listen!
         </a>
+        <a href="/quiz">Return to quiz</a>
       </div>
     );
   }
