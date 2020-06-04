@@ -1,13 +1,3 @@
-// import q1 from "../assets/q1";
-// import q2 from "../assets/q2";
-// import q4 from "../assets/q4";
-// import q5 from "../assets/q5";
-// import q6 from "../assets/q6";
-// import q7 from "../assets/q7";
-// import q8 from "../assets/q8";
-// import q9 from "../assets/q9";
-// import q10 from "../assets/q10";
-
 var quizQuestions = [
   {
     img: "https://source.unsplash.com/Enr71dsAO5w/1600x900",
