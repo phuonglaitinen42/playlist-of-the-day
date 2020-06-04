@@ -1,6 +1,8 @@
-import React, { Component } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
+import React, { Component } from "react";
+import Axios from "axios";
 const spotifyApi = new SpotifyWebApi();
+
 class Playlist extends Component {
   constructor(props) {
     super(props);
@@ -14,10 +16,19 @@ class Playlist extends Component {
       loggedIn: token ? true : false,
       playlistName: "",
       link: null,
-      genre: "",
+      // genre: "",
+      mygenre: "",
     };
-    this.getGenre = this.getGenre.bind(this);
+    // this.getGenre = this.getGenre.bind(this);
   }
+
+  componentDidMount() {
+    Axios.get("http://localhost:3001/Genre").then((res) => {
+      const mygenre = res.data[res.data.length - 1].genre;
+      this.setState({ mygenre });
+    });
+  }
+
   getHashParams() {
     var hashParams = {};
     var e,
@@ -32,17 +43,21 @@ class Playlist extends Component {
   }
 
   getCall() {
-    if (this.state.genre === "Pop") {
+    console.log(this.state.mygenre[0]);
+    if (this.state.mygenre[0] === "Pop/Ballad") {
       return this.getPop();
     }
-    if (this.state.genre === "Jazz") {
+    if (this.state.mygenre[0] === "Jazz") {
       return this.getJazz();
     }
-    if (this.state.genre === "Metal") {
+    if (this.state.mygenre[0] === "Metal") {
       return this.getMetal();
     }
-    if (this.state.genre === "Rock") {
+    if (this.state.mygenre[0] === "Progressive Rock") {
       return this.getRock();
+    }
+    if (this.state.mygenre[0] === "Mixed") {
+      return this.getMix();
     }
   }
 
@@ -107,17 +122,30 @@ class Playlist extends Component {
       });
     });
   }
-  getGenre(e) {
-    this.setState({
-      genre: e.target.value,
+  getMix() {
+    spotifyApi.getPlaylist("37i9dQZF1DXdxcBWuJkbcy").then((response) => {
+      console.log(response);
+      const link = response.external_urls.spotify;
+      const playlistName = response.name;
+      console.log(link);
+
+      this.setState({
+        playlistName: playlistName,
+        link: link,
+      });
     });
-    console.log(e.target.value);
   }
+  // getGenre(e) {
+  //   this.setState({
+  //     genre: e.target.value,
+  //   });
+  //   console.log(this.state.genre);
+  // }
 
   render() {
     return (
       <div>
-        <h3>What was the result you got from our quiz?</h3>
+        {/* <h3>What was the result you got from our quiz?</h3>
         <label>
           Genre:
           <select value={this.state.genre} onChange={this.getGenre} required>
@@ -126,7 +154,8 @@ class Playlist extends Component {
             <option value="Metal">Metal</option>
             <option value="Pop">Pop/Ballad</option>
           </select>
-        </label>
+        </label> */}
+        <p>Music genre suits your mood today is {this.state.mygenre} </p>
 
         <input
           type="button"
