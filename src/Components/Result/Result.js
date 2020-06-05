@@ -45,10 +45,12 @@ function Result(props) {
       </div>
       <div>
         <Button className="d-inline-block" variant="success" type="submit">
-          <a href="http://localhost:8888">Login first</a>
+          <a className="btn btn-success" href="http://localhost:8888">
+            Login first
+          </a>
         </Button>
         <Button
-          className="d-inline-block"
+          className="btn btn-success d-inline-block"
           variant="light"
           type="submit"
           onClick={refreshPage}

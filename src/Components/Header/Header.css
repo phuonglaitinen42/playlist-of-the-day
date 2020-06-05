@@ -1,3 +1,6 @@
 .header .navbar-brand h4 {
   color: #28a745;
 }
+.header {
+  background-color: white;
+}
