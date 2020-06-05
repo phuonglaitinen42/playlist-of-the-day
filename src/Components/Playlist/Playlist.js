@@ -7,6 +7,7 @@ import {
   FacebookIcon,
   TwitterIcon,
 } from "react-share";
+import Share from "../Share/Share";
 const spotifyApi = new SpotifyWebApi();
 
 class Playlist extends Component {
@@ -26,7 +27,7 @@ class Playlist extends Component {
       // genre: "",
       mygenre: "",
       shareUrl: "",
-      title: "Playlist of the Day",
+      title: "",
     };
 
     // this.getGenre = this.getGenre.bind(this);
@@ -37,7 +38,6 @@ class Playlist extends Component {
       const mygenre = res.data[res.data.length - 1].genre;
       this.setState({ mygenre });
     });
-    Axios.get();
   }
 
   getHashParams() {
@@ -85,6 +85,8 @@ class Playlist extends Component {
           playlistName: playlistName,
           link: link,
           image: image,
+          shareUrl: link,
+          title: playlistName,
         });
       }
 
@@ -109,6 +111,8 @@ class Playlist extends Component {
         playlistName: playlistName,
         link: link,
         image: image,
+        shareUrl: link,
+        title: playlistName,
       });
     });
   }
@@ -125,6 +129,8 @@ class Playlist extends Component {
         playlistName: playlistName,
         link: link,
         image: image,
+        shareUrl: link,
+        title: playlistName,
       });
     });
   }
@@ -141,6 +147,8 @@ class Playlist extends Component {
         playlistName: playlistName,
         link: link,
         image: image,
+        shareUrl: link,
+        title: playlistName,
       });
     });
   }
@@ -157,6 +165,8 @@ class Playlist extends Component {
         playlistName: playlistName,
         link: link,
         image: image,
+        shareUrl: link,
+        title: playlistName,
       });
     });
   }
@@ -206,7 +216,7 @@ class Playlist extends Component {
           </FacebookShareButton>
           <TwitterShareButton
             url={this.state.shareUrl}
-            quote={this.state.title}
+            title={this.state.title}
           >
             <TwitterIcon size={40} round={true} />
           </TwitterShareButton>
