@@ -22,9 +22,10 @@ class Playlist extends Component {
       loggedIn: token ? true : false,
       playlistName: "",
       link: null,
+      image: "",
       // genre: "",
       mygenre: "",
-      shareUrl: "http://localhost:3000/quiz",
+      shareUrl: "",
       title: "Playlist of the Day",
     };
 
@@ -36,6 +37,7 @@ class Playlist extends Component {
       const mygenre = res.data[res.data.length - 1].genre;
       this.setState({ mygenre });
     });
+    Axios.get();
   }
 
   getHashParams() {
@@ -76,11 +78,13 @@ class Playlist extends Component {
         console.log(response);
         const link = response.external_urls.spotify;
         const playlistName = response.name;
+        const image = response.images[0].url;
         console.log(link);
 
         this.setState({
           playlistName: playlistName,
           link: link,
+          image: image,
         });
       }
 
@@ -97,11 +101,14 @@ class Playlist extends Component {
       console.log(response);
       const link = response.external_urls.spotify;
       const playlistName = response.name;
+      const image = response.images[0].url;
+
       console.log(link);
 
       this.setState({
         playlistName: playlistName,
         link: link,
+        image: image,
       });
     });
   }
@@ -110,11 +117,14 @@ class Playlist extends Component {
       console.log(response);
       const link = response.external_urls.spotify;
       const playlistName = response.name;
+      const image = response.images[0].url;
+
       console.log(link);
 
       this.setState({
         playlistName: playlistName,
         link: link,
+        image: image,
       });
     });
   }
@@ -123,11 +133,14 @@ class Playlist extends Component {
       console.log(response);
       const link = response.external_urls.spotify;
       const playlistName = response.name;
+      const image = response.images[0].url;
+
       console.log(link);
 
       this.setState({
         playlistName: playlistName,
         link: link,
+        image: image,
       });
     });
   }
@@ -136,11 +149,14 @@ class Playlist extends Component {
       console.log(response);
       const link = response.external_urls.spotify;
       const playlistName = response.name;
+      const image = response.images[0].url;
+
       console.log(link);
 
       this.setState({
         playlistName: playlistName,
         link: link,
+        image: image,
       });
     });
   }
@@ -173,6 +189,7 @@ class Playlist extends Component {
         ></input>
         <div className="playlist-result">
           Your playlist of the day is: {this.state.playlistName}
+          <img src={this.state.image} alt={this.state.playlistName} />
         </div>
 
         <a href={this.state.link} target="blank_">

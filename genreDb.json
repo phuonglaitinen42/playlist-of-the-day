@@ -81,6 +81,30 @@
         "Pop/Ballad"
       ],
       "id": 14
+    },
+    {
+      "genre": [
+        "Metal"
+      ],
+      "id": 15
+    },
+    {
+      "genre": [
+        "Jazz"
+      ],
+      "id": 16
+    },
+    {
+      "genre": [
+        "Pop/Ballad"
+      ],
+      "id": 17
+    },
+    {
+      "genre": [
+        "Progressive Rock"
+      ],
+      "id": 18
     }
   ]
 }
