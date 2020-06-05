@@ -75,6 +75,36 @@
         "Progressive Rock"
       ],
       "id": 13
+    },
+    {
+      "genre": [
+        "Pop/Ballad"
+      ],
+      "id": 14
+    },
+    {
+      "genre": [
+        "Mixed"
+      ],
+      "id": 15
+    },
+    {
+      "genre": [
+        "Mixed"
+      ],
+      "id": 16
+    },
+    {
+      "genre": [
+        "Mixed"
+      ],
+      "id": 17
+    },
+    {
+      "genre": [
+        "Mixed"
+      ],
+      "id": 18
     }
   ]
 }
