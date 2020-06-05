@@ -43,9 +43,14 @@ const Username = () => {
         ></Form.Control>
       </Form.Group>
       <Button className="d-inline-block" variant="success" type="submit">
-        <Link className="toQuiz" to="/quiz" style={{ color: "white" }}>
+        <Link
+          className="toQuiz"
+          class="btn btn-success"
+          to="/quiz"
+          style={{ color: "white" }}
+        >
           Send
-          <FontAwesomeIcon icon={faSignature} className="signature-icon" />
+          {/* <FontAwesomeIcon icon={faSignature} className="signature-icon" /> */}
         </Link>
       </Button>
     </Form>
