@@ -1,6 +1,12 @@
 import SpotifyWebApi from "spotify-web-api-js";
 import React, { Component } from "react";
 import Axios from "axios";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  TwitterIcon,
+} from "react-share";
 const spotifyApi = new SpotifyWebApi();
 
 class Playlist extends Component {
@@ -18,7 +24,10 @@ class Playlist extends Component {
       link: null,
       // genre: "",
       mygenre: "",
+      shareUrl: "http://localhost:3000/quiz",
+      title: "Playlist of the Day",
     };
+
     // this.getGenre = this.getGenre.bind(this);
   }
 
@@ -170,6 +179,21 @@ class Playlist extends Component {
           Open Spotify and listen!
         </a>
         <a href="/quiz">Return to quiz</a>
+        <div className="share-btn">
+          <h5>Share your Playlist of the Day with your friends</h5>
+          <FacebookShareButton
+            url={this.state.shareUrl}
+            quote={this.state.title}
+          >
+            <FacebookIcon size={40} round={true} />
+          </FacebookShareButton>
+          <TwitterShareButton
+            url={this.state.shareUrl}
+            quote={this.state.title}
+          >
+            <TwitterIcon size={40} round={true} />
+          </TwitterShareButton>
+        </div>
       </div>
     );
   }
