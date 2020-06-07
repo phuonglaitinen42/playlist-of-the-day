@@ -4,10 +4,15 @@
 }
 
 .App-header {
-  background-color: rgba(34, 34, 34, 0.5);
+  background: url("https://source.unsplash.com/DBGwy7s3QY0") no-repeat fixed
+    center center/cover;
   padding: 20px;
   color: white;
   text-align: center;
+  height: 1000px;
+}
+.App-header h2 {
+  font-size: 4rem;
 }
 
 .App-intro {
@@ -38,19 +43,21 @@
 .quiz-render {
   position: absolute;
   min-width: 100%;
-  top: 120px;
 }
-.question-area,
-.result {
+.question-area {
   position: absolute;
   width: 80vw;
   left: 50%;
   margin-left: -40vw;
 }
+.quiz-render {
+  display: flex;
+  justify-content: center;
+}
 
 .answer-render-section {
   position: absolute;
-  top: 30vh;
+  top: 40vh;
   width: 80vw;
   left: 50%;
   margin-left: -40vw;
