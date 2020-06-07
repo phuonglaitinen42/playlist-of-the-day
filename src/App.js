@@ -23,6 +23,7 @@ const App = () => {
             <Footer />
           </Route>
           <Route path="/quiz" component={QuizPage} />
+           {/* Line 27 should be /result/:username ?    */ }
           <Route path="/result" component={ResultPage} />
           <Route path="/playlist" component={Playlist} />
         </Switch>

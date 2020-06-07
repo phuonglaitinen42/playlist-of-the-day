@@ -6,7 +6,8 @@ import { CSSTransitionGroup } from "react-transition-group";
 import Button from "react-bootstrap/Button";
 import Axios from "axios";
 
-// try the link with =/result/{$user._id}
+// create a logic with Route and useRouteMatch for username?
+// try the link with ={`/result/{$user._id}`} ? Line 53.
 
 function Result(props) {
   function refreshPage() {
@@ -63,6 +64,9 @@ function Result(props) {
     </CSSTransitionGroup>
   );
 }
+
+// Here is my biggest problem. How to have 70-71 codes work and getting an external link.
+// This has been one big obstacle for me.
 
 Result.propTypes = {
   quizResult: PropTypes.string.isRequired,
