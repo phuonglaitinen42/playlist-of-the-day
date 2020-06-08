@@ -47,14 +47,10 @@ function Result(props) {
         >
           Save result
         </Button>
-
-        <Button variant="success" type="submit" style={{ marginRight: 20 }}>
-          <a
-            href="http://localhost:8888"
-            style={{ textDecoration: "none", color: "white" }}
-          >
-            Login first
-          </a>
+      </div>
+      <div>
+        <Button className="d-inline-block" variant="success" type="submit">
+          <a href="/playlist">Get your playlist of the day!</a>
         </Button>
         <Button
           className="btn btn-success /* d-inline-block */"
