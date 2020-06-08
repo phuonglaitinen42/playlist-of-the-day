@@ -208,3 +208,20 @@ body {
     justify-items: center;
   }
 }
+@media (min-width: 415px) {
+  .loader p {
+    margin-left: -19rem;
+    width: 70vw;
+  }
+}
+@media (min-width: 1024px) {
+  .loader p {
+    width: 60vw;
+  }
+}
+@media (min-width: 1337px) {
+  .loader p {
+    width: 40vw;
+    margin-left: -25rem;
+  }
+}
