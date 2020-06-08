@@ -1,12 +1,12 @@
 import React from "react";
-import Username from "../Components/Username/Username";
+import Login from "../Components/Login/Login";
 import "./WelcomePage.css";
 
 const WelcomePage = () => {
   return (
     <div className="App-header">
       <h2>Find what playlist fits your feeling</h2>
-      <Username />
+      <Login />
     </div>
   );
 };

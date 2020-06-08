@@ -45,7 +45,7 @@ function Result(props) {
       </div>
       <div>
         <Button className="d-inline-block" variant="success" type="submit">
-          <a href="http://localhost:8888">Login first</a>
+          <a href="/playlist">Get your playlist of the day!</a>
         </Button>
         <Button
           className="d-inline-block"
