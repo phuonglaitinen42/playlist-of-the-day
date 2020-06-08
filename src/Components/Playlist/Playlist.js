@@ -194,7 +194,6 @@ class Playlist extends Component {
         </label> */}
           <p>Music genre suits your mood today is {this.state.mygenre} </p>
 
-
           <input
             class="btn btn-success"
             type="button"
@@ -202,9 +201,9 @@ class Playlist extends Component {
             onClick={() => this.getCall()}
           ></input>
           <div className="playlist-result">
-          Your playlist of the day is: {this.state.playlistName}
-          <img src={this.state.image} alt={this.state.playlistName} />
-        </div>
+            Your playlist of the day is: {this.state.playlistName}
+            <img src={this.state.image} alt={this.state.playlistName} />
+          </div>
 
           <a href={this.state.link} target="blank_" class="btn btn-success">
             Open Spotify and listen!
@@ -212,20 +211,21 @@ class Playlist extends Component {
           <a href="/quiz" class="btn btn-success">
             Start your new playlist of the day!
           </a>
-        <div className="share-btn">
-          <h5>Share your Playlist of the Day with your friends</h5>
-          <FacebookShareButton
-            url={this.state.shareUrl}
-            quote={this.state.title}
-          >
-            <FacebookIcon size={40} round={true} />
-          </FacebookShareButton>
-          <TwitterShareButton
-            url={this.state.shareUrl}
-            title={this.state.title}
-          >
-            <TwitterIcon size={40} round={true} />
-          </TwitterShareButton>
+          <div className="share-btn">
+            <h5>Share your Playlist of the Day with your friends</h5>
+            <FacebookShareButton
+              url={this.state.shareUrl}
+              quote={this.state.title}
+            >
+              <FacebookIcon size={40} round={true} />
+            </FacebookShareButton>
+            <TwitterShareButton
+              url={this.state.shareUrl}
+              title={this.state.title}
+            >
+              <TwitterIcon size={40} round={true} />
+            </TwitterShareButton>
+          </div>
         </div>
       </div>
     );
