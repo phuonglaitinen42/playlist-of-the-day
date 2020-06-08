@@ -11,8 +11,10 @@
   padding-top: 3rem;
 }
 .playlist-render input,
-.playlist-render a {
-  margin: 1rem;
+.playlist-render a,
+.playlist-render p,
+.playlist-result {
+  margin: 0.5rem;
 }
 @media (max-width: 411px) {
   .playlist-render {
