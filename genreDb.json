@@ -5,112 +5,53 @@
       "genre": ""
     },
     {
-      "genre": [
-        "Pop/Ballad"
-      ],
+      "genre": ["Pop/Ballad"],
       "id": 2
     },
     {
-      "genre": [
-        "Jazz"
-      ],
+      "genre": ["Jazz"],
       "id": 3
     },
     {
-      "genre": [
-        "Metal"
-      ],
+      "genre": ["Metal"],
       "id": 4
     },
     {
-      "genre": [
-        "Pop/Ballad"
-      ],
+      "genre": ["Pop/Ballad"],
       "id": 5
     },
     {
-      "genre": [
-        "Pop/Ballad"
-      ],
+      "genre": ["Pop/Ballad"],
       "id": 6
     },
     {
-      "genre": [
-        "Mixed"
-      ],
+      "genre": ["Mixed"],
       "id": 7
     },
     {
-      "genre": [
-        "Metal"
-      ],
+      "genre": ["Metal"],
       "id": 8
     },
     {
-      "genre": [
-        "Metal"
-      ],
+      "genre": ["Metal"],
       "id": 9
     },
     {
-      "genre": [
-        "Pop/Ballad"
-      ],
+      "genre": ["Pop/Ballad"],
       "id": 10
     },
     {
-      "genre": [
-        "Progressive Rock"
-      ],
+      "genre": ["Progressive Rock"],
       "id": 11
     },
     {
-      "genre": [
-        "Progressive Rock"
-      ],
+      "genre": ["Progressive Rock"],
       "id": 12
     },
     {
-      "genre": [
-        "Progressive Rock"
-      ],
+      "genre": ["Progressive Rock"],
       "id": 13
     },
-    {
-      "genre": [
-        "Pop/Ballad"
-      ],
-      "id": 14
-    },
-    {
-      "genre": [
-        "Metal"
-      ],
-      "id": 15
-    },
-    {
-      "genre": [
-        "Jazz"
-      ],
-      "id": 16
-    },
-    {
-      "genre": [
-        "Pop/Ballad"
-      ],
-      "id": 17
-    },
-    {
-      "genre": [
-        "Progressive Rock"
-      ],
-      "id": 18
-    },
-    {
-      "genre": [
-        "Progressive Rock"
-      ],
-      "id": 19
-    }
+
   ]
 }
