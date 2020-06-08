@@ -49,6 +49,7 @@ function Result(props) {
         </Button>
       </div>
       <div>
+        {/* Line 54 (a href) would be something akin to: {´game/result/:${username}`}*/}
         <Button className="d-inline-block" variant="success" type="submit">
           <a href="http://localhost:8888">Login first</a>
         </Button>

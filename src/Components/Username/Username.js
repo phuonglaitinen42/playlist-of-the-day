@@ -11,6 +11,7 @@ import "./Username.css";
 
 const Username = () => {
   const [registeredName, setUserName] = useState({
+    // id: [],
     username: "",
   });
 
