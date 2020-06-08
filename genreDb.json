@@ -123,6 +123,30 @@
         "Pop/Ballad"
       ],
       "id": 21
+    },
+    {
+      "genre": [
+        "Mixed"
+      ],
+      "id": 22
+    },
+    {
+      "genre": [
+        "Mixed"
+      ],
+      "id": 23
+    },
+    {
+      "genre": [
+        "Pop/Ballad"
+      ],
+      "id": 24
+    },
+    {
+      "genre": [
+        "Progressive Rock"
+      ],
+      "id": 25
     }
   ]
 }
