@@ -1,89 +1,92 @@
 var quizQuestions = [
   {
-    img: "https://source.unsplash.com/Enr71dsAO5w/1600x900",
-    story: "Today, like any other day, you wake up and open your curtains.",
+    img: "https://source.unsplash.com/5sF6NrB1MEg/1600x900",
+    story:
+      "Today is like any other day. You wake up in the morning and open your curtains.",
     text: "Music is an outburst of the soul. -Frederick Delius-",
     question: "How's the weather like outside?",
     answers: [
       {
         type: "Jazz",
-        content: "Sunny",
-      },
-      {
-        type: "Pop/Ballad",
-        content: "Rainy",
-      },
-      {
-        type: "Progressive Rock",
         content: "Cloudy",
       },
       {
+        type: "Pop/Ballad",
+        content: "Sunny",
+      },
+      {
+        type: "Progressive Rock",
+        content: "Rainy",
+      },
+      {
         type: "Metal",
-        content: "Snowy",
+        content: "Stormy",
       },
     ],
   },
   {
-    img: "https://source.unsplash.com/Ydj_lckko4M/1600x900",
-    story: "Now it is time to kick off your day",
+    img: "https://source.unsplash.com/3TmLV0fLzfU/1600x900",
+    story: "It's time to begin your morning activities.",
     text: "",
-    question: "What would you do first? ",
+    question: "What would you like to do first?",
     answers: [
       {
         type: "Jazz",
-        content: "Coffee first",
+        content: "Get straight to work",
       },
       {
         type: "Pop/Ballad",
-        content: "Write journal",
+        content: "Write on your journal",
       },
       {
         type: "Progressive Rock",
-        content: "Work out",
+        content: "Morning exercise",
       },
       {
         type: "Metal",
-        content: "Get to work",
+        content: "Coffee!",
       },
     ],
   },
   {
-    img: "https://source.unsplash.com/3-EiAnsIXps/1600x900",
-    story: "Now you're ready to kick off your day",
+    img: "https://source.unsplash.com/af5zYyofeoM/1600x900",
+    story:
+      "You think about how you want to set out your day. With what motive would you like conquer the day?",
     text: "If I cannot fly, let me sing. -Stephen Sondheim-",
-    question: "Choose your motivation quote of the day  ",
+    question: "Pick up a motivational quote",
     answers: [
       {
         type: "Jazz",
-        content: "Live Colorfully",
+        content: "I create everything I do from the heart",
       },
       {
         type: "Pop/Ballad",
-        content: "Be proud of how hard you are working",
+        content: "Nobody can tell me where I can and can’t go",
       },
       {
         type: "Progressive Rock",
-        content: "You got this",
+        content:
+          "Gentleness clears the soul, love cleans the mind and makes it free",
       },
       {
         type: "Metal",
-        content: "Punch today in the face",
+        content: "Born to lose. Live to win",
       },
     ],
   },
   {
-    img: "https://source.unsplash.com/pNpRf6tPrYw/1600x900",
+    img: "https://source.unsplash.com/_ZQW69o_zv4/1600x900",
     story: "Time flies when you are concentrate. It is soon lunch time",
     text: "",
     question: "How would you like to have lunch? ",
     answers: [
       {
         type: "Jazz",
-        content: "Cook your own",
+        content: "Cook your own meal",
       },
       {
         type: "Pop/Ballad",
-        content: "Eat with coworkers",
+        content: "Eat with co-workers",
       },
       {
         type: "Progressive Rock",
@@ -96,8 +99,8 @@ var quizQuestions = [
     ],
   },
   {
-    img: "https://source.unsplash.com/UzPbvwqvKNE/1600x900",
-    story: "As usual, afternoon slump approaches... You need a small break",
+    img: "https://source.unsplash.com/Hz6nmRTCBbo/1600x900",
+    story: "The afternoon slump approaches... You need a small break",
     text:
       "Music touches us emotionally, where words alone can’t. -Johnny Depp-",
     question: "What kind of activity would you do?  ",
@@ -121,14 +124,14 @@ var quizQuestions = [
     ],
   },
   {
-    img: "https://source.unsplash.com/JePhj_nNn3w/1600x900",
-    story: "Now you finally have some personal time",
+    img: "https://source.unsplash.com/GC2d2lpz7zI/1600x900",
+    story: "The working day is over. Now it's time for some personal time",
     text: "",
     question: "What is your plan? ",
     answers: [
       {
         type: "Jazz",
-        content: "Chill at home",
+        content: "Go chill at home",
       },
       {
         type: "Pop/Ballad",
@@ -136,7 +139,7 @@ var quizQuestions = [
       },
       {
         type: "Progressive Rock",
-        content: "Have a drink with friends",
+        content: "Enjoy afterwork with co-workers",
       },
       {
         type: "Metal",
@@ -145,66 +148,67 @@ var quizQuestions = [
     ],
   },
   {
-    img: "https://source.unsplash.com/8E7io2lzvZQ/1600x900",
+    img: "https://source.unsplash.com/ZQ8RQKjrDk0/1600x900",
     story:
-      "While you were enjoying your afterwork time, your friend invited you to a gig, you accepted the invitation",
+      "Your phone rings and it's your friend. You have been invited to join a gig at the local pub and you decide to go there.",
     text:
       "Life seems to go on without effort when I am filled with music. -George Eliot-",
     question: "What would you do during the gig?  ",
     answers: [
       {
         type: "Jazz",
-        content: "Move your body along with the music",
+        content: "Sing-along to the melodies as the vibes hit you.",
       },
       {
         type: "Pop/Ballad",
-        content: "Dance with friends",
+        content: "Dance like there's no tomorrow",
       },
       {
         type: "Progressive Rock",
-        content: "Deeply listen to the lyrics",
+        content: "Deeply listen to the lyrics as you embrace the tunes",
       },
       {
         type: "Metal",
-        content: "Go crazy at the front row",
+        content: "Just go crazy at the front row",
       },
     ],
   },
   {
-    img: "https://source.unsplash.com/KpBXAOs80YI/1600x900",
+    img: "https://source.unsplash.com/f9KOnJeUtv4/1600x900",
     story:
-      "After all daily activities, you are at home, you start to plan your next trip.",
+      "After all your activities you are finally back at home again. Feeling energetic you decide to plan your next vacation trip.",
     text: "",
     question: "What would you like to do?  ",
     answers: [
       {
         type: "Jazz",
-        content: "Lie on a beach with mojito",
+        content: "Go trekking",
       },
       {
         type: "Pop/Ballad",
-        content: "Simply eat, sleep, relax",
+        content: "Lie on the beach with a mojito",
       },
       {
         type: "Progressive Rock",
-        content: "Explore history and culture",
+        content: "Simply eat, party, relax, sleep and repeat",
       },
       {
         type: "Metal",
-        content: "Go trekking",
+        content: "Explore history and culture of the world",
       },
     ],
   },
   {
     img: "https://source.unsplash.com/gl7joOaABlI/1600x900",
-    story: "You look at the bookshelf and see an unread pile of books",
+    story:
+      "You take a closer look at your bookshelf and the pile of unread books that are just waiting to be read.",
     text:
       "Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything. -Plato-",
     question: "which type of book would you bring on your trip? ",
     answers: [
       {
         type: "Jazz",
-        content: "Fantasy adventure book",
+        content: "Philosophy",
       },
       {
         type: "Pop/Ballad",
@@ -212,18 +216,19 @@ var quizQuestions = [
       },
       {
         type: "Progressive Rock",
-        content: "Investing management",
+        content: "Psychology",
       },
       {
         type: "Metal",
-        content: "Biography of famous people",
+        content: "The Occult",
       },
     ],
   },
 
   {
-    img: "https://source.unsplash.com/SHqPyXB2lJE/1600x900",
-    story: "Before the day ends, you ask yourself on question",
+    img: "https://source.unsplash.com/JyNgsjIE3Ow/1600x900",
+    story:
+      "As you tuck yourself to bed and prepare to fall asleep. You ask yourself the most important question of the day.",
     text: "",
     question: "How do I feel about the day?  ",
     answers: [
@@ -241,7 +246,7 @@ var quizQuestions = [
       },
       {
         type: "Metal",
-        content: "Neutral",
+        content: "Satisfied",
       },
     ],
   },

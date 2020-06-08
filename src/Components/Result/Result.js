@@ -39,17 +39,26 @@ function Result(props) {
         music at the momment!
       </div>
       <div>
-        <Button type="submit" onClick={saveGenre}>
+        <Button
+          type="submit"
+          onClick={saveGenre}
+          variant="success"
+          style={{ marginRight: 20 }}
+        >
           Save result
         </Button>
-      </div>
-      <div>
-        <Button className="d-inline-block" variant="success" type="submit">
-          <a href="http://localhost:8888">Login first</a>
+
+        <Button variant="success" type="submit" style={{ marginRight: 20 }}>
+          <a
+            href="http://localhost:8888"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Login first
+          </a>
         </Button>
         <Button
-          className="d-inline-block"
-          variant="light"
+          className="btn btn-success /* d-inline-block */"
+          style={{ marginRight: 20 }}
           type="submit"
           onClick={refreshPage}
         >

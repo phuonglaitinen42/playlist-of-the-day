@@ -1,6 +1,7 @@
 import SpotifyWebApi from "spotify-web-api-js";
 import React, { Component } from "react";
 import Axios from "axios";
+import "./Playlist.css";
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -179,8 +180,9 @@ class Playlist extends Component {
 
   render() {
     return (
-      <div>
-        {/* <h3>What was the result you got from our quiz?</h3>
+      <div className="playlist-bg">
+        <div className="playlist-render">
+          {/* <h3>What was the result you got from our quiz?</h3>
         <label>
           Genre:
           <select value={this.state.genre} onChange={this.getGenre} required>
@@ -190,22 +192,26 @@ class Playlist extends Component {
             <option value="Pop">Pop/Ballad</option>
           </select>
         </label> */}
-        <p>Music genre suits your mood today is {this.state.mygenre} </p>
+          <p>Music genre suits your mood today is {this.state.mygenre} </p>
 
-        <input
-          type="button"
-          value="Get your playlist"
-          onClick={() => this.getCall()}
-        ></input>
-        <div className="playlist-result">
+
+          <input
+            class="btn btn-success"
+            type="button"
+            value="Get your playlist"
+            onClick={() => this.getCall()}
+          ></input>
+          <div className="playlist-result">
           Your playlist of the day is: {this.state.playlistName}
           <img src={this.state.image} alt={this.state.playlistName} />
         </div>
 
-        <a href={this.state.link} target="blank_">
-          Open Spotify and listen!
-        </a>
-        <a href="/quiz">Return to quiz</a>
+          <a href={this.state.link} target="blank_" class="btn btn-success">
+            Open Spotify and listen!
+          </a>
+          <a href="/quiz" class="btn btn-success">
+            Start your new playlist of the day!
+          </a>
         <div className="share-btn">
           <h5>Share your Playlist of the Day with your friends</h5>
           <FacebookShareButton

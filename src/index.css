@@ -167,7 +167,8 @@ body {
 }
 
 @media (max-width: 411px) {
-  .question {
+  .question,
+  .loader p {
     font-size: 20px;
     padding-bottom: 10px;
   }
@@ -184,5 +185,10 @@ body {
   }
   .radioCustomLabel {
     padding: 10px;
+  }
+  .loader p {
+    margin: 0 auto;
+    margin-left: -100px;
+    margin-right: 60px;
   }
 }
