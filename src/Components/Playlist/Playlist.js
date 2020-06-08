@@ -202,7 +202,9 @@ class Playlist extends Component {
           ></input>
           <div className="playlist-result">
             Your playlist of the day is: {this.state.playlistName}
-            <img src={this.state.image} alt={this.state.playlistName} />
+            <div className="playlist-img">
+              <img src={this.state.image} alt={this.state.playlistName} />
+            </div>
           </div>
 
           <a href={this.state.link} target="blank_" class="btn btn-success">
@@ -212,7 +214,7 @@ class Playlist extends Component {
             Start your new playlist of the day!
           </a>
           <div className="share-btn">
-            <h5>Share your Playlist of the Day with your friends</h5>
+            <p>Share your Playlist of the Day with your friends</p>
             <FacebookShareButton
               url={this.state.shareUrl}
               quote={this.state.title}

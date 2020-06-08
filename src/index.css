@@ -37,6 +37,7 @@ body {
   position: absolute;
   background: rgba(255, 255, 255, 0.5);
   margin: 20px;
+  border-radius: 5px;
 }
 
 @media (min-width: 769px) {
@@ -166,7 +167,7 @@ body {
   transition: opacity 0.5s ease-in-out;
 }
 
-@media (max-width: 411px) {
+@media (max-width: 414px) {
   .question,
   .loader p {
     font-size: 20px;
@@ -179,6 +180,10 @@ body {
   }
   .question-area {
     padding: 0;
+    margin: -10px -30px;
+  }
+  .answerOptions {
+    margin: -7px -50px;
   }
   .answer-render-section {
     position: absolute;
@@ -190,5 +195,16 @@ body {
     margin: 0 auto;
     margin-left: -100px;
     margin-right: 60px;
+  }
+  .result-btn {
+    display: grid;
+    justify-items: center;
+  }
+  .result-btn .btn {
+    margin: 1rem;
+  }
+  .result {
+    display: grid;
+    justify-items: center;
   }
 }
