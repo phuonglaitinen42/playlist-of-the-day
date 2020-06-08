@@ -23,25 +23,26 @@ const Username = () => {
 
   const addPostHandler = (u) => {
     u.preventDefault();
-
     axios
-      .post("http://localhost:3001/usernames", registeredName)
+      .post("http://localhost:3001/usernames", registeredName, {
+        headers: { "Content-Type": "application/json" },
+      })
       .then((response) => {
         console.log(response.data);
       });
   };
 
-
   // for Phuong.
   // onSubmit had to be changed to onClick, because backend does not save the names to db otherwise. Not sure why this happens.
+  //fixed
 
   return (
-    <Form className="registeredName" onClick={addPostHandler}>
+    <Form className="registeredName" onSubmit={addPostHandler}>
       <Form.Group>
         <Form.Label htmlFor="username">Please provide your name.</Form.Label>
         <Form.Control
           id="username"
-          username="username"
+          name="username"
           type="text"
           placeholder="Artturi Reinikainen"
           onChange={changeValueHandler}
