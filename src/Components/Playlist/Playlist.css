@@ -1,0 +1,30 @@
+.playlist-render {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  background-color: rgba(252, 255, 95, 0.603);
+  padding-bottom: 3rem;
+  border-radius: 5px;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 10rem;
+  padding-top: 3rem;
+}
+.playlist-render input,
+.playlist-render a,
+.playlist-render p,
+.playlist-result {
+  margin: 0.5rem;
+}
+@media (max-width: 411px) {
+  .playlist-render {
+    width: 90vw;
+    margin-top: 5rem;
+  }
+}
+/* .playlist-bg {
+  background: url("https://source.unsplash.com/vC8wj_Kphak/1600x900") no-repeat
+    fixed center center / cover;
+  width: 100%;
+  height: 600%;
+} */
