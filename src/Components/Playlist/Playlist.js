@@ -2,6 +2,13 @@ import SpotifyWebApi from "spotify-web-api-js";
 import React, { Component } from "react";
 import Axios from "axios";
 import "./Playlist.css";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  TwitterIcon,
+} from "react-share";
+import Share from "../Share/Share";
 const spotifyApi = new SpotifyWebApi();
 
 class Playlist extends Component {
@@ -17,9 +24,13 @@ class Playlist extends Component {
       loggedIn: token ? true : false,
       playlistName: "",
       link: null,
+      image: "",
       // genre: "",
       mygenre: "",
+      shareUrl: "",
+      title: "",
     };
+
     // this.getGenre = this.getGenre.bind(this);
   }
 
@@ -68,11 +79,15 @@ class Playlist extends Component {
         console.log(response);
         const link = response.external_urls.spotify;
         const playlistName = response.name;
+        const image = response.images[0].url;
         console.log(link);
 
         this.setState({
           playlistName: playlistName,
           link: link,
+          image: image,
+          shareUrl: link,
+          title: playlistName,
         });
       }
 
@@ -89,11 +104,16 @@ class Playlist extends Component {
       console.log(response);
       const link = response.external_urls.spotify;
       const playlistName = response.name;
+      const image = response.images[0].url;
+
       console.log(link);
 
       this.setState({
         playlistName: playlistName,
         link: link,
+        image: image,
+        shareUrl: link,
+        title: playlistName,
       });
     });
   }
@@ -102,11 +122,16 @@ class Playlist extends Component {
       console.log(response);
       const link = response.external_urls.spotify;
       const playlistName = response.name;
+      const image = response.images[0].url;
+
       console.log(link);
 
       this.setState({
         playlistName: playlistName,
         link: link,
+        image: image,
+        shareUrl: link,
+        title: playlistName,
       });
     });
   }
@@ -115,11 +140,16 @@ class Playlist extends Component {
       console.log(response);
       const link = response.external_urls.spotify;
       const playlistName = response.name;
+      const image = response.images[0].url;
+
       console.log(link);
 
       this.setState({
         playlistName: playlistName,
         link: link,
+        image: image,
+        shareUrl: link,
+        title: playlistName,
       });
     });
   }
@@ -128,11 +158,16 @@ class Playlist extends Component {
       console.log(response);
       const link = response.external_urls.spotify;
       const playlistName = response.name;
+      const image = response.images[0].url;
+
       console.log(link);
 
       this.setState({
         playlistName: playlistName,
         link: link,
+        image: image,
+        shareUrl: link,
+        title: playlistName,
       });
     });
   }
@@ -159,6 +194,7 @@ class Playlist extends Component {
         </label> */}
           <p>Music genre suits your mood today is {this.state.mygenre} </p>
 
+
           <input
             class="btn btn-success"
             type="button"
@@ -166,8 +202,9 @@ class Playlist extends Component {
             onClick={() => this.getCall()}
           ></input>
           <div className="playlist-result">
-            Your playlist of the day is: {this.state.playlistName}
-          </div>
+          Your playlist of the day is: {this.state.playlistName}
+          <img src={this.state.image} alt={this.state.playlistName} />
+        </div>
 
           <a href={this.state.link} target="blank_" class="btn btn-success">
             Open Spotify and listen!
@@ -175,6 +212,20 @@ class Playlist extends Component {
           <a href="/quiz" class="btn btn-success">
             Start your new playlist of the day!
           </a>
+        <div className="share-btn">
+          <h5>Share your Playlist of the Day with your friends</h5>
+          <FacebookShareButton
+            url={this.state.shareUrl}
+            quote={this.state.title}
+          >
+            <FacebookIcon size={40} round={true} />
+          </FacebookShareButton>
+          <TwitterShareButton
+            url={this.state.shareUrl}
+            title={this.state.title}
+          >
+            <TwitterIcon size={40} round={true} />
+          </TwitterShareButton>
         </div>
       </div>
     );

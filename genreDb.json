@@ -5,154 +5,53 @@
       "genre": ""
     },
     {
-      "genre": [
-        "Pop/Ballad"
-      ],
+      "genre": ["Pop/Ballad"],
       "id": 2
     },
     {
-      "genre": [
-        "Jazz"
-      ],
+      "genre": ["Jazz"],
       "id": 3
     },
     {
-      "genre": [
-        "Metal"
-      ],
+      "genre": ["Metal"],
       "id": 4
     },
     {
-      "genre": [
-        "Pop/Ballad"
-      ],
+      "genre": ["Pop/Ballad"],
       "id": 5
     },
     {
-      "genre": [
-        "Pop/Ballad"
-      ],
+      "genre": ["Pop/Ballad"],
       "id": 6
     },
     {
-      "genre": [
-        "Mixed"
-      ],
+      "genre": ["Mixed"],
       "id": 7
     },
     {
-      "genre": [
-        "Metal"
-      ],
+      "genre": ["Metal"],
       "id": 8
     },
     {
-      "genre": [
-        "Metal"
-      ],
+      "genre": ["Metal"],
       "id": 9
     },
     {
-      "genre": [
-        "Pop/Ballad"
-      ],
+      "genre": ["Pop/Ballad"],
       "id": 10
     },
     {
-      "genre": [
-        "Progressive Rock"
-      ],
+      "genre": ["Progressive Rock"],
       "id": 11
     },
     {
-      "genre": [
-        "Progressive Rock"
-      ],
+      "genre": ["Progressive Rock"],
       "id": 12
     },
     {
-      "genre": [
-        "Progressive Rock"
-      ],
+      "genre": ["Progressive Rock"],
       "id": 13
-    },
-    {
-      "genre": [
-        "Pop/Ballad"
-      ],
-      "id": 14
-    },
-    {
-      "genre": [
-        "Mixed"
-      ],
-      "id": 15
-    },
-    {
-      "genre": [
-        "Mixed"
-      ],
-      "id": 16
-    },
-    {
-      "genre": [
-        "Mixed"
-      ],
-      "id": 17
-    },
-    {
-      "genre": [
-        "Mixed"
-      ],
-      "id": 18
-    },
-    {
-      "genre": [
-        "Pop/Ballad"
-      ],
-      "id": 19
-    },
-    {
-      "genre": [
-        "Pop/Ballad"
-      ],
-      "id": 20
-    },
-    {
-      "genre": [
-        "Pop/Ballad"
-      ],
-      "id": 21
-    },
-    {
-      "genre": [
-        "Mixed"
-      ],
-      "id": 22
-    },
-    {
-      "genre": [
-        "Mixed"
-      ],
-      "id": 23
-    },
-    {
-      "genre": [
-        "Pop/Ballad"
-      ],
-      "id": 24
-    },
-    {
-      "genre": [
-        "Progressive Rock"
-      ],
-      "id": 25
-    },
-    {
-      "genre": [
-        "Mixed"
-      ],
-      "id": 26
     }
+
   ]
 }
