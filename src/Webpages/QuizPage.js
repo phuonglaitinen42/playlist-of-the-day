@@ -5,6 +5,7 @@ import Quiz from "./../Components/Quiz/Quiz";
 import Result from "./../Components/Result/Result";
 import Loader from "./../Components/Loader/Loader";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ResultPage from "./../Webpages/ResultPage";
 
 class QuizPage extends Component {
   constructor(props) {

@@ -10,7 +10,7 @@ import Footer from "../src/Components/Footer/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Playlist from "./Components/Playlist/Playlist";
-import ResultPage from '../src/Webpages/ResultPage';
+import ResultPage from "../src/Webpages/ResultPage";
 
 const App = () => {
   return (
@@ -22,8 +22,9 @@ const App = () => {
             <WelcomePage />
             <Footer />
           </Route>
+
           <Route path="/quiz" component={QuizPage} />
-           {/* Line 27 should be /result/:username ?    */ }
+          {/* Line 27 should be /result/:username ?    */}
           <Route path="/result" component={ResultPage} />
           <Route path="/playlist" component={Playlist} />
         </Switch>
