@@ -36,12 +36,12 @@ const Username = () => {
   // onSubmit had to be changed to onClick, because backend does not save the names to db otherwise. Not sure why this happens.
 
   return (
-    <Form className="registeredName" onClick={addPostHandler}>
+    <Form className="registeredName" onSubmit={addPostHandler}>
       <Form.Group>
         <Form.Label htmlFor="username">Please provide your name.</Form.Label>
         <Form.Control
           id="username"
-          username="username"
+          name="username"
           type="text"
           placeholder="Artturi Reinikainen"
           onChange={changeValueHandler}
