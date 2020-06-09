@@ -35,8 +35,9 @@ class Playlist extends Component {
   }
 
   componentDidMount() {
-    Axios.get("http://localhost:3001/Genre").then((res) => {
-      const mygenre = res.data[res.data.length - 1].genre;
+    const _id = this.props.match.params.id;
+    Axios.get(`http://localhost:3002/result/${_id}`).then((response) => {
+      const mygenre = response.data.genre;
       this.setState({ mygenre });
     });
   }

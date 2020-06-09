@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { CSSTransitionGroup } from "react-transition-group";
 import Button from "react-bootstrap/Button";
@@ -16,7 +16,7 @@ function Result(props) {
   };
   const saveGenre = (e) => {
     e.preventDefault();
-    Axios.post("http://localhost:3001/Genre", genre).then((response) => {
+    Axios.post("http://localhost:3002/result", genre).then((response) => {
       console.log(response.data);
     });
   };
@@ -50,7 +50,7 @@ function Result(props) {
       </div>
       <div>
         <Button className="d-inline-block" variant="success" type="submit">
-          <a href="/playlist">Get your playlist of the day!</a>
+          <a href="http://localhost:8888">Get your playlist of the day!</a>
         </Button>
         <Button
           className="btn btn-success /* d-inline-block */"

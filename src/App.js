@@ -22,7 +22,7 @@ const App = () => {
             <Footer />
           </Route>
           <Route path="/quiz" component={QuizPage} />
-          <Route path="/playlist" component={Playlist} />
+          <Route path="/playlist/:_id" component={Playlist} />
         </Switch>
       </Container>
     </Router>
