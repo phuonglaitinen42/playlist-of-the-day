@@ -31,7 +31,7 @@ class QuizPage extends Component {
     return new Promise((resolve) => setTimeout(resolve, milliseconds));
   };
 
-  wait = async (milliseconds = 4000) => {
+  wait = async (milliseconds = 1000) => {
     this.setState({
       loading: true,
     });
