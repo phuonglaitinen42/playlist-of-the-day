@@ -16,7 +16,7 @@ const Player = props => {
         <div className="player-container">
             <div className="player-wrapper">
                 <div className="now-playing_img">
-                    <img src={props.item.playlist.images[0].url} />
+                    <img src={props.item.playlist.images[0].url} alt={props.item.playlist.images[0].url} />
                 </div>
                 <div className="now-playing_side">
                     <div className="now-playing_name">{props.item.name}</div>
