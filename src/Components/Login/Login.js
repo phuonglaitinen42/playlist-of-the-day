@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 
-export const authEndpoint = "https://accounts.spotify.com/authorize";
+
 
 const Login = () => { 
     return (

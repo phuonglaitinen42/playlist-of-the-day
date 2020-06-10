@@ -50,8 +50,11 @@ class Playlist extends Component {
   }
 
   componentDidMount() {
-    Axios.get("http://localhost:3001/Genre").then((res) => {
-      const mygenre = res.data[res.data.length - 1].genre;
+    const resultId = localStorage.getItem("resultId");
+    console.log(resultId);
+
+    Axios.get("http://localhost:3001/result/" + resultId).then((response) => {
+      const mygenre = response.data.genre;
       this.setState({ mygenre });
     });
   }
@@ -70,20 +73,20 @@ class Playlist extends Component {
   }
 
   getCall() {
-    console.log(this.state.mygenre[0]);
-    if (this.state.mygenre[0] === "Pop/Ballad") {
+    console.log(this.state.mygenre);
+    if (this.state.mygenre === "Pop/Ballad") {
       return this.getPop();
     }
-    if (this.state.mygenre[0] === "Jazz") {
+    if (this.state.mygenre === "Jazz") {
       return this.getJazz();
     }
-    if (this.state.mygenre[0] === "Metal") {
+    if (this.state.mygenre === "Metal") {
       return this.getMetal();
     }
-    if (this.state.mygenre[0] === "Progressive Rock") {
+    if (this.state.mygenre === "Progressive Rock") {
       return this.getRock();
     }
-    if (this.state.mygenre[0] === "Mixed") {
+    if (this.state.mygenre === "Mixed") {
       return this.getMix();
     }
   }
