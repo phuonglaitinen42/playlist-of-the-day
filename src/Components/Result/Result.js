@@ -43,7 +43,7 @@ function Result(props) {
         </div>
         music at the momment!
       </div>
-      <div>
+      <div className="result-btn">
         <Button
           type="submit"
           onClick={saveGenre}

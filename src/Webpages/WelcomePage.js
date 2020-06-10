@@ -1,5 +1,4 @@
 import React from "react";
-import Login from "../Components/Login/Login";
 import "./WelcomePage.css";
 
 const WelcomePage = () => {
