@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import Login from "../Login/Login"
-
 import PropTypes from "prop-types";
 import { CSSTransitionGroup } from "react-transition-group";
 import Button from "react-bootstrap/Button";
@@ -45,7 +43,7 @@ function Result(props) {
         </div>
         music at the momment!
       </div>
-      <div>
+      <div className="result-btn">
         <Button
           type="submit"
           onClick={saveGenre}
@@ -56,7 +54,9 @@ function Result(props) {
         </Button>
       </div>
       <div>
-      <Login />
+      <Button className="d-inline-block" variant="success" type="submit">
+    <a href="http://localhost:8888/">Start game.</a>
+    </Button>
         <Button
           className="btn btn-success /* d-inline-block */"
           style={{ marginRight: 20 }}
