@@ -27,13 +27,14 @@ class Playlist extends Component {
     this.state = {
       loggedIn: token ? true : false,
       playlistName: "",
+      displayName: "",
       link: null,
       image: "",
       // genre: "",
       mygenre: "",
       shareUrl: "",
       title: "",
-      item: {
+    /*  item: {
         album: { 
           images: [{ url: ""}]
         },
@@ -42,10 +43,10 @@ class Playlist extends Component {
         duration_ms: 0,
       },
       is_playing: "Paused",
-      progress_ms: 0
+      progress_ms: 0 */
     };
 
-    this.getCurrentlyPlaying = this.getCurrentlyPlaying.bind(this);
+    //this.getCurrentlyPlaying = this.getCurrentlyPlaying.bind(this);
     // this.getGenre = this.getGenre.bind(this);
   }
 
@@ -71,6 +72,20 @@ class Playlist extends Component {
     }
     return hashParams;
   }
+
+  getDisplayName() {
+    // making an Ajax call, because were using jQuery.
+    $.ajax({
+      url: "https://api.spotify.com/v1/me",
+      type: "GET",
+      success: (data) => {
+        this.setState({
+          displayName: data.displayname
+        });
+      }
+    });
+  }
+
 
   getCall() {
     console.log(this.state.mygenre);
@@ -196,24 +211,6 @@ class Playlist extends Component {
   //   console.log(this.state.genre);
   // }
 
-getCurrentlyPlaying() {
-  // making an Ajax call, because were using jQuery.
-  $.ajax({
-    url: "https://api.spotify.com/v1/me/player",
-    type: "GET",
-    beforeSend: (xhr) => {
-      xhr.setRequestHeader("Authorization", + "Bearer");
-    },
-    success: (data) => {
-      this.setState({
-        item: data.item,
-        is_playing: data.is_playing,
-        progress_ms: data.progress_ms,
-      });
-    }
-  });
-}
-
 
   render() {
     return (
@@ -229,6 +226,7 @@ getCurrentlyPlaying() {
             <option value="Pop">Pop/Ballad</option>
           </select>
         </label> */}
+        <h3> Hey {this.state.displayName}</h3>
           <p>The music genre that suits your mood today is {this.state.mygenre} </p>
           <input
             class="btn btn-success"
@@ -241,13 +239,7 @@ getCurrentlyPlaying() {
             <img src={this.state.image} alt={this.state.playlistName} />
           </div>
           <div>
-            {this.state.loggedIn && (
-              <Player
-              item={this.state.item}
-              is_playing={this.state.is_playing}
-              progress_ms={this.progress_ms}
-              />
-            )}
+           
           </div>
           <a href={this.state.link} target="blank_" class="btn btn-success">
             Open Spotify and listen!
