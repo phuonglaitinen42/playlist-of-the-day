@@ -1,4 +1,5 @@
 import SpotifyWebApi from "spotify-web-api-js";
+import * as $ from "jquery";
 import React, { Component } from "react";
 import Axios from "axios";
 import "./Playlist.css";
@@ -9,6 +10,9 @@ import {
   TwitterIcon,
 } from "react-share";
 import Share from "../Share/Share";
+
+import Player from "../Player/Player";
+
 const spotifyApi = new SpotifyWebApi();
 
 class Playlist extends Component {
@@ -29,8 +33,19 @@ class Playlist extends Component {
       mygenre: "",
       shareUrl: "",
       title: "",
+      item: {
+        album: { 
+          images: [{ url: ""}]
+        },
+        name: "",
+        artists: [{ name: ""}],
+        duration_ms: 0,
+      },
+      is_playing: "Paused",
+      progress_ms: 0
     };
 
+    this.getCurrentlyPlaying = this.getCurrentlyPlaying.bind(this);
     // this.getGenre = this.getGenre.bind(this);
   }
 
@@ -178,6 +193,25 @@ class Playlist extends Component {
   //   console.log(this.state.genre);
   // }
 
+getCurrentlyPlaying() {
+  // making an Ajax call, because were using jQuery.
+  $.ajax({
+    url: "https://api.spotify.com/v1/me/player",
+    type: "GET",
+    beforeSend: (xhr) => {
+      xhr.setRequestHeader("Authorization", + "Bearer");
+    },
+    success: (data) => {
+      this.setState({
+        item: data.item,
+        is_playing: data.is_playing,
+        progress_ms: data.progress_ms,
+      });
+    }
+  });
+}
+
+
   render() {
     return (
       <div className="playlist-bg">
@@ -192,8 +226,7 @@ class Playlist extends Component {
             <option value="Pop">Pop/Ballad</option>
           </select>
         </label> */}
-          <p>Music genre suits your mood today is {this.state.mygenre} </p>
-
+          <p>The music genre that suits your mood today is {this.state.mygenre} </p>
           <input
             class="btn btn-success"
             type="button"
@@ -204,7 +237,15 @@ class Playlist extends Component {
             Your playlist of the day is: {this.state.playlistName}
             <img src={this.state.image} alt={this.state.playlistName} />
           </div>
-
+          <div>
+            {this.state.loggedIn && (
+              <Player
+              item={this.state.item}
+              is_playing={this.state.is_playing}
+              progress_ms={this.progress_ms}
+              />
+            )}
+          </div>
           <a href={this.state.link} target="blank_" class="btn btn-success">
             Open Spotify and listen!
           </a>
