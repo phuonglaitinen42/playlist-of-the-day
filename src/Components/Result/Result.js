@@ -1,24 +1,29 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { CSSTransitionGroup } from "react-transition-group";
 import Button from "react-bootstrap/Button";
-import Axios from "axios";
+import axios from "axios";
 
 function Result(props) {
   function refreshPage() {
     window.location.reload(false);
   }
-  const [genre, setGenre] = useState({ genre: [props.quizResult] });
+  const [genre, setGenre] = useState({ genre: props.quizResult });
   const genreHandler = (e) => {
     setGenre(...genre, ([e.target.name] = e.target));
     console.log(genre);
   };
   const saveGenre = (e) => {
     e.preventDefault();
-    Axios.post("http://localhost:3001/Genre", genre).then((response) => {
-      console.log(response.data);
-    });
+    axios
+      .post("http://localhost:3001/result", genre, {
+        headers: { "Content-Type": "application/json" },
+      })
+      .then((response) => {
+        window.localStorage.setItem("resultId", response.data._id);
+        console.log(response.data);
+      });
   };
 
   return (
@@ -50,7 +55,7 @@ function Result(props) {
       </div>
       <div>
         <Button className="d-inline-block" variant="success" type="submit">
-          <a href="/playlist">Get your playlist of the day!</a>
+          <a href="http://localhost:8888">Get your playlist of the day!</a>
         </Button>
         <Button
           className="btn btn-success /* d-inline-block */"

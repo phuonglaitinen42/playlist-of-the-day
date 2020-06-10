@@ -6,7 +6,9 @@ const WelcomePage = () => {
   return (
     <div className="App-header">
       <h2>Find what playlist fits your feeling</h2>
-      <Login />
+      <button>
+        <a href="/quiz">Start quiz</a>
+      </button>
     </div>
   );
 };
