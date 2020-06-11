@@ -1,5 +1,4 @@
 import SpotifyWebApi from "spotify-web-api-js";
-import * as $ from "jquery";
 import React, { Component } from "react";
 import Axios from "axios";
 import "./Playlist.css";
@@ -34,19 +33,8 @@ class Playlist extends Component {
       mygenre: "",
       shareUrl: "",
       title: "",
-    /*  item: {
-        album: { 
-          images: [{ url: ""}]
-        },
-        name: "",
-        artists: [{ name: ""}],
-        duration_ms: 0,
-      },
-      is_playing: "Paused",
-      progress_ms: 0 */
     };
 
-    //this.getCurrentlyPlaying = this.getCurrentlyPlaying.bind(this);
     // this.getGenre = this.getGenre.bind(this);
   }
 
@@ -73,18 +61,20 @@ class Playlist extends Component {
     return hashParams;
   }
 
-  getDisplayName() {
-    // making an Ajax call, because were using jQuery.
-    $.ajax({
-      url: "https://api.spotify.com/v1/me",
-      type: "GET",
-      success: (data) => {
+  getdisplayName() {
+    spotifyApi.getUser('https://api.spotify.com/v1/me')
+    .then(
+      (response) => {
+        console.log(this.state.displayName);
+        const displayName = response.display_name;
+  
         this.setState({
-          displayName: data.displayname
+          displayName: displayName
         });
-      }
-    });
-  }
+      })
+    }
+
+
 
 
   getCall() {
@@ -105,6 +95,7 @@ class Playlist extends Component {
       return this.getMix();
     }
   }
+
 
   getJazz() {
     spotifyApi.getPlaylist("7pBWAhZGgqo3q1w672FoKl").then(
@@ -204,13 +195,14 @@ class Playlist extends Component {
       });
     });
   }
+
+ 
   // getGenre(e) {
   //   this.setState({
   //     genre: e.target.value,
   //   });
   //   console.log(this.state.genre);
   // }
-
 
   render() {
     return (
@@ -226,8 +218,7 @@ class Playlist extends Component {
             <option value="Pop">Pop/Ballad</option>
           </select>
         </label> */}
-        <h3> Hey {this.state.displayName}</h3>
-          <p>The music genre that suits your mood today is {this.state.mygenre} </p>
+          <p> Hey {this.state.displayName}. The music genre that suits your mood today is {this.state.mygenre} </p>
           <input
             class="btn btn-success"
             type="button"
@@ -239,9 +230,6 @@ class Playlist extends Component {
             <div className="playlist-img">
               <img src={this.state.image} alt={this.state.playlistName} />
             </div>
-          </div>
-          <div>
-           
           </div>
           <a href={this.state.link} target="blank_" class="btn btn-success">
             Open Spotify and listen!
