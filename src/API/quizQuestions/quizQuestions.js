@@ -99,7 +99,7 @@ var quizQuestions = [
     ],
   },
   {
-    img: "https://source.unsplash.com/Hz6nmRTCBbo/1600x900",
+    img: "https://source.unsplash.com/Ydj_lckko4M/1600x900",
     story: "The afternoon slump approaches... You need a small break",
     text:
       "Music touches us emotionally, where words alone can’t. -Johnny Depp-",
@@ -124,7 +124,7 @@ var quizQuestions = [
     ],
   },
   {
-    img: "https://source.unsplash.com/GC2d2lpz7zI/1600x900",
+    img: "https://source.unsplash.com/JePhj_nNn3w//1600x900",
     story: "The working day is over. Now it's time for some personal time",
     text: "",
     question: "What is your plan? ",
@@ -148,7 +148,7 @@ var quizQuestions = [
     ],
   },
   {
-    img: "https://source.unsplash.com/ZQ8RQKjrDk0/1600x900",
+    img: "https://source.unsplash.com/8E7io2lzvZQ/1600x900",
     story:
       "Your phone rings and it's your friend. You have been invited to join a gig at the local pub and you decide to go there.",
     text:
@@ -174,7 +174,7 @@ var quizQuestions = [
     ],
   },
   {
-    img: "https://source.unsplash.com/f9KOnJeUtv4/1600x900",
+    img: "https://source.unsplash.com/KpBXAOs80YI/1600x900",
     story:
       "After all your activities you are finally back at home again. Feeling energetic you decide to plan your next vacation trip.",
     text: "",
