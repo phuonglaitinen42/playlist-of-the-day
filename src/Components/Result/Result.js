@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { CSSTransitionGroup } from "react-transition-group";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
+import Login from "../../Webpages/Login";
 
 function Result(props) {
   function refreshPage() {
@@ -52,14 +53,19 @@ function Result(props) {
         >
           Save result
         </Button>
-      </div>
-      <div>
-      <Button className="d-inline-block" variant="success" type="submit">
-    <a href="http://localhost:8888/">Get your playlist</a>
-    </Button>
         <Button
-          className="btn btn-success /* d-inline-block */"
+          className="btn-success"
           style={{ marginRight: 20 }}
+          variant="success"
+          type="submit"
+        >
+          <Login />
+        </Button>
+
+        <Button
+          className="btn-success"
+          style={{ marginRight: 20 }}
+          variant="sucess"
           type="submit"
           onClick={refreshPage}
         >

@@ -27,6 +27,7 @@ class Playlist extends Component {
       loggedIn: token ? true : false,
       playlistName: "",
       displayName: "",
+      idName: "",
       link: null,
       image: "",
       // genre: "",
@@ -62,17 +63,30 @@ class Playlist extends Component {
   }
 
   getdisplayName() {
-    spotifyApi.getUser('https://api.spotify.com/v1/me')
+    Axios.get('https://api.spotify.com/v1/users/')
     .then(
       (response) => {
-        console.log(this.state.displayName);
+        console.log(response)
         const displayName = response.display_name;
-  
+      
         this.setState({
           displayName: displayName
         });
       })
     }
+
+    getidName() {
+      Axios.get('https://api.spotify.com/v1/users/{user_id}')
+      .then(
+        (response) => {
+          console.log(response)
+          const idName = response.id;
+        
+          this.setState({
+            idName: idName
+          });
+        })
+      }
 
 
 
@@ -218,11 +232,11 @@ class Playlist extends Component {
             <option value="Pop">Pop/Ballad</option>
           </select>
         </label> */}
-          <p> Hey {this.state.displayName}. The music genre that suits your mood today is {this.state.mygenre} </p>
+          <p> Hey {this.state.displayName}{this.state.idName}. The music genre that suits your mood today is {this.state.mygenre} </p>
           <input
             class="btn btn-success"
             type="button"
-            value="Get your playlist"
+            value="Generate playlist"
             onClick={() => this.getCall()}
           ></input>
           <div className="playlist-result">
@@ -231,7 +245,13 @@ class Playlist extends Component {
               <img src={this.state.image} alt={this.state.playlistName} />
             </div>
           </div>
-          <a href={this.state.link} target="blank_" class="btn btn-success">
+
+          <a
+            href={this.state.link}
+            target="blank_"
+            class="btn btn-success"
+            style={{ textDecoration: "none", color: "white" }}
+          >
             Open Spotify and listen!
           </a>
           <a href="/quiz" class="btn btn-success">
