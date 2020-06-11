@@ -172,6 +172,8 @@ body {
 .loader p {
   border: 1px solid #eee;
 }
+.result-btn {
+}
 
 @media (max-width: 414px) {
   .question,
