@@ -38,8 +38,16 @@ class Playlist extends Component {
       mygenre: "",
       shareUrl: "",
       title: "",
+      error: "",
+      deviceId: "",
+      artistName:"",
+      trackName:"",
+      albumName:"",
+      playing: false,
+      position: 0,
+      duration: 0,
     };
-
+    this.playerCheckInterval = null;
     // this.getGenre = this.getGenre.bind(this);
   }
 
@@ -66,32 +74,7 @@ class Playlist extends Component {
     return hashParams;
   }
 
-  getdisplayName() {
-    Axios.get('https://api.spotify.com/v1/users/')
-    .then(
-      (response) => {
-        console.log(response)
-        const displayName = response.display_name;
-      
-        this.setState({
-          displayName: displayName
-        });
-      })
-    }
-
-    getidName() {
-      Axios.get('https://api.spotify.com/v1/users/{user_id}')
-      .then(
-        (response) => {
-          console.log(response)
-          const idName = response.id;
-        
-          this.setState({
-            idName: idName
-          });
-        })
-      }
-
+ 
 
 
 
@@ -122,6 +105,9 @@ class Playlist extends Component {
         const link = response.external_urls.spotify;
         const playlistName = response.name;
         const image = response.images[0].url;
+        const artistName = response.artists;
+        const trackName = response.name;
+        const albumName = response.album.name;
         console.log(link);
 
         this.setState({
@@ -130,6 +116,9 @@ class Playlist extends Component {
           image: image,
           shareUrl: link,
           title: playlistName,
+          artistName: artistName,
+          trackName: trackName,
+          albumName: albumName,
         });
       }
 
@@ -147,6 +136,9 @@ class Playlist extends Component {
       const link = response.external_urls.spotify;
       const playlistName = response.name;
       const image = response.images[0].url;
+      const artistName = response.artists;
+      const trackName = response.name;
+      const albumName = response.album.name;
 
       console.log(link);
 
@@ -156,6 +148,9 @@ class Playlist extends Component {
         image: image,
         shareUrl: link,
         title: playlistName,
+        artistName: artistName,
+          trackName: trackName,
+          albumName: albumName,
       });
     });
   }
@@ -165,6 +160,9 @@ class Playlist extends Component {
       const link = response.external_urls.spotify;
       const playlistName = response.name;
       const image = response.images[0].url;
+      const artistName = response.artists;
+      const trackName = response.name;
+      const albumName = response.album.name;
 
       console.log(link);
 
@@ -174,6 +172,9 @@ class Playlist extends Component {
         image: image,
         shareUrl: link,
         title: playlistName,
+        artistName: artistName,
+          trackName: trackName,
+          albumName: albumName,
       });
     });
   }
@@ -183,6 +184,9 @@ class Playlist extends Component {
       const link = response.external_urls.spotify;
       const playlistName = response.name;
       const image = response.images[0].url;
+      const artistName = response.artists;
+      const trackName = response.name;
+      const albumName = response.album.name;
 
       console.log(link);
 
@@ -192,6 +196,9 @@ class Playlist extends Component {
         image: image,
         shareUrl: link,
         title: playlistName,
+        artistName: artistName,
+        trackName: trackName,
+        albumName: albumName,
       });
     });
   }
@@ -213,6 +220,68 @@ class Playlist extends Component {
       });
     });
   }
+
+  getdisplayName() {
+    Axios.get('https://api.spotify.com/v1/users/')
+    .then(
+      (response) => {
+        console.log(response)
+        const displayName = response.display_name;
+      
+        this.setState({
+          displayName: displayName
+        });
+      })
+    }
+
+    getidName() {
+      Axios.get('https://api.spotify.com/v1/users/{user_id}')
+      .then(
+        (response) => {
+          console.log(response)
+          const idName = response.id;
+        
+          this.setState({
+            idName: idName
+          });
+        })
+      }
+
+      checkLogin() {
+        if ({loggedIn: false}) {
+          this.playerCheckInterval = setInterval(() => this.checkForPlayer(), 1000);
+        }
+      }
+
+      checkForPlayer() {
+        if (window.Spotify !== null) {
+          this.player = new window.Spotify.Player({
+            name: "Spotify Player",
+          });
+
+          this.player.connect();
+        }
+      }
+
+      playerHandler() {
+        this.player.on('initialization_error', e => { console.error(e); });
+        this.player.on('autentication_error', e => {
+          console.error(e)
+          this.setState({ loggedIn: false });
+        });
+        this.player.on('account_error', e => { console.error(e); });
+        this.player.on('playback_error', e => { console.error(e); } )
+
+        // playback updates
+        this.player.on('player_state_changed', state => { console.log(state); })
+
+        // ready
+        this.player.on('ready', response => {
+          let { device_id } = response;
+          console.log("device ready");
+          this.setState({ deviceId: device_id })
+        });
+      }
 
  
   // getGenre(e) {
@@ -250,6 +319,9 @@ class Playlist extends Component {
             </div>
           </div>
           <div>
+          <p>Artist: {this.state.artistName}</p>
+          <p>Track:{this.state.trackName}</p>
+          <p>Album:{this.state.albumName}</p>
           </div>
           <a
             href={this.state.link}
