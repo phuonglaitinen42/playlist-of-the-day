@@ -4,8 +4,7 @@ import './Player.css';
 const Player = props => {
     const backgroundStyles= {
         backgroundImage: `url(${
-            props.item.album.images[0].url
-        })`,
+            props.item.album.images[0].url})`,
     };
 
     const progressBarStyles = {

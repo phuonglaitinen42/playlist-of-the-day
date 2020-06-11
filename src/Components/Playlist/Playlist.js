@@ -27,7 +27,7 @@ class Playlist extends Component {
       loggedIn: token ? true : false,
       playlistName: "",
       displayName: "",
-      idName: "",
+      idName: "",      
       link: null,
       image: "",
       // genre: "",
@@ -245,7 +245,9 @@ class Playlist extends Component {
               <img src={this.state.image} alt={this.state.playlistName} />
             </div>
           </div>
-
+          <div>
+            <Player />
+          </div>
           <a
             href={this.state.link}
             target="blank_"
