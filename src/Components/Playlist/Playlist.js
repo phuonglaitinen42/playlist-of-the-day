@@ -200,7 +200,7 @@ class Playlist extends Component {
           <input
             class="btn btn-success"
             type="button"
-            value="Get your playlist"
+            value="Generate playlist"
             onClick={() => this.getCall()}
           ></input>
           <div className="playlist-result">
@@ -210,7 +210,12 @@ class Playlist extends Component {
             </div>
           </div>
 
-          <a href={this.state.link} target="blank_" class="btn btn-success">
+          <a
+            href={this.state.link}
+            target="blank_"
+            class="btn btn-success"
+            style={{ textDecoration: "none", color: "white" }}
+          >
             Open Spotify and listen!
           </a>
           <a href="/quiz" class="btn btn-success">
