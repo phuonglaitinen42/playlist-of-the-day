@@ -1,9 +1,10 @@
 import React from "react";
-
-export const authEndpoint = "https://accounts.spotify.com/authorize"; // Replace with your app's client ID, redirect URI and desired scopes
-const clientId = "5a2f9ddd57784db0aab3f4179a994b1f";
-const redirectUri = "http://localhost:8888/callback";
-const scopes = ["user-read-private", "user-read-email"]; // Get the hash of the url
+import {
+  authEndpoint,
+  clientId,
+  redirectUri,
+  scopes,
+} from "../API/quizQuestions/constants";
 
 const Login = () => {
   return (
