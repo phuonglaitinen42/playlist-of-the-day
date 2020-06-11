@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 
+=======
+>>>>>>> dev-branch-3
 import PropTypes from "prop-types";
 import { CSSTransitionGroup } from "react-transition-group";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import Login from "../../Webpages/Login";
+import { GenreDb } from "../../API/quizQuestions/constants";
 
 function Result(props) {
   function refreshPage() {
@@ -18,7 +22,7 @@ function Result(props) {
   const saveGenre = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/result", genre, {
+      .post(GenreDb, genre, {
         headers: { "Content-Type": "application/json" },
       })
       .then((response) => {
@@ -60,7 +64,6 @@ function Result(props) {
           type="submit"
         >
           <Login />
-
         </Button>
 
         <Button
