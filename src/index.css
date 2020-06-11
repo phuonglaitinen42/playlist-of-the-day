@@ -177,13 +177,14 @@ body {
   .question,
   .questionCount {
     padding-left: 10px !important;
+    padding-top: 2px;
   }
   .question-area {
     padding: 0;
-    margin: -10px -30px;
+    margin: 5px -30px;
   }
   .answerOptions {
-    margin: -7px -50px;
+    margin: 4px -50px;
   }
   .answer-render-section {
     position: absolute;
@@ -194,7 +195,7 @@ body {
   .loader p {
     margin: 0 auto;
     margin-left: -100px;
-    margin-right: 60px;
+    margin-right: 90px;
   }
   .result-btn {
     display: grid;
