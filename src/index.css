@@ -38,6 +38,11 @@ body {
   background: rgba(255, 255, 255, 0.5);
   margin: 20px;
 }
+.quiz-render {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
 
 @media (min-width: 769px) {
   .container {
@@ -184,5 +189,37 @@ body {
   }
   .radioCustomLabel {
     padding: 10px;
+  }
+  .loader p {
+    margin-left: -100px;
+    margin-right: 90px;
+  }
+  .result-btn {
+    display: grid;
+    justify-items: center;
+  }
+  .result-btn .btn {
+    margin: 1rem;
+  }
+  .result {
+    display: grid;
+    justify-items: center;
+  }
+}
+@media (min-width: 415px) {
+  .loader p {
+    margin-left: -19rem;
+    width: 70vw;
+  }
+}
+@media (min-width: 1024px) {
+  .loader p {
+    width: 60vw;
+  }
+}
+@media (min-width: 1337px) {
+  .loader p {
+    width: 40vw;
+    margin-left: -25rem;
   }
 }
