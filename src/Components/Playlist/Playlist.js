@@ -1,5 +1,6 @@
 import SpotifyWebApi from "spotify-web-api-js";
 import React, { Component } from "react";
+import Player from "../Player/Player";
 import Axios from "axios";
 import "./Playlist.css";
 import {
@@ -30,19 +31,13 @@ class Playlist extends Component {
     this.state = {
       loggedIn: token ? true : false,
       playlistName: "",
-      displayName: "",  
       link: null,
       image: "",
       // genre: "",
       mygenre: "",
       shareUrl: "",
       title: "",
-      error: "",
-      deviceId: "",
-      artistName:"",
-      playing: false,
-      position: 0,
-      duration: 0,
+      myname: "",
     };
     this.playerCheckInterval = null;
     // this.getGenre = this.getGenre.bind(this);
@@ -71,7 +66,21 @@ class Playlist extends Component {
     return hashParams;
   }
 
- 
+  getName() {
+    spotifyApi
+      .getMe()
+      .then((profile) => {
+        const myname = profile.display_name;
+        this.setState({
+          myname: myname,
+        });
+      })
+
+      .catch((e) => {
+        console.log(e);
+      });
+  }
+
   getCall() {
     console.log(this.state.mygenre);
     if (this.state.mygenre === "Pop/Ballad") {
@@ -99,7 +108,6 @@ class Playlist extends Component {
         const link = response.external_urls.spotify;
         const playlistName = response.name;
         const image = response.images[0].url;
-        const artistName = response.artists;
         console.log(link);
 
         this.setState({
@@ -108,7 +116,6 @@ class Playlist extends Component {
           image: image,
           shareUrl: link,
           title: playlistName,
-          artistName: artistName,
         });
       }
 
@@ -126,7 +133,6 @@ class Playlist extends Component {
       const link = response.external_urls.spotify;
       const playlistName = response.name;
       const image = response.images[0].url;
-      const artistName = response.artists;
 
       console.log(link);
 
@@ -136,7 +142,6 @@ class Playlist extends Component {
         image: image,
         shareUrl: link,
         title: playlistName,
-        artistName: artistName,
       });
     });
   }
@@ -146,7 +151,6 @@ class Playlist extends Component {
       const link = response.external_urls.spotify;
       const playlistName = response.name;
       const image = response.images[0].url;
-      const artistName = response.artists;
 
       console.log(link);
 
@@ -156,7 +160,6 @@ class Playlist extends Component {
         image: image,
         shareUrl: link,
         title: playlistName,
-        artistName: artistName,
       });
     });
   }
@@ -166,7 +169,6 @@ class Playlist extends Component {
       const link = response.external_urls.spotify;
       const playlistName = response.name;
       const image = response.images[0].url;
-      const artistName = response.artists;
 
       console.log(link);
 
@@ -175,8 +177,6 @@ class Playlist extends Component {
         link: link,
         image: image,
         shareUrl: link,
-        title: playlistName,
-        artistName: artistName,
       });
     });
   }
@@ -199,94 +199,8 @@ class Playlist extends Component {
     });
   }
 
-  getName() {
-    spotifyApi
-    .getMe()
-    .then((response) => {
-        console.log(response)
-        const displayName = response.display_name;
-        console.log(displayName);
-        this.setState({
-          displayName: displayName,
-        });
-      })
-    }
-
-
-      checkLogin() {
-        if ({loggedIn: false}) {
-          this.playerCheckInterval = setInterval(() => this.checkForPlayer(), 1000);
-        }
-      }
-
-      checkForPlayer() {
-        if (window.Spotify !== null) {
-          this.player = new window.Spotify.Player({
-            name: "Spotify Player",
-          });
-          this.playerHandler();
-
-          this.player.connect();
-        }
-      }
-
-      playerHandler() {
-        this.player.on('initialization_error', e => { console.error(e); });
-        this.player.on('autentication_error', e => {
-          console.error(e)
-          this.setState({ loggedIn: false });
-        });
-        this.player.on('account_error', e => { console.error(e); });
-        this.player.on('playback_error', e => { console.error(e); } )
-
-        // playback updates
-        this.player.on('player_state_changed', state => this.onStateChanged(state));
-
-        // ready
-        this.player.on('ready', response => {
-          let { device_id } = response;
-          console.log("device ready");
-          this.setState({ deviceId: device_id })
-        });
-      }
-
-      onStateChanged(state) {
-        // no longer listening to music causes a null state.
-        if (state !== null) {
-          const {
-            current_track: currentTrack,
-            position,
-            duration,
-          } = state.track_window;
-          const trackName = currentTrack.name;
-          const albumName = currentTrack.album.name;
-          const artistName = currentTrack.artists
-          .map(artist => artist.name)
-          .join(", ");
-          const playing = !state.paused;
-          this.setState({
-            position,
-            duration,
-            trackName,
-            albumName,
-            artistName,
-            playing
-          });
-        }
-      }
-
-      onPrevClick() {
-        this.player.previousTrack();
-      }
-
-      onPlayClick() {
-        this.player.toggleTrack();
-      }
-
-      onNextClick() {
-        this.player.nextTrack();
-      }
  
+
   // getGenre(e) {
   //   this.setState({
   //     genre: e.target.value,
@@ -308,7 +222,10 @@ class Playlist extends Component {
             <option value="Pop">Pop/Ballad</option>
           </select>
         </label> */}
-          <p> Hey {this.state.displayName}. The music genre that suits your mood today is {this.state.mygenre} </p>
+          <p onChange={this.getName()}>Hey {this.state.myname}! </p>
+
+          <p>Music genre suits your mood today is {this.state.mygenre} </p>
+
           <input
             class="btn btn-success"
             type="button"
@@ -322,14 +239,7 @@ class Playlist extends Component {
             </div>
           </div>
           <div>
-          <p>Artist: {this.state.artistName}</p>
-          <p>Track:{this.state.trackName}</p>
-          <p>Album:{this.state.albumName}</p>
-          <p>
-            <button>previous</button>
-            <button></button>
-            <button>Next</button>
-          </p>
+          <Player />
           </div>
           <a
             href={this.state.link}
