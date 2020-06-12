@@ -15,11 +15,9 @@ class Player extends Component {
     }
     this.state = {
       loggedIn: token ? true : false,
-      playlistName: "",
-      link: null,
-      image: "",
-      error: "",
       deviceId: "",
+      error: "",
+
       artistName: "",
       playing: false,
       position: 0,
