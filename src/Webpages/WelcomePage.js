@@ -14,6 +14,9 @@ const WelcomePage = () => {
       <a href="/quiz" class="btn btn-success">
         Start quiz{" "}
       </a>
+      <a href="/credits" class="btn btn-success">
+        Learn more about the team.
+      </a>
     </div>
   );
 };

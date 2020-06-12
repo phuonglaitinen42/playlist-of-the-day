@@ -228,6 +228,11 @@ class Playlist extends Component {
           <a href="/quiz" class="btn btn-success">
             Start your new playlist of the day!
           </a>
+          <div>
+          <a href="/credits" class="btn btn-success">
+        Learn more about the team.
+      </a>
+          </div>
           <div className="share-btn">
             <p>Share your Playlist of the Day with your friends</p>
             <FacebookShareButton

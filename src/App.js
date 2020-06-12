@@ -6,6 +6,7 @@ import "./App.css";
 import Header from "../src/Components/Header/Header";
 import WelcomePage from "../src/Webpages/WelcomePage";
 import QuizPage from "../src/Webpages/QuizPage";
+import CreditPage from "../src/Webpages/CreditPage";
 import Footer from "../src/Components/Footer/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
@@ -23,6 +24,7 @@ const App = () => {
           </Route>
           <Route path="/quiz" component={QuizPage} />
           <Route path="/playlist" component={Playlist} />
+          <Route path="/credits" component={CreditPage} />
         </Switch>
       </Container>
     </Router>
