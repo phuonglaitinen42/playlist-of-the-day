@@ -1,6 +1,6 @@
 import SpotifyWebApi from "spotify-web-api-js";
 import React, { Component } from "react";
-import Player from "../Player/Player";
+// import Player from "../Player/Player";
 import Axios from "axios";
 import "./Playlist.css";
 import {
@@ -38,6 +38,12 @@ class Playlist extends Component {
       shareUrl: "",
       title: "",
       myname: "",
+      song1: "",
+      song2: "",
+      song3: "",
+      artist1: "",
+      artist2: "",
+      artist3: "",
     };
     this.playerCheckInterval = null;
     // this.getGenre = this.getGenre.bind(this);
@@ -100,7 +106,6 @@ class Playlist extends Component {
     }
   }
 
-
   getJazz() {
     spotifyApi.getPlaylist(JazzID).then(
       (response) => {
@@ -108,6 +113,18 @@ class Playlist extends Component {
         const link = response.external_urls.spotify;
         const playlistName = response.name;
         const image = response.images[0].url;
+        const song1 = response.tracks.items[0].track.name;
+        const artist1 = response.tracks.items[0].track.artists[0].name;
+        const song2 = response.tracks.items[1].track.name;
+        const artist2 = response.tracks.items[1].track.artists[0].name;
+        const song3 = response.tracks.items[2].track.name;
+        const artist3 = response.tracks.items[2].track.artists[0].name;
+        console.log(song1);
+        console.log(artist1);
+        console.log(song2);
+        console.log(artist2);
+        console.log(song3);
+        console.log(artist3);
         console.log(link);
 
         this.setState({
@@ -116,6 +133,12 @@ class Playlist extends Component {
           image: image,
           shareUrl: link,
           title: playlistName,
+          song1: song1,
+          song2: song2,
+          song3: song3,
+          artist1: artist1,
+          artist2: artist2,
+          artist3: artist3,
         });
       }
 
@@ -133,7 +156,18 @@ class Playlist extends Component {
       const link = response.external_urls.spotify;
       const playlistName = response.name;
       const image = response.images[0].url;
-
+      const song1 = response.tracks.items[0].track.name;
+      const artist1 = response.tracks.items[0].track.artists[0].name;
+      const song2 = response.tracks.items[1].track.name;
+      const artist2 = response.tracks.items[1].track.artists[0].name;
+      const song3 = response.tracks.items[2].track.name;
+      const artist3 = response.tracks.items[2].track.artists[0].name;
+      console.log(song1);
+      console.log(artist1);
+      console.log(song2);
+      console.log(artist2);
+      console.log(song3);
+      console.log(artist3);
       console.log(link);
 
       this.setState({
@@ -142,6 +176,12 @@ class Playlist extends Component {
         image: image,
         shareUrl: link,
         title: playlistName,
+        song1: song1,
+        song2: song2,
+        song3: song3,
+        artist1: artist1,
+        artist2: artist2,
+        artist3: artist3,
       });
     });
   }
@@ -151,7 +191,18 @@ class Playlist extends Component {
       const link = response.external_urls.spotify;
       const playlistName = response.name;
       const image = response.images[0].url;
-
+      const song1 = response.tracks.items[0].track.name;
+      const artist1 = response.tracks.items[0].track.artists[0].name;
+      const song2 = response.tracks.items[1].track.name;
+      const artist2 = response.tracks.items[1].track.artists[0].name;
+      const song3 = response.tracks.items[2].track.name;
+      const artist3 = response.tracks.items[2].track.artists[0].name;
+      console.log(song1);
+      console.log(artist1);
+      console.log(song2);
+      console.log(artist2);
+      console.log(song3);
+      console.log(artist3);
       console.log(link);
 
       this.setState({
@@ -160,6 +211,12 @@ class Playlist extends Component {
         image: image,
         shareUrl: link,
         title: playlistName,
+        song1: song1,
+        song2: song2,
+        song3: song3,
+        artist1: artist1,
+        artist2: artist2,
+        artist3: artist3,
       });
     });
   }
@@ -170,13 +227,30 @@ class Playlist extends Component {
       const playlistName = response.name;
       const image = response.images[0].url;
 
+      const song1 = response.tracks.items[0].track.name;
+      const artist1 = response.tracks.items[0].track.artists[0].name;
+      const song2 = response.tracks.items[1].track.name;
+      const artist2 = response.tracks.items[1].track.artists[0].name;
+      const song3 = response.tracks.items[2].track.name;
+      const artist3 = response.tracks.items[2].track.artists[0].name;
+      console.log(song1);
+      console.log(artist1);
+      console.log(song2);
+      console.log(artist2);
+      console.log(song3);
+      console.log(artist3);
       console.log(link);
-
       this.setState({
         playlistName: playlistName,
         link: link,
         image: image,
         shareUrl: link,
+        song1: song1,
+        song2: song2,
+        song3: song3,
+        artist1: artist1,
+        artist2: artist2,
+        artist3: artist3,
       });
     });
   }
@@ -186,20 +260,34 @@ class Playlist extends Component {
       const link = response.external_urls.spotify;
       const playlistName = response.name;
       const image = response.images[0].url;
-
+      const song1 = response.tracks.items[0].track.name;
+      const artist1 = response.tracks.items[0].track.artists[0].name;
+      const song2 = response.tracks.items[1].track.name;
+      const artist2 = response.tracks.items[1].track.artists[0].name;
+      const song3 = response.tracks.items[2].track.name;
+      const artist3 = response.tracks.items[2].track.artists[0].name;
+      console.log(song1);
+      console.log(artist1);
+      console.log(song2);
+      console.log(artist2);
+      console.log(song3);
+      console.log(artist3);
       console.log(link);
-
       this.setState({
         playlistName: playlistName,
         link: link,
         image: image,
         shareUrl: link,
         title: playlistName,
+        song1: song1,
+        song2: song2,
+        song3: song3,
+        artist1: artist1,
+        artist2: artist2,
+        artist3: artist3,
       });
     });
   }
-
- 
 
   // getGenre(e) {
   //   this.setState({
@@ -237,10 +325,22 @@ class Playlist extends Component {
             <div className="playlist-img">
               <img src={this.state.image} alt={this.state.playlistName} />
             </div>
+            <div>
+              Some songs:{" "}
+              <ul>
+                <li>
+                  {this.state.song1} - {this.state.artist1}
+                </li>
+                <li>
+                  {this.state.song2} - {this.state.artist2}
+                </li>
+                <li>
+                  {this.state.song3} - {this.state.artist3}
+                </li>
+              </ul>{" "}
+            </div>
           </div>
-          <div>
-          <Player />
-          </div>
+          <div></div>
           <a
             href={this.state.link}
             target="blank_"
