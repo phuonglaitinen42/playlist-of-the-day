@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
-
-=======
->>>>>>> dev-branch-3
 import PropTypes from "prop-types";
 import { CSSTransitionGroup } from "react-transition-group";
 import Button from "react-bootstrap/Button";

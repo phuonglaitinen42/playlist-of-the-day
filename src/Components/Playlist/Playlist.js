@@ -30,8 +30,7 @@ class Playlist extends Component {
     this.state = {
       loggedIn: token ? true : false,
       playlistName: "",
-      displayName: "",
-      idName: "",      
+      displayName: "",  
       link: null,
       image: "",
       // genre: "",
@@ -41,8 +40,6 @@ class Playlist extends Component {
       error: "",
       deviceId: "",
       artistName:"",
-      trackName:"",
-      albumName:"",
       playing: false,
       position: 0,
       duration: 0,
@@ -75,9 +72,6 @@ class Playlist extends Component {
   }
 
  
-
-
-
   getCall() {
     console.log(this.state.mygenre);
     if (this.state.mygenre === "Pop/Ballad") {
@@ -106,8 +100,6 @@ class Playlist extends Component {
         const playlistName = response.name;
         const image = response.images[0].url;
         const artistName = response.artists;
-        const trackName = response.name;
-        const albumName = response.album.name;
         console.log(link);
 
         this.setState({
@@ -117,8 +109,6 @@ class Playlist extends Component {
           shareUrl: link,
           title: playlistName,
           artistName: artistName,
-          trackName: trackName,
-          albumName: albumName,
         });
       }
 
@@ -137,8 +127,6 @@ class Playlist extends Component {
       const playlistName = response.name;
       const image = response.images[0].url;
       const artistName = response.artists;
-      const trackName = response.name;
-      const albumName = response.album.name;
 
       console.log(link);
 
@@ -149,8 +137,6 @@ class Playlist extends Component {
         shareUrl: link,
         title: playlistName,
         artistName: artistName,
-          trackName: trackName,
-          albumName: albumName,
       });
     });
   }
@@ -161,8 +147,6 @@ class Playlist extends Component {
       const playlistName = response.name;
       const image = response.images[0].url;
       const artistName = response.artists;
-      const trackName = response.name;
-      const albumName = response.album.name;
 
       console.log(link);
 
@@ -173,8 +157,6 @@ class Playlist extends Component {
         shareUrl: link,
         title: playlistName,
         artistName: artistName,
-          trackName: trackName,
-          albumName: albumName,
       });
     });
   }
@@ -185,8 +167,6 @@ class Playlist extends Component {
       const playlistName = response.name;
       const image = response.images[0].url;
       const artistName = response.artists;
-      const trackName = response.name;
-      const albumName = response.album.name;
 
       console.log(link);
 
@@ -197,8 +177,6 @@ class Playlist extends Component {
         shareUrl: link,
         title: playlistName,
         artistName: artistName,
-        trackName: trackName,
-        albumName: albumName,
       });
     });
   }
@@ -221,31 +199,19 @@ class Playlist extends Component {
     });
   }
 
-  getdisplayName() {
-    Axios.get('https://api.spotify.com/v1/users/')
-    .then(
-      (response) => {
+  getName() {
+    spotifyApi
+    .getMe()
+    .then((response) => {
         console.log(response)
         const displayName = response.display_name;
-      
+        console.log(displayName);
         this.setState({
-          displayName: displayName
+          displayName: displayName,
         });
       })
     }
 
-    getidName() {
-      Axios.get('https://api.spotify.com/v1/users/{user_id}')
-      .then(
-        (response) => {
-          console.log(response)
-          const idName = response.id;
-        
-          this.setState({
-            idName: idName
-          });
-        })
-      }
 
       checkLogin() {
         if ({loggedIn: false}) {
@@ -258,6 +224,7 @@ class Playlist extends Component {
           this.player = new window.Spotify.Player({
             name: "Spotify Player",
           });
+          this.playerHandler();
 
           this.player.connect();
         }
@@ -273,7 +240,7 @@ class Playlist extends Component {
         this.player.on('playback_error', e => { console.error(e); } )
 
         // playback updates
-        this.player.on('player_state_changed', state => { console.log(state); })
+        this.player.on('player_state_changed', state => this.onStateChanged(state));
 
         // ready
         this.player.on('ready', response => {
@@ -283,6 +250,42 @@ class Playlist extends Component {
         });
       }
 
+      onStateChanged(state) {
+        // no longer listening to music causes a null state.
+        if (state !== null) {
+          const {
+            current_track: currentTrack,
+            position,
+            duration,
+          } = state.track_window;
+          const trackName = currentTrack.name;
+          const albumName = currentTrack.album.name;
+          const artistName = currentTrack.artists
+          .map(artist => artist.name)
+          .join(", ");
+          const playing = !state.paused;
+          this.setState({
+            position,
+            duration,
+            trackName,
+            albumName,
+            artistName,
+            playing
+          });
+        }
+      }
+
+      onPrevClick() {
+        this.player.previousTrack();
+      }
+
+      onPlayClick() {
+        this.player.toggleTrack();
+      }
+
+      onNextClick() {
+        this.player.nextTrack();
+      }
  
   // getGenre(e) {
   //   this.setState({
@@ -305,7 +308,7 @@ class Playlist extends Component {
             <option value="Pop">Pop/Ballad</option>
           </select>
         </label> */}
-          <p> Hey {this.state.displayName}{this.state.idName}. The music genre that suits your mood today is {this.state.mygenre} </p>
+          <p> Hey {this.state.displayName}. The music genre that suits your mood today is {this.state.mygenre} </p>
           <input
             class="btn btn-success"
             type="button"
@@ -322,6 +325,11 @@ class Playlist extends Component {
           <p>Artist: {this.state.artistName}</p>
           <p>Track:{this.state.trackName}</p>
           <p>Album:{this.state.albumName}</p>
+          <p>
+            <button>previous</button>
+            <button></button>
+            <button>Next</button>
+          </p>
           </div>
           <a
             href={this.state.link}
