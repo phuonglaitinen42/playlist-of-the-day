@@ -8,7 +8,18 @@ import {
   FacebookIcon,
   TwitterIcon,
 } from "react-share";
+
 // import Share from "../Share/Share";
+
+import {
+  GenreDb,
+  JazzID,
+  PopID,
+  RockID,
+  MetalID,
+  MixedID,
+} from "../../API/quizQuestions/constants";
+
 const spotifyApi = new SpotifyWebApi();
 
 class Playlist extends Component {
@@ -39,7 +50,7 @@ class Playlist extends Component {
     const resultId = localStorage.getItem("resultId");
     console.log(resultId);
 
-    Axios.get("http://localhost:3001/result/" + resultId).then((response) => {
+    Axios.get(GenreDb + resultId).then((response) => {
       const mygenre = response.data.genre;
       this.setState({ mygenre });
     });
@@ -94,7 +105,7 @@ class Playlist extends Component {
   }
 
   getJazz() {
-    spotifyApi.getPlaylist("7pBWAhZGgqo3q1w672FoKl").then(
+    spotifyApi.getPlaylist(JazzID).then(
       (response) => {
         console.log(response);
         const link = response.external_urls.spotify;
@@ -120,7 +131,7 @@ class Playlist extends Component {
     );
   }
   getPop() {
-    spotifyApi.getPlaylist("37i9dQZF1DXaPCIWxzZwR1").then((response) => {
+    spotifyApi.getPlaylist(PopID).then((response) => {
       console.log(response);
       const link = response.external_urls.spotify;
       const playlistName = response.name;
@@ -138,7 +149,7 @@ class Playlist extends Component {
     });
   }
   getRock() {
-    spotifyApi.getPlaylist("37i9dQZF1DXcF6B6QPhFDv").then((response) => {
+    spotifyApi.getPlaylist(RockID).then((response) => {
       console.log(response);
       const link = response.external_urls.spotify;
       const playlistName = response.name;
@@ -156,7 +167,7 @@ class Playlist extends Component {
     });
   }
   getMetal() {
-    spotifyApi.getPlaylist("37i9dQZF1DWTcqUzwhNmKv").then((response) => {
+    spotifyApi.getPlaylist(MetalID).then((response) => {
       console.log(response);
       const link = response.external_urls.spotify;
       const playlistName = response.name;
@@ -174,7 +185,7 @@ class Playlist extends Component {
     });
   }
   getMix() {
-    spotifyApi.getPlaylist("37i9dQZF1DXdxcBWuJkbcy").then((response) => {
+    spotifyApi.getPlaylist(MixedID).then((response) => {
       console.log(response);
       const link = response.external_urls.spotify;
       const playlistName = response.name;
