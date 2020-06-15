@@ -19,6 +19,10 @@
   display: grid;
   justify-items: center;
 }
+.playlist-player {
+  display: grid;
+  justify-items: center;
+}
 .playlist-img img {
   background-size: contain;
 }

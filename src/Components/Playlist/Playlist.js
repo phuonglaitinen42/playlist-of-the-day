@@ -1,3 +1,4 @@
+import SpotifyPlayer from "react-spotify-player";
 import SpotifyWebApi from "spotify-web-api-js";
 import React, { Component } from "react";
 // import Player from "../Player/Player";
@@ -11,11 +12,11 @@ import {
 } from "react-share";
 import {
   GenreDb,
-  JazzID,
-  PopID,
-  RockID,
-  MetalID,
-  MixedID,
+  // JazzID,
+  // PopID,
+  // RockID,
+  // MetalID,
+  // MixedID,
 } from "../../API/quizQuestions/constants";
 const spotifyApi = new SpotifyWebApi();
 
@@ -35,15 +36,16 @@ class Playlist extends Component {
       image: "",
       // genre: "",
       mygenre: "",
+      player: "",
       shareUrl: "",
       title: "",
       myname: "",
-      song1: "",
-      song2: "",
-      song3: "",
-      artist1: "",
-      artist2: "",
-      artist3: "",
+      // song1: "",
+      // song2: "",
+      // song3: "",
+      // artist1: "",
+      // artist2: "",
+      // artist3: "",
     };
     this.playerCheckInterval = null;
     // this.getGenre = this.getGenre.bind(this);
@@ -87,206 +89,234 @@ class Playlist extends Component {
       });
   }
 
-  getCall() {
-    console.log(this.state.mygenre);
+  // getCall() {
+  //   console.log(this.state.mygenre);
+  //   if (this.state.mygenre === "Pop/Ballad") {
+  //     return this.getPop();
+  //   }
+  //   if (this.state.mygenre === "Jazz") {
+  //     return this.getJazz();
+  //   }
+  //   if (this.state.mygenre === "Metal") {
+  //     return this.getMetal();
+  //   }
+  //   if (this.state.mygenre === "Progressive Rock") {
+  //     return this.getRock();
+  //   }
+  //   if (this.state.mygenre === "Mixed") {
+  //     return this.getMix();
+  //   }
+  // }
+
+  // getJazz() {
+  //   spotifyApi.getPlaylist(JazzID).then(
+  //     (response) => {
+  //       console.log(response);
+  //       const link = response.external_urls.spotify;
+  //       const playlistName = response.name;
+  //       const image = response.images[0].url;
+  //       const song1 = response.tracks.items[0].track.name;
+  //       const artist1 = response.tracks.items[0].track.artists[0].name;
+  //       const song2 = response.tracks.items[1].track.name;
+  //       const artist2 = response.tracks.items[1].track.artists[0].name;
+  //       const song3 = response.tracks.items[2].track.name;
+  //       const artist3 = response.tracks.items[2].track.artists[0].name;
+  //       console.log(song1);
+  //       console.log(artist1);
+  //       console.log(song2);
+  //       console.log(artist2);
+  //       console.log(song3);
+  //       console.log(artist3);
+  //       console.log(link);
+
+  //       this.setState({
+  //         playlistName: playlistName,
+  //         link: link,
+  //         image: image,
+  //         shareUrl: link,
+  //         title: playlistName,
+  //         song1: song1,
+  //         song2: song2,
+  //         song3: song3,
+  //         artist1: artist1,
+  //         artist2: artist2,
+  //         artist3: artist3,
+  //       });
+  //     }
+
+  //     // function (data) {
+  //     //   console.log(data.playlists.items[0].uri);
+  //     // },
+  //     // function (err) {
+  //     //   console.error(err);
+  //     // }
+  //   );
+  // }
+  // getPop() {
+  //   spotifyApi.getPlaylist(PopID).then((response) => {
+  //     console.log(response);
+  //     const link = response.external_urls.spotify;
+  //     const playlistName = response.name;
+  //     const image = response.images[0].url;
+  //     const song1 = response.tracks.items[0].track.name;
+  //     const artist1 = response.tracks.items[0].track.artists[0].name;
+  //     const song2 = response.tracks.items[1].track.name;
+  //     const artist2 = response.tracks.items[1].track.artists[0].name;
+  //     const song3 = response.tracks.items[2].track.name;
+  //     const artist3 = response.tracks.items[2].track.artists[0].name;
+  //     console.log(song1);
+  //     console.log(artist1);
+  //     console.log(song2);
+  //     console.log(artist2);
+  //     console.log(song3);
+  //     console.log(artist3);
+  //     console.log(link);
+
+  //     this.setState({
+  //       playlistName: playlistName,
+  //       link: link,
+  //       image: image,
+  //       shareUrl: link,
+  //       title: playlistName,
+  //       song1: song1,
+  //       song2: song2,
+  //       song3: song3,
+  //       artist1: artist1,
+  //       artist2: artist2,
+  //       artist3: artist3,
+  //     });
+  //   });
+  // }
+  // getRock() {
+  //   spotifyApi.getPlaylist(RockID).then((response) => {
+  //     console.log(response);
+  //     const link = response.external_urls.spotify;
+  //     const playlistName = response.name;
+  //     const image = response.images[0].url;
+  //     const song1 = response.tracks.items[0].track.name;
+  //     const artist1 = response.tracks.items[0].track.artists[0].name;
+  //     const song2 = response.tracks.items[1].track.name;
+  //     const artist2 = response.tracks.items[1].track.artists[0].name;
+  //     const song3 = response.tracks.items[2].track.name;
+  //     const artist3 = response.tracks.items[2].track.artists[0].name;
+  //     console.log(song1);
+  //     console.log(artist1);
+  //     console.log(song2);
+  //     console.log(artist2);
+  //     console.log(song3);
+  //     console.log(artist3);
+  //     console.log(link);
+
+  //     this.setState({
+  //       playlistName: playlistName,
+  //       link: link,
+  //       image: image,
+  //       shareUrl: link,
+  //       title: playlistName,
+  //       song1: song1,
+  //       song2: song2,
+  //       song3: song3,
+  //       artist1: artist1,
+  //       artist2: artist2,
+  //       artist3: artist3,
+  //     });
+  //   });
+  // }
+  // getMetal() {
+  //   spotifyApi.getPlaylist(MetalID).then((response) => {
+  //     console.log(response);
+  //     const link = response.external_urls.spotify;
+  //     const playlistName = response.name;
+  //     const image = response.images[0].url;
+
+  //     const song1 = response.tracks.items[0].track.name;
+  //     const artist1 = response.tracks.items[0].track.artists[0].name;
+  //     const song2 = response.tracks.items[1].track.name;
+  //     const artist2 = response.tracks.items[1].track.artists[0].name;
+  //     const song3 = response.tracks.items[2].track.name;
+  //     const artist3 = response.tracks.items[2].track.artists[0].name;
+  //     console.log(song1);
+  //     console.log(artist1);
+  //     console.log(song2);
+  //     console.log(artist2);
+  //     console.log(song3);
+  //     console.log(artist3);
+  //     console.log(link);
+  //     this.setState({
+  //       playlistName: playlistName,
+  //       link: link,
+  //       image: image,
+  //       shareUrl: link,
+  //       song1: song1,
+  //       song2: song2,
+  //       song3: song3,
+  //       artist1: artist1,
+  //       artist2: artist2,
+  //       artist3: artist3,
+  //     });
+  //   });
+  // }
+  // getMix() {
+  //   spotifyApi.getPlaylist(MixedID).then((response) => {
+  //     console.log(response);
+  //     const link = response.external_urls.spotify;
+  //     const playlistName = response.name;
+  //     const image = response.images[0].url;
+  //     const song1 = response.tracks.items[0].track.name;
+  //     const artist1 = response.tracks.items[0].track.artists[0].name;
+  //     const song2 = response.tracks.items[1].track.name;
+  //     const artist2 = response.tracks.items[1].track.artists[0].name;
+  //     const song3 = response.tracks.items[2].track.name;
+  //     const artist3 = response.tracks.items[2].track.artists[0].name;
+  //     console.log(song1);
+  //     console.log(artist1);
+  //     console.log(song2);
+  //     console.log(artist2);
+  //     console.log(song3);
+  //     console.log(artist3);
+  //     console.log(link);
+  //     this.setState({
+  //       playlistName: playlistName,
+  //       link: link,
+  //       image: image,
+  //       shareUrl: link,
+  //       title: playlistName,
+  //       song1: song1,
+  //       song2: song2,
+  //       song3: song3,
+  //       artist1: artist1,
+  //       artist2: artist2,
+  //       artist3: artist3,
+  //     });
+  //   });
+  // }
+  getPlayer() {
     if (this.state.mygenre === "Pop/Ballad") {
-      return this.getPop();
+      this.setState({
+        player: "spotify:playlist:37i9dQZF1DXaPCIWxzZwR1",
+      });
     }
+
     if (this.state.mygenre === "Jazz") {
-      return this.getJazz();
+      this.setState({
+        player: "spotify:playlist:7pBWAhZGgqo3q1w672FoKl",
+      });
     }
     if (this.state.mygenre === "Metal") {
-      return this.getMetal();
+      this.setState({
+        player: "spotify:playlist:37i9dQZF1DWTcqUzwhNmKv",
+      });
     }
     if (this.state.mygenre === "Progressive Rock") {
-      return this.getRock();
+      this.setState({
+        player: "spotify:playlist:37i9dQZF1DXcF6B6QPhFDv",
+      });
     }
     if (this.state.mygenre === "Mixed") {
-      return this.getMix();
+      this.setState({
+        player: "spotify:playlist:37i9dQZF1DXdxcBWuJkbcy",
+      });
     }
-  }
-
-  getJazz() {
-    spotifyApi.getPlaylist(JazzID).then(
-      (response) => {
-        console.log(response);
-        const link = response.external_urls.spotify;
-        const playlistName = response.name;
-        const image = response.images[0].url;
-        const song1 = response.tracks.items[0].track.name;
-        const artist1 = response.tracks.items[0].track.artists[0].name;
-        const song2 = response.tracks.items[1].track.name;
-        const artist2 = response.tracks.items[1].track.artists[0].name;
-        const song3 = response.tracks.items[2].track.name;
-        const artist3 = response.tracks.items[2].track.artists[0].name;
-        console.log(song1);
-        console.log(artist1);
-        console.log(song2);
-        console.log(artist2);
-        console.log(song3);
-        console.log(artist3);
-        console.log(link);
-
-        this.setState({
-          playlistName: playlistName,
-          link: link,
-          image: image,
-          shareUrl: link,
-          title: playlistName,
-          song1: song1,
-          song2: song2,
-          song3: song3,
-          artist1: artist1,
-          artist2: artist2,
-          artist3: artist3,
-        });
-      }
-
-      // function (data) {
-      //   console.log(data.playlists.items[0].uri);
-      // },
-      // function (err) {
-      //   console.error(err);
-      // }
-    );
-  }
-  getPop() {
-    spotifyApi.getPlaylist(PopID).then((response) => {
-      console.log(response);
-      const link = response.external_urls.spotify;
-      const playlistName = response.name;
-      const image = response.images[0].url;
-      const song1 = response.tracks.items[0].track.name;
-      const artist1 = response.tracks.items[0].track.artists[0].name;
-      const song2 = response.tracks.items[1].track.name;
-      const artist2 = response.tracks.items[1].track.artists[0].name;
-      const song3 = response.tracks.items[2].track.name;
-      const artist3 = response.tracks.items[2].track.artists[0].name;
-      console.log(song1);
-      console.log(artist1);
-      console.log(song2);
-      console.log(artist2);
-      console.log(song3);
-      console.log(artist3);
-      console.log(link);
-
-      this.setState({
-        playlistName: playlistName,
-        link: link,
-        image: image,
-        shareUrl: link,
-        title: playlistName,
-        song1: song1,
-        song2: song2,
-        song3: song3,
-        artist1: artist1,
-        artist2: artist2,
-        artist3: artist3,
-      });
-    });
-  }
-  getRock() {
-    spotifyApi.getPlaylist(RockID).then((response) => {
-      console.log(response);
-      const link = response.external_urls.spotify;
-      const playlistName = response.name;
-      const image = response.images[0].url;
-      const song1 = response.tracks.items[0].track.name;
-      const artist1 = response.tracks.items[0].track.artists[0].name;
-      const song2 = response.tracks.items[1].track.name;
-      const artist2 = response.tracks.items[1].track.artists[0].name;
-      const song3 = response.tracks.items[2].track.name;
-      const artist3 = response.tracks.items[2].track.artists[0].name;
-      console.log(song1);
-      console.log(artist1);
-      console.log(song2);
-      console.log(artist2);
-      console.log(song3);
-      console.log(artist3);
-      console.log(link);
-
-      this.setState({
-        playlistName: playlistName,
-        link: link,
-        image: image,
-        shareUrl: link,
-        title: playlistName,
-        song1: song1,
-        song2: song2,
-        song3: song3,
-        artist1: artist1,
-        artist2: artist2,
-        artist3: artist3,
-      });
-    });
-  }
-  getMetal() {
-    spotifyApi.getPlaylist(MetalID).then((response) => {
-      console.log(response);
-      const link = response.external_urls.spotify;
-      const playlistName = response.name;
-      const image = response.images[0].url;
-
-      const song1 = response.tracks.items[0].track.name;
-      const artist1 = response.tracks.items[0].track.artists[0].name;
-      const song2 = response.tracks.items[1].track.name;
-      const artist2 = response.tracks.items[1].track.artists[0].name;
-      const song3 = response.tracks.items[2].track.name;
-      const artist3 = response.tracks.items[2].track.artists[0].name;
-      console.log(song1);
-      console.log(artist1);
-      console.log(song2);
-      console.log(artist2);
-      console.log(song3);
-      console.log(artist3);
-      console.log(link);
-      this.setState({
-        playlistName: playlistName,
-        link: link,
-        image: image,
-        shareUrl: link,
-        song1: song1,
-        song2: song2,
-        song3: song3,
-        artist1: artist1,
-        artist2: artist2,
-        artist3: artist3,
-      });
-    });
-  }
-  getMix() {
-    spotifyApi.getPlaylist(MixedID).then((response) => {
-      console.log(response);
-      const link = response.external_urls.spotify;
-      const playlistName = response.name;
-      const image = response.images[0].url;
-      const song1 = response.tracks.items[0].track.name;
-      const artist1 = response.tracks.items[0].track.artists[0].name;
-      const song2 = response.tracks.items[1].track.name;
-      const artist2 = response.tracks.items[1].track.artists[0].name;
-      const song3 = response.tracks.items[2].track.name;
-      const artist3 = response.tracks.items[2].track.artists[0].name;
-      console.log(song1);
-      console.log(artist1);
-      console.log(song2);
-      console.log(artist2);
-      console.log(song3);
-      console.log(artist3);
-      console.log(link);
-      this.setState({
-        playlistName: playlistName,
-        link: link,
-        image: image,
-        shareUrl: link,
-        title: playlistName,
-        song1: song1,
-        song2: song2,
-        song3: song3,
-        artist1: artist1,
-        artist2: artist2,
-        artist3: artist3,
-      });
-    });
   }
 
   // getGenre(e) {
@@ -318,10 +348,10 @@ class Playlist extends Component {
             class="btn btn-success"
             type="button"
             value="Generate playlist"
-            onClick={() => this.getCall()}
+            onClick={() => this.getPlayer()}
           ></input>
           <div className="playlist-result">
-            Your playlist of the day is: {this.state.playlistName}
+            {/* Your playlist of the day is: {this.state.playlistName}
             <div className="playlist-img">
               <img src={this.state.image} alt={this.state.playlistName} />
             </div>
@@ -338,17 +368,19 @@ class Playlist extends Component {
                   {this.state.song3} - {this.state.artist3}
                 </li>
               </ul>{" "}
+            </div> */}
+            <div className="playlist-player">
+              <SpotifyPlayer uri={this.state.player} />
             </div>
           </div>
-          <div></div>
-          <a
+          {/* <a
             href={this.state.link}
             target="blank_"
             class="btn btn-success"
             style={{ textDecoration: "none", color: "white" }}
           >
             Open Spotify and listen!
-          </a>
+          </a> */}
           <a href="/quiz" class="btn btn-success">
             Start your new playlist of the day!
           </a>
