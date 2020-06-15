@@ -8,6 +8,9 @@ import {
   FacebookIcon,
   TwitterIcon,
 } from "react-share";
+
+// import Share from "../Share/Share";
+
 import {
   GenreDb,
   JazzID,
@@ -16,6 +19,7 @@ import {
   MetalID,
   MixedID,
 } from "../../API/quizQuestions/constants";
+
 const spotifyApi = new SpotifyWebApi();
 
 class Playlist extends Component {
@@ -36,6 +40,7 @@ class Playlist extends Component {
       mygenre: "",
       shareUrl: "",
       title: "",
+      myName: "",
     };
 
     // this.getGenre = this.getGenre.bind(this);
@@ -62,6 +67,22 @@ class Playlist extends Component {
       e = r.exec(q);
     }
     return hashParams;
+  }
+
+  getName() {
+    spotifyApi
+      .getMe()
+      .then((profile) => {
+        const myname = profile.display_name;
+        console.log(myname);
+        this.setState({
+          myName: myname,
+        });
+      })
+
+      .catch((e) => {
+        console.log(e);
+      });
   }
 
   getCall() {
@@ -202,6 +223,8 @@ class Playlist extends Component {
             <option value="Pop">Pop/Ballad</option>
           </select>
         </label> */}
+          <p onChange={this.getName()}>Welcome back {this.state.myName}! </p>
+
           <p>Music genre suits your mood today is {this.state.mygenre} </p>
 
           <input
