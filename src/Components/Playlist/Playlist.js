@@ -23,6 +23,19 @@ import {
 
 const spotifyApi = new SpotifyWebApi();
 
+function ShowPlayer (props) {
+  if (!props.show) {
+    return null;
+  }
+
+  return (
+    <div className="playlist-player">
+              <SpotifyPlayer uri={this.state.player} />
+            </div>
+  );
+}
+
+
 class Playlist extends Component {
   constructor(props) {
     super(props);
@@ -43,6 +56,7 @@ class Playlist extends Component {
       shareUrl: "",
       title: "",
       myname: "",
+      showplayer: "false",
       // song1: "",
       // song2: "",
       // song3: "",
@@ -118,6 +132,9 @@ class Playlist extends Component {
         player: "spotify:playlist:37i9dQZF1DXdxcBWuJkbcy",
       });
     }
+    this.setState(state => ({
+      showplayer: !state.showplayer
+    }))
   }
 
   // getGenre(e) {
@@ -128,6 +145,8 @@ class Playlist extends Component {
   // }
 
   render() {
+   
+
     return (
       <div className="playlist-bg">
         <div className="playlist-render">
@@ -145,12 +164,14 @@ class Playlist extends Component {
 
           <p>Music genre suits your mood today is {this.state.mygenre} </p>
 
+          <ShowPlayer show={this.state.showplayer} />
           <input
             className="btn btn-success"
             type="button"
             value="Generate playlist"
             onClick={() => this.getPlayer()}
-          ></input>
+          >
+           </input>
           <div className="playlist-result">
             {/* Your playlist of the day is: {this.state.playlistName}
             <div className="playlist-img">
@@ -170,9 +191,7 @@ class Playlist extends Component {
                 </li>
               </ul>{" "}
             </div> */}
-            <div className="playlist-player">
-              <SpotifyPlayer uri={this.state.player} />
-            </div>
+            {this.state.showplayer ? 'Hide' : 'Show'}
           </div>
           {/* <a
             href={this.state.link}
@@ -182,9 +201,16 @@ class Playlist extends Component {
           >
             Open Spotify and listen!
           </a> */}
+          <div>
           <a href="/quiz" className="btn btn-success">
-            Start your new playlist of the day!
+            Replay?!
           </a>
+          </div>
+          <div>
+          <a href="/credits" className="btn btn-success">
+        Learn more about the team behind the game.
+      </a>
+          </div>
           <div className="share-btn">
             <p>Share your Playlist of the Day with your friends</p>
             <FacebookShareButton
