@@ -150,7 +150,6 @@ body {
   box-shadow: 0px 0px 3px 1px #ccc;
 }
 
-
 .t-card-info {
   margin-top: 1rem;
   min-height: 100px;
@@ -160,6 +159,27 @@ body {
   font-size: 14px;
   margin: 0px;
 }
+
+.t-card-link {
+  margin: 0.5rem;
+  padding: 1rem;
+  
+}
+
+.t-card-profile {
+  font-size: 12px;
+  margin: 0.5rem;
+}
+
+.t-card-link {
+  font-size: 30px;
+}
+
+.t-card-btn {
+  margin: 1rem;
+  position: bottom;
+}
+
 
 /* Animation */
 

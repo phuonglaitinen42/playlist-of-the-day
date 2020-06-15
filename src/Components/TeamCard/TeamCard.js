@@ -7,20 +7,17 @@ function TeamCard(props) {
 
     return (
         <div className="d-inline-block t-card">
-            <TeamInfo
-                name={props.item.name} />
-            <img className="t-card-img" src={props.item.mainImgSrc} alt={props.item.mainImgSrc} />
-            <Button onClick={(e => props.click(props.item))}>Learn more</Button>
+            <h3>{props.item.name}</h3>
+            <img className="t-card-img" src={props.item.imgSrc} alt={props.item.imgSrc} />
             {props.item.selected && 
             <TeamInfo
-            name={props.item.name}
-            altImgSrc={props.item.altImgSrc}
+            imgSrc={props.item.imgSrc}
             title={props.item.title}
-            profile={props.item.profile}
             github={props.item.github } 
             linkedIn={props.item.linkedIn}
             playlist={props.item.playlist}
              />}
+             <Button variant="info outline-primary" size="sm" className="t-card-btn" onClick={(e) => props.click(props.item)}>Learn more</Button>
         </div>
     )
 }
