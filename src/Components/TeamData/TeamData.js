@@ -12,7 +12,7 @@ const teamdata = [
                 {
                     id: 1,
                     title: "Vy Pham",
-                    subtitle: "Full Stack Superstar, UI/UX Architecht",
+                    subtitle: "Full Stack Superstar, UI/UX Architect",
                     profile:"Hi, I'm student at HBC building skills to become full-stack developer. My current repositories are for learning and testing. Everything starts with baby steps!",
                     imgSrc: "https://i.imgur.com/PqhMnwf.jpg",
                     github: "https://github.com/phamhavy171/",
