@@ -18,6 +18,10 @@ import {
   // MetalID,
   // MixedID,
 } from "../../API/quizQuestions/constants";
+
+
+// import Share from "../Share/Share";
+
 const spotifyApi = new SpotifyWebApi();
 
 class Playlist extends Component {
@@ -46,6 +50,7 @@ class Playlist extends Component {
       // artist1: "",
       // artist2: "",
       // artist3: "",
+
     };
     this.playerCheckInterval = null;
     // this.getGenre = this.getGenre.bind(this);
@@ -79,8 +84,9 @@ class Playlist extends Component {
       .getMe()
       .then((profile) => {
         const myname = profile.display_name;
+        console.log(myname);
         this.setState({
-          myname: myname,
+          myName: myname,
         });
       })
 
@@ -88,216 +94,14 @@ class Playlist extends Component {
         console.log(e);
       });
   }
-
-  // getCall() {
-  //   console.log(this.state.mygenre);
-  //   if (this.state.mygenre === "Pop/Ballad") {
-  //     return this.getPop();
-  //   }
-  //   if (this.state.mygenre === "Jazz") {
-  //     return this.getJazz();
-  //   }
-  //   if (this.state.mygenre === "Metal") {
-  //     return this.getMetal();
-  //   }
-  //   if (this.state.mygenre === "Progressive Rock") {
-  //     return this.getRock();
-  //   }
-  //   if (this.state.mygenre === "Mixed") {
-  //     return this.getMix();
-  //   }
-  // }
-
-  // getJazz() {
-  //   spotifyApi.getPlaylist(JazzID).then(
-  //     (response) => {
-  //       console.log(response);
-  //       const link = response.external_urls.spotify;
-  //       const playlistName = response.name;
-  //       const image = response.images[0].url;
-  //       const song1 = response.tracks.items[0].track.name;
-  //       const artist1 = response.tracks.items[0].track.artists[0].name;
-  //       const song2 = response.tracks.items[1].track.name;
-  //       const artist2 = response.tracks.items[1].track.artists[0].name;
-  //       const song3 = response.tracks.items[2].track.name;
-  //       const artist3 = response.tracks.items[2].track.artists[0].name;
-  //       console.log(song1);
-  //       console.log(artist1);
-  //       console.log(song2);
-  //       console.log(artist2);
-  //       console.log(song3);
-  //       console.log(artist3);
-  //       console.log(link);
-
-  //       this.setState({
-  //         playlistName: playlistName,
-  //         link: link,
-  //         image: image,
-  //         shareUrl: link,
-  //         title: playlistName,
-  //         song1: song1,
-  //         song2: song2,
-  //         song3: song3,
-  //         artist1: artist1,
-  //         artist2: artist2,
-  //         artist3: artist3,
-  //       });
-  //     }
-
-  //     // function (data) {
-  //     //   console.log(data.playlists.items[0].uri);
-  //     // },
-  //     // function (err) {
-  //     //   console.error(err);
-  //     // }
-  //   );
-  // }
-  // getPop() {
-  //   spotifyApi.getPlaylist(PopID).then((response) => {
-  //     console.log(response);
-  //     const link = response.external_urls.spotify;
-  //     const playlistName = response.name;
-  //     const image = response.images[0].url;
-  //     const song1 = response.tracks.items[0].track.name;
-  //     const artist1 = response.tracks.items[0].track.artists[0].name;
-  //     const song2 = response.tracks.items[1].track.name;
-  //     const artist2 = response.tracks.items[1].track.artists[0].name;
-  //     const song3 = response.tracks.items[2].track.name;
-  //     const artist3 = response.tracks.items[2].track.artists[0].name;
-  //     console.log(song1);
-  //     console.log(artist1);
-  //     console.log(song2);
-  //     console.log(artist2);
-  //     console.log(song3);
-  //     console.log(artist3);
-  //     console.log(link);
-
-  //     this.setState({
-  //       playlistName: playlistName,
-  //       link: link,
-  //       image: image,
-  //       shareUrl: link,
-  //       title: playlistName,
-  //       song1: song1,
-  //       song2: song2,
-  //       song3: song3,
-  //       artist1: artist1,
-  //       artist2: artist2,
-  //       artist3: artist3,
-  //     });
-  //   });
-  // }
-  // getRock() {
-  //   spotifyApi.getPlaylist(RockID).then((response) => {
-  //     console.log(response);
-  //     const link = response.external_urls.spotify;
-  //     const playlistName = response.name;
-  //     const image = response.images[0].url;
-  //     const song1 = response.tracks.items[0].track.name;
-  //     const artist1 = response.tracks.items[0].track.artists[0].name;
-  //     const song2 = response.tracks.items[1].track.name;
-  //     const artist2 = response.tracks.items[1].track.artists[0].name;
-  //     const song3 = response.tracks.items[2].track.name;
-  //     const artist3 = response.tracks.items[2].track.artists[0].name;
-  //     console.log(song1);
-  //     console.log(artist1);
-  //     console.log(song2);
-  //     console.log(artist2);
-  //     console.log(song3);
-  //     console.log(artist3);
-  //     console.log(link);
-
-  //     this.setState({
-  //       playlistName: playlistName,
-  //       link: link,
-  //       image: image,
-  //       shareUrl: link,
-  //       title: playlistName,
-  //       song1: song1,
-  //       song2: song2,
-  //       song3: song3,
-  //       artist1: artist1,
-  //       artist2: artist2,
-  //       artist3: artist3,
-  //     });
-  //   });
-  // }
-  // getMetal() {
-  //   spotifyApi.getPlaylist(MetalID).then((response) => {
-  //     console.log(response);
-  //     const link = response.external_urls.spotify;
-  //     const playlistName = response.name;
-  //     const image = response.images[0].url;
-
-  //     const song1 = response.tracks.items[0].track.name;
-  //     const artist1 = response.tracks.items[0].track.artists[0].name;
-  //     const song2 = response.tracks.items[1].track.name;
-  //     const artist2 = response.tracks.items[1].track.artists[0].name;
-  //     const song3 = response.tracks.items[2].track.name;
-  //     const artist3 = response.tracks.items[2].track.artists[0].name;
-  //     console.log(song1);
-  //     console.log(artist1);
-  //     console.log(song2);
-  //     console.log(artist2);
-  //     console.log(song3);
-  //     console.log(artist3);
-  //     console.log(link);
-  //     this.setState({
-  //       playlistName: playlistName,
-  //       link: link,
-  //       image: image,
-  //       shareUrl: link,
-  //       song1: song1,
-  //       song2: song2,
-  //       song3: song3,
-  //       artist1: artist1,
-  //       artist2: artist2,
-  //       artist3: artist3,
-  //     });
-  //   });
-  // }
-  // getMix() {
-  //   spotifyApi.getPlaylist(MixedID).then((response) => {
-  //     console.log(response);
-  //     const link = response.external_urls.spotify;
-  //     const playlistName = response.name;
-  //     const image = response.images[0].url;
-  //     const song1 = response.tracks.items[0].track.name;
-  //     const artist1 = response.tracks.items[0].track.artists[0].name;
-  //     const song2 = response.tracks.items[1].track.name;
-  //     const artist2 = response.tracks.items[1].track.artists[0].name;
-  //     const song3 = response.tracks.items[2].track.name;
-  //     const artist3 = response.tracks.items[2].track.artists[0].name;
-  //     console.log(song1);
-  //     console.log(artist1);
-  //     console.log(song2);
-  //     console.log(artist2);
-  //     console.log(song3);
-  //     console.log(artist3);
-  //     console.log(link);
-  //     this.setState({
-  //       playlistName: playlistName,
-  //       link: link,
-  //       image: image,
-  //       shareUrl: link,
-  //       title: playlistName,
-  //       song1: song1,
-  //       song2: song2,
-  //       song3: song3,
-  //       artist1: artist1,
-  //       artist2: artist2,
-  //       artist3: artist3,
-  //     });
-  //   });
-  // }
+  
   getPlayer() {
     if (this.state.mygenre === "Pop/Ballad") {
       this.setState({
         player: "spotify:playlist:37i9dQZF1DXaPCIWxzZwR1",
       });
     }
-
-    if (this.state.mygenre === "Jazz") {
+     if (this.state.mygenre === "Jazz") {
       this.setState({
         player: "spotify:playlist:7pBWAhZGgqo3q1w672FoKl",
       });
