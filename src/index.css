@@ -140,11 +140,11 @@ body {
 /* Team cards and carousel.  */
 
 .t-card {
-  margin: 20px
+  margin: 2rem;
 }
 
 .t-card-img {
-  border-radius: 10px;
+  border-radius: 1rem;
   width: auto;
   height: 250px;
   box-shadow: 0px 0px 3px 1px #ccc;
@@ -152,7 +152,7 @@ body {
 
 
 .t-card-info {
-  margin-top: 10px;
+  margin-top: 1rem;
   min-height: 100px;
 }
 
