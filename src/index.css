@@ -137,7 +137,8 @@ body {
   border-color: #8bc53f;
 }
 
-/* Team cards and carousel.  */
+
+/* Team cards, carousel and link to the page itself.  */
 
 .t-card {
   margin: 2rem;
@@ -156,15 +157,10 @@ body {
 }
 
 .t-card-title {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0px;
 }
 
-.t-card-link {
-  margin: 0.5rem;
-  padding: 1rem;
-  
-}
 
 .t-card-profile {
   font-size: 12px;
@@ -172,7 +168,9 @@ body {
 }
 
 .t-card-link {
-  font-size: 30px;
+  margin: 0.3rem;
+  padding: 0.3rem;
+  font-size: 14px;
 }
 
 .t-card-btn {

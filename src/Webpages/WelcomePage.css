@@ -1,6 +1,7 @@
 .App-header p {
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
   padding: 2rem;
   font-weight: bold;
+  font-size: 1.2rem;
 }

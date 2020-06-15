@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./WelcomePage.css";
 
 const WelcomePage = () => {
@@ -13,9 +14,6 @@ const WelcomePage = () => {
       </p>
       <a href="/quiz" class="btn btn-success">
         Start quiz{" "}
-      </a>
-      <a href="/credits" class="btn btn-success">
-        Learn more about the team.
       </a>
     </div>
   );

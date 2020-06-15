@@ -1,26 +1,56 @@
 import React from 'react';
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import {
+    useRouteMatch,
+    Route,
+    Switch,
+} from 'react-router-dom';
 
-import TeamCarousel from '../Components/TeamCarousel/TeamCarousel';
+import TeamContainer from '../Components/TeamContainer/TeamContainer';
+import teamdata from '../Components/TeamData/TeamData';
+import TeamInfo from '../Components/TeamInfo/TeamInfo';
+import Header from '../Components/Header/Header';
 
-
+import Card from 'react-bootstrap/Card';
+import CardDeck from 'react-bootstrap/CardDeck';
+import Button from 'react-bootstrap/Button';
 
 const CreditPage = (props) => {
+let match = useRouteMatch();
+const team = teamdata;
+
+const teamMembers = team.map((team) => {
     return (
-        <Jumbotron className="bg-transparent jumbotron-fluid p-0">
-            <Container fluid={true}>
-                <Row className="justify-content-center py-5">
-                    <Col md={8} sm={12}>
-                        <TeamCarousel />
-                    </Col>
-                </Row>
-            </Container>
-        </Jumbotron>
-    )
+    <div key={team.id} >
+                       <Card bg="light" text="dark" className="mt-top" d-inline-block border="light" style={{ width: '35rem'}}>
+                        <Card.Body>
+                            <Card.Img variant="top" className="mb-3" src={team.imgSrc} alt={team.title} />
+                            <Card.Title>{team.title}</Card.Title>
+                            <Card.Text><p>{team.subtitle}</p></Card.Text>
+                            <Button variant="success" href={`${match.url}/${team.title}`}> Learn more
+                            </Button>
+                        </Card.Body>
+                       </Card>
+                       </div>
+    );
+});
+
+return (
+    <div>
+        <Header />
+    <Switch>
+        <Route path="/credits/:teamId">
+            <TeamContainer>
+            <TeamInfo />
+            </TeamContainer>
+        </Route>
+        <Route path={match.path}>
+            <CardDeck>{teamMembers}</CardDeck>
+        </Route>
+    </Switch>
+</div>
+);
 
 }
+
 
 export default CreditPage;
