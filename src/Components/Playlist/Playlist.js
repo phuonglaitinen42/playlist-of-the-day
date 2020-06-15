@@ -29,7 +29,7 @@ class Playlist extends Component {
       mygenre: "",
       shareUrl: "",
       title: "",
-      myname: "",
+      myName: "",
     };
 
     // this.getGenre = this.getGenre.bind(this);
@@ -63,8 +63,9 @@ class Playlist extends Component {
       .getMe()
       .then((profile) => {
         const myname = profile.display_name;
+        console.log(myname);
         this.setState({
-          myname: myname,
+          myName: myname,
         });
       })
 
@@ -211,7 +212,7 @@ class Playlist extends Component {
             <option value="Pop">Pop/Ballad</option>
           </select>
         </label> */}
-          <p onChange={this.getName()}>Welcome back {this.state.myname}! </p>
+          <p onChange={this.getName()}>Welcome back {this.state.myName}! </p>
 
           <p>Music genre suits your mood today is {this.state.mygenre} </p>
 
