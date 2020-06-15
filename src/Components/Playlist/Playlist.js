@@ -62,19 +62,6 @@ class Playlist extends Component {
       const mygenre = response.data.genre;
       this.setState({ mygenre });
     });
-    spotifyApi
-      .getMe()
-      .then((profile) => {
-        const myname = profile.display_name;
-        console.log(myname);
-        this.setState({
-          myName: myname,
-        });
-      })
-
-      .catch((e) => {
-        console.log(e);
-      });
   }
 
   getHashParams() {
@@ -95,9 +82,8 @@ class Playlist extends Component {
       .getMe()
       .then((profile) => {
         const myname = profile.display_name;
-        console.log(myname);
         this.setState({
-          myName: myname,
+          myname: myname,
         });
       })
 
@@ -155,12 +141,12 @@ class Playlist extends Component {
             <option value="Pop">Pop/Ballad</option>
           </select>
         </label> */}
-          <p>Hey {this.state.myname}! </p>
+          <p onChange={this.getName()}>Hey {this.state.myname}! </p>
 
           <p>Music genre suits your mood today is {this.state.mygenre} </p>
 
           <input
-            class="btn btn-success"
+            className="btn btn-success"
             type="button"
             value="Generate playlist"
             onClick={() => this.getPlayer()}
@@ -196,7 +182,7 @@ class Playlist extends Component {
           >
             Open Spotify and listen!
           </a> */}
-          <a href="/quiz" class="btn btn-success">
+          <a href="/quiz" className="btn btn-success">
             Start your new playlist of the day!
           </a>
           <div className="share-btn">
