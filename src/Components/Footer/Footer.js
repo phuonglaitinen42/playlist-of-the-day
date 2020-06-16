@@ -14,7 +14,9 @@ const Footer = () => {
             REACT20K - BC.FI
           </Col>
           <Col className="p-0 d-flex justify-content-end" md={3}>
-            Created by Phuong Laitinen, Otso Lappalainen and Vy Pham.
+          <a href="/credits" class="btn btn-light">
+        Created by Phuong Laitinen, Vy Pham and Otso Lappalainen.
+      </a>
           </Col>
         </Row>
       </Container>

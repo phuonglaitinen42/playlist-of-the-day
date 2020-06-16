@@ -182,9 +182,16 @@ class Playlist extends Component {
           >
             Open Spotify and listen!
           </a> */}
+          <div>
           <a href="/quiz" className="btn btn-success">
-            Start your new playlist of the day!
+            Replay?!
           </a>
+          </div>
+          <div>
+          <a href="/credits" className="btn btn-success">
+        Learn more about the team behind the game.
+      </a>
+          </div>
           <div className="share-btn">
             <p>Share your Playlist of the Day with your friends</p>
             <FacebookShareButton
