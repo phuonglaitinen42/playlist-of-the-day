@@ -3,11 +3,17 @@ import SpotifyWebApi from "spotify-web-api-js";
 import React, { Component } from "react";
 import Axios from "axios";
 import "./Playlist.css";
-
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  TwitterIcon,
+} from "react-share";
 import { GenreDb } from "../../API/quizQuestions/constants";
 
 const spotifyApi = new SpotifyWebApi();
-
+const shareUrl = "https://daily-playlist-frontend.herokuapp.com";
+const quote = "Playlist of the Day";
 class Playlist extends Component {
   constructor(props) {
     super(props);
@@ -133,6 +139,15 @@ class Playlist extends Component {
             <a href="/credits" className="btn btn-success">
               Learn more about the team behind the game.
             </a>
+          </div>
+          <div className="share-btn">
+            <p>Share the quiz with your friends</p>
+            <FacebookShareButton url={shareUrl} quote={quote}>
+              <FacebookIcon size={40} round={true} />
+            </FacebookShareButton>
+            <TwitterShareButton url={shareUrl} title={quote}>
+              <TwitterIcon size={40} round={true} />
+            </TwitterShareButton>
           </div>
         </div>
       </div>
