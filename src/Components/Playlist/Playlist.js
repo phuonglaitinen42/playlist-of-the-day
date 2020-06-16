@@ -3,12 +3,7 @@ import SpotifyWebApi from "spotify-web-api-js";
 import React, { Component } from "react";
 import Axios from "axios";
 import "./Playlist.css";
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  FacebookIcon,
-  TwitterIcon,
-} from "react-share";
+
 import { GenreDb } from "../../API/quizQuestions/constants";
 
 const spotifyApi = new SpotifyWebApi();
@@ -138,21 +133,6 @@ class Playlist extends Component {
             <a href="/credits" className="btn btn-success">
               Learn more about the team behind the game.
             </a>
-          </div>
-          <div className="share-btn">
-            <p>Share your Playlist of the Day with your friends</p>
-            <FacebookShareButton
-              url={this.state.shareUrl}
-              quote={this.state.title}
-            >
-              <FacebookIcon size={40} round={true} />
-            </FacebookShareButton>
-            <TwitterShareButton
-              url={this.state.shareUrl}
-              title={this.state.title}
-            >
-              <TwitterIcon size={40} round={true} />
-            </TwitterShareButton>
           </div>
         </div>
       </div>
