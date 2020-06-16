@@ -8,24 +8,25 @@
   margin-top: 1rem;
   padding: 3rem 1rem;
 }
-.playlist-render input,
-.playlist-render a,
-.playlist-render p,
-.playlist-result,
-.react-share__ShareButton {
+
+.playlist-render input, .playlist-render a, .playlist-render p, .playlist-result, .react-share__ShareButton {
   margin: 0.5rem;
 }
+
 .playlist-img {
   display: grid;
   justify-items: center;
 }
+
 .playlist-player {
   display: grid;
   justify-items: center;
 }
+
 .playlist-img img {
   background-size: contain;
 }
+
 @media (max-width: 414px) {
   .playlist-render {
     min-width: 90vw;
