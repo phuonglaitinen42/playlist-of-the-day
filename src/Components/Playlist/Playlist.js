@@ -5,9 +5,13 @@ import Axios from "axios";
 import "./Playlist.css";
 import {
   FacebookShareButton,
+  LinkedinShareButton,
   TwitterShareButton,
+  WhatsappShareButton,
   FacebookIcon,
+  LinkedinIcon,
   TwitterIcon,
+  WhatsappIcon,
 } from "react-share";
 import { GenreDb } from "../../API/quizQuestions/constants";
 
@@ -145,9 +149,15 @@ class Playlist extends Component {
             <FacebookShareButton url={shareUrl} quote={quote}>
               <FacebookIcon size={40} round={true} />
             </FacebookShareButton>
+            <LinkedinShareButton url={shareUrl} title={quote}>
+              <LinkedinIcon size={40} round={true} />
+            </LinkedinShareButton>
             <TwitterShareButton url={shareUrl} title={quote}>
               <TwitterIcon size={40} round={true} />
             </TwitterShareButton>
+            <WhatsappShareButton url={shareUrl} title={quote}>
+              <WhatsappIcon size={40} round={true} />
+            </WhatsappShareButton>
           </div>
         </div>
       </div>

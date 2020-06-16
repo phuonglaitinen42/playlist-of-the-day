@@ -21,9 +21,9 @@ const team = teamdata;
 const teamMembers = team.map((team) => {
     return (
     <div key={team.id} >
-                       <Card bg="light" text="dark" className="mt-top" d-inline-block border="light" style={{ width: '35rem'}}>
+                       <Card bg="light" text="dark" className="mt-top" d-inline-block border="light" style={{ width: '20rem'}}>
                         <Card.Body>
-                            <Card.Img variant="top" className="mb-3" src={team.imgSrc} alt={team.title} />
+                            <Card.Img variant="top" className="mb-3 team-thumb-img" src={team.imgSrc} alt={team.title} />
                             <Card.Title>{team.title}</Card.Title>
                             <Card.Text><p>{team.subtitle}</p></Card.Text>
                             <Button variant="success" href={`${match.url}/${team.title}`}> Learn more

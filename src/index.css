@@ -144,23 +144,17 @@ body {
   margin: 2rem;
 }
 
-.t-card-img {
+.t-team-img {
   border-radius: 1rem;
   width: auto;
-  height: 250px;
+  height: 400px;
   box-shadow: 0px 0px 3px 1px #ccc;
-}
-
-.t-card-info {
-  margin-top: 1rem;
-  min-height: 100px;
 }
 
 .t-card-title {
   font-size: 16px;
   margin: 0px;
 }
-
 
 .t-card-profile {
   font-size: 12px;
@@ -260,7 +254,25 @@ body {
     display: grid;
     justify-items: center;
   }
+  .t-card {
+    margin: 0;
+  }
+  .t-team-img {
+    border-radius: 1rem;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 3px 1px #ccc;
+    margin: 0;
+  }
+  .team-thumb-img {
+    border-radius: 1rem;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 3px 1px #ccc;
+    margin: 0;
+  }
 }
+
 @media (min-width: 415px) {
   .loader p {
     margin-left: -19rem;
