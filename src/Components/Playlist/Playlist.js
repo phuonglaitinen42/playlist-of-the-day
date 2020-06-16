@@ -1,7 +1,6 @@
 import SpotifyPlayer from "react-spotify-player";
 import SpotifyWebApi from "spotify-web-api-js";
 import React, { Component } from "react";
-// import Player from "../Player/Player";
 import Axios from "axios";
 import "./Playlist.css";
 import {
@@ -10,16 +9,7 @@ import {
   FacebookIcon,
   TwitterIcon,
 } from "react-share";
-import {
-  GenreDb,
-  // JazzID,
-  // PopID,
-  // RockID,
-  // MetalID,
-  // MixedID,
-} from "../../API/quizQuestions/constants";
-
-// import Share from "../Share/Share";
+import { GenreDb } from "../../API/quizQuestions/constants";
 
 const spotifyApi = new SpotifyWebApi();
 
@@ -43,15 +33,9 @@ class Playlist extends Component {
       shareUrl: "",
       title: "",
       myname: "",
-      // song1: "",
-      // song2: "",
-      // song3: "",
-      // artist1: "",
-      // artist2: "",
-      // artist3: "",
+      show: false,
     };
     this.playerCheckInterval = null;
-    // this.getGenre = this.getGenre.bind(this);
   }
 
   componentDidMount() {
@@ -118,29 +102,19 @@ class Playlist extends Component {
         player: "spotify:playlist:37i9dQZF1DXdxcBWuJkbcy",
       });
     }
+    this.setState({
+      show: this.state.player === null ? false : true,
+    });
   }
 
-  // getGenre(e) {
-  //   this.setState({
-  //     genre: e.target.value,
-  //   });
-  //   console.log(this.state.genre);
-  // }
-
   render() {
+    let player = "";
+    if (this.state.player) {
+      player = <SpotifyPlayer uri={this.state.player} />;
+    }
     return (
       <div className="playlist-bg">
         <div className="playlist-render">
-          {/* <h3>What was the result you got from our quiz?</h3>
-        <label>
-          Genre:
-          <select value={this.state.genre} onChange={this.getGenre} required>
-            <option value="Jazz">Jazz</option>
-            <option value="Rock">Progressive Rock</option>
-            <option value="Metal">Metal</option>
-            <option value="Pop">Pop/Ballad</option>
-          </select>
-        </label> */}
           <p onChange={this.getName()}>Hey {this.state.myname}! </p>
 
           <p>Music genre suits your mood today is {this.state.mygenre} </p>
@@ -152,45 +126,18 @@ class Playlist extends Component {
             onClick={() => this.getPlayer()}
           ></input>
           <div className="playlist-result">
-            {/* Your playlist of the day is: {this.state.playlistName}
-            <div className="playlist-img">
-              <img src={this.state.image} alt={this.state.playlistName} />
-            </div>
-            <div>
-              Some songs:{" "}
-              <ul>
-                <li>
-                  {this.state.song1} - {this.state.artist1}
-                </li>
-                <li>
-                  {this.state.song2} - {this.state.artist2}
-                </li>
-                <li>
-                  {this.state.song3} - {this.state.artist3}
-                </li>
-              </ul>{" "}
-            </div> */}
-            <div className="playlist-player">
-              <SpotifyPlayer uri={this.state.player} />
-            </div>
+            <div className="playlist-player">{player}</div>
           </div>
-          {/* <a
-            href={this.state.link}
-            target="blank_"
-            class="btn btn-success"
-            style={{ textDecoration: "none", color: "white" }}
-          >
-            Open Spotify and listen!
-          </a> */}
+
           <div>
-          <a href="/quiz" className="btn btn-success">
-            Replay?!
-          </a>
+            <a href="/quiz" className="btn btn-success">
+              Replay?!
+            </a>
           </div>
           <div>
-          <a href="/credits" className="btn btn-success">
-        Learn more about the team behind the game.
-      </a>
+            <a href="/credits" className="btn btn-success">
+              Learn more about the team behind the game.
+            </a>
           </div>
           <div className="share-btn">
             <p>Share your Playlist of the Day with your friends</p>
