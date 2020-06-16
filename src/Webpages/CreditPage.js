@@ -45,6 +45,10 @@ return (
         </Route>
         <Route path={match.path}>
             <CardDeck>{teamMembers}</CardDeck>
+            <Button variant="link">
+        <a href="/">
+            Return to main menu.
+          </a></Button>
         </Route>
     </Switch>
 </div>

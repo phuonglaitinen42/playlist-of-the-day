@@ -27,11 +27,11 @@ function TeamInfo() {
                     <div> <p className="t-card-title">{team.title}</p></div>
                     <p className="t-card-profile">{team.profile}</p>
                     <div className="t-card-link">
-                        <a href={team.github} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="fa-github" icon={faGithub} />Checkout my repositories.</a>
+                        <a href={team.github} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="fa-github" icon={faGithub} />   Follow my progress as a full stack developer</a>
                     </div>
-                    <div className="t-card-link"><a href={team.linkedIn} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="fa-linkedIn" icon={faLinkedin} />Let's connect on LinkedIn!</a></div>
+                    <div className="t-card-link"><a href={team.linkedIn} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="fa-linkedIn" icon={faLinkedin} />   Let's connect on LinkedIn!</a></div>
                     <div className="t-card-link">
-                        <a href={team.playlist} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="fa-spotify" icon={faSpotify} />Enjoy the vibes from my favourite playlist.</a>
+                        <a href={team.playlist} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="fa-spotify" icon={faSpotify} />   Enjoy the vibes from my favourite playlist.</a>
                     </div>
                     <Button variant="warning" href="/credits">Back to Credits</Button>
                 </div>
